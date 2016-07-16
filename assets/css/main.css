@@ -2204,11 +2204,11 @@
 		opacity: 1;
 	}
 	
-/* header nova rota*/	
+	/* headerPlacas*/	
 	
-	#headern {
+	#headerPlacas {
 		position: relative;
-		background-image: url("../../images/placas.jpg");
+		background-image: url("../../images/Cadastros/placas.jpg");
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
@@ -2219,14 +2219,14 @@
 	}
 	
 
-		#headern:before {
+		#headerPlacas:before {
 			content: '';
 			display: inline-block;
 			vertical-align: middle;
 			height: 100%;
 		}
 
-		#headern .inner {
+		#headerPlacas .inner {
 			position: relative;
 			z-index: 1;
 			margin: 0;
@@ -2234,26 +2234,26 @@
 			vertical-align: middle;
 		}
 
-		#headern header {
+		#headerPlacas header {
 			display: inline-block;
 		}
 
-			#headern header > p {
+			#headerPlacas header > p {
 				font-size: 1.25em;
 				margin: 0;
 			}
 
-		#headern h1 {
+		#headerPlacas h1 {
 			color: #fff;
 			font-size: 3em;
 			line-height: 1em;
 		}
 
-			#headern h1 a {
+			#headerPlacas h1 a {
 				color: inherit;
 			}
 
-		#headern .button {
+		#headerPlacas .button {
 			display: inline-block;
 			border-radius: 100%;
 			width: 4.5em;
@@ -2264,18 +2264,93 @@
 			padding: 0;
 		}
 
-		#headern hr {
+		#headerPlacas hr {
 			top: 1.5em;
 			margin-bottom: 3em;
 			border-bottom-color: rgba(192, 192, 192, 0.35);
 			box-shadow: inset 0 1px 0 0 rgba(192, 192, 192, 0.35);
 		}
 
-			#headern hr:before, #header hr:after {
+			#headerPlacas hr:before, #header hr:after {
 				background: rgba(192, 192, 192, 0.35);
 			}
 
-		#headern footer {
+		#headerPlacas footer {
+			margin: 1em 0 0 0;
+		}
+		
+	/* headerEventos*/	
+	
+	#headerEventos {
+		position: relative;
+		background-image: url("../../images/Cadastros/eventos.jpg");
+		background-size: cover;
+		background-position: center center;
+		background-attachment: fixed;
+		color: #fff;
+		text-align: center;
+		padding: 7.5em 0 2em 0;
+		cursor: default;
+	}
+	
+
+		#headerEventos:before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+
+		#headerEventos .inner {
+			position: relative;
+			z-index: 1;
+			margin: 0;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		#headerEventos header {
+			display: inline-block;
+		}
+
+			#headerEventos header > p {
+				font-size: 1.25em;
+				margin: 0;
+			}
+
+		#headerEventos h1 {
+			color: #fff;
+			font-size: 3em;
+			line-height: 1em;
+		}
+
+			#headerEventos h1 a {
+				color: inherit;
+			}
+
+		#headerEventos .button {
+			display: inline-block;
+			border-radius: 100%;
+			width: 4.5em;
+			height: 4.5em;
+			line-height: 4.5em;
+			text-align: center;
+			font-size: 1.25em;
+			padding: 0;
+		}
+
+		#headerEventos hr {
+			top: 1.5em;
+			margin-bottom: 3em;
+			border-bottom-color: rgba(192, 192, 192, 0.35);
+			box-shadow: inset 0 1px 0 0 rgba(192, 192, 192, 0.35);
+		}
+
+			#headerEventos hr:before, #header hr:after {
+				background: rgba(192, 192, 192, 0.35);
+			}
+
+		#headerEventos footer {
 			margin: 1em 0 0 0;
 		}
 

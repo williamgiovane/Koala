@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <!--
 	Helios by HTML5 UP
 	html5up.net | @ajlkn
@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Nova Rota</title>
+		<title>Eventos</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -17,12 +17,12 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<div id="headerPlacas">
+				<div id="headerEventos">
 
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">Nova Rota</a></h1>
+								<h1><a href="index.html" id="logo">Cadastro de Eventos</a></h1>
 							</header>
 						</div>
 
@@ -30,14 +30,14 @@
 						<nav id="nav">
 							<ul>
 								<li><a href="index.html">Home</a></li>
-								<li>
+								<!--<li>
 									<a href="#">Minhas rotas</a>
 									<ul>
 										<li><a href="#">Rota 1</a></li>
 										<li><a href="#">Rota 2</a></li>
 										<li><a href="#">Rota 3</a></li>
 										<li></li>
-											<!--
+											
 											<a href="#">Todas as Rotas</a>
 											<ul>
 												<li><a href="#">Lorem ipsum dolor</a></li>
@@ -45,43 +45,53 @@
 												<li><a href="#">Magna phasellus</a></li>
 												<li><a href="#">Etiam dolore nisl</a></li>
 											</ul>
-											-->
-									</ul>
-								</li>
-								<li><a href="left-sidebar.html">Nova Rota</a></li>
-								<li><a href="right-sidebar.html">Favoritos</a></li>
-								<li><a href="no-sidebar.html">Eventos</a></li>
+									</ul>	
+								</li>-->
+								<li><a href="left-sidebar.html">Notícias</a></li>
+								<li><a href="right-sidebar.html">Login</a></li>
+								<li><a href="registrar.html">Registrar</a></li>
 							</ul>
 						</nav>
 				</div>
 
 			<!-- Main -->
 				<div class="wrapper style1">
-
 					<div class="container">
-						<div class="row 200%">
-								<article id="main" class="special">
-									<header>
-										<h2>Para começar digite o nome da rota e seu período de viagem</a></h2>
-									</header>
-								</article>
-						</div>
-					</div>
-					<div class="container">
+						<h2>Digite os dados do evento:</a></h2>
 						<div class="content">
 							<div class="8u 12u(mobile)" id="content">
 								<form>
-									Digite o nome da rota:<input type="text" name="nomerota">
-									Período Inicial:&nbsp <input type="date" name="periodoInicial"></br>
-									Período Final:&nbsp&nbsp <input type="date" name="periodoFinal">
+									<table>
+										<tr>
+											<td><input type="checkbox" name="eventoMusical" value="">Musical</td>
+											<td><input type="checkbox" name="eventoCultural" value="">Cultural</td>
+											<td><input type="checkbox" name="eventoTecnologico" value="">Tecnológico</td>	
+											<td><input type="checkbox" name="eventoGastronomico" value="">Gastronômico</td>
+											<td><input type="checkbox" name="eventoDataComerativo" value="">Datas Comemorativas</td>	
+										</tr>
+										<tr>
+											<td><input type="checkbox" name="eventoEsportivo" value="">Esportivo</td>
+											<td><input type="checkbox" name="eventoPalestra" value="">Palestras</td>
+											<td><input type="checkbox" name="eventoWorkshop" value="">Workshops</td>
+											<td><input type="checkbox" name="eventoCorporativo" value="">Corporativos</td>
+											<td><input type="checkbox" name="eventoFestival" value="">Festival</td>	
+										</tr>
+									</table>
+									
+									Nome Completo:<input type="text" name="nomeUsu"> 
+									Email:<input type="email" name="emailUsu">
+									Senha:<input type="password" name="senhaUsu">
+									Confirme a senha:<input type="password" name="senhaConfiUsu">
+									Celular:<input type="text" name="celularUsu">
+									
 								</form>
 							</div>
 						</div>
 					</div>
 									
 					<footer  align="center">
+						<a href="index.html" class="button circled scrolly">Cadastrar</a>
 						<a href="index.html" class="button circled scrolly">Cancelar</a>
-						<a href="estados.html" class="button circled scrolly">Próximo</a>
 					</footer>
 				</div>
 
