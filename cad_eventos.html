@@ -12,6 +12,8 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="jquery.js" type="text/javascript"></script>
+		<script src="jquery.maskedinput.js" type="text/javascript"></script>
 	</head>
 	<body class="right-sidebar">
 		<div id="page-wrapper">
@@ -49,7 +51,7 @@
 								</li>-->
 								<li><a href="left-sidebar.html">Notícias</a></li>
 								<li><a href="right-sidebar.html">Login</a></li>
-								<li><a href="registrar.html">Registrar</a></li>
+								<li><a href="cad_registrar.html">Registrar</a></li>
 							</ul>
 						</nav>
 				</div>
@@ -61,37 +63,45 @@
 						<div class="content">
 							<div class="8u 12u(mobile)" id="content">
 								<form>
+									Nome Evento:<input type="text" name="nomeEvento">
+									Data Inicio:<input type="date" name="dataInicio">
+									Data Final:<input type="date" name="dataFinal"></br>
+									Cidade:<input type="text" name="cidade">
+									Cep:<input type="text" name="cep" placeholder="00000-000">
+									Local Evento:<input type="text" name="localEvento">
+									Telefone:<input type="text" name="telefone">
+									Horario Inicio:<input type="text" name="horarioInicio">
+									Horario Final:<input type="text" name="horarioFinal">
+									Valor Ingreso:<input type="text" name="valorIngresso">
+									Site Evento:<input type="text" name="siteEvento">
+									Pontos de Venda:<input type="text" name="pontosDeVenda">
+									Tipo do Evento:
 									<table>
 										<tr>
-											<td><input type="checkbox" name="eventoMusical" value="">Musical</td>
-											<td><input type="checkbox" name="eventoCultural" value="">Cultural</td>
-											<td><input type="checkbox" name="eventoTecnologico" value="">Tecnológico</td>	
-											<td><input type="checkbox" name="eventoGastronomico" value="">Gastronômico</td>
+											<td><input type="checkbox" name="eventoMusical" 	   value="">Musical</td>
+											<td><input type="checkbox" name="eventoCultural" 	   value="">Cultural</td>
+											<td><input type="checkbox" name="eventoTecnologico"    value="">Tecnológico</td>	
+											<td><input type="checkbox" name="eventoGastronomico"   value="">Gastronômico</td>
 											<td><input type="checkbox" name="eventoDataComerativo" value="">Datas Comemorativas</td>	
 										</tr>
 										<tr>
-											<td><input type="checkbox" name="eventoEsportivo" value="">Esportivo</td>
-											<td><input type="checkbox" name="eventoPalestra" value="">Palestras</td>
-											<td><input type="checkbox" name="eventoWorkshop" value="">Workshops</td>
-											<td><input type="checkbox" name="eventoCorporativo" value="">Corporativos</td>
-											<td><input type="checkbox" name="eventoFestival" value="">Festival</td>	
+											<td><input type="checkbox" name="eventoEsportivo" 	   value="">Esportivo</td>
+											<td><input type="checkbox" name="eventoPalestra" 	   value="">Palestras</td>
+											<td><input type="checkbox" name="eventoWorkshop" 	   value="">Workshops</td>
+											<td><input type="checkbox" name="eventoCorporativo"    value="">Corporativos</td>
+											<td><input type="checkbox" name="eventoFestival" 	   value="">Festival</td>	
 										</tr>
 									</table>
-									
-									Nome Completo:<input type="text" name="nomeUsu"> 
-									Email:<input type="email" name="emailUsu">
-									Senha:<input type="password" name="senhaUsu">
-									Confirme a senha:<input type="password" name="senhaConfiUsu">
-									Celular:<input type="text" name="celularUsu">
-									
+									Sobre Evento:<textarea name="Mensagem" rows="10" cols="60" wrap="virtual"></textarea></p>
+									Upload Foto:<input type="text" name="uploadFoto">
 								</form>
 							</div>
 						</div>
 					</div>
 									
 					<footer  align="center">
-						<a href="index.html" class="button circled scrolly">Cadastrar</a>
 						<a href="index.html" class="button circled scrolly">Cancelar</a>
+						<a href="index.html" class="button circled scrolly">Cadastrar</a>
 					</footer>
 				</div>
 
