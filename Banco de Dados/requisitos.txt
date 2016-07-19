@@ -1,0 +1,8 @@
+﻿O protótipo permite pesquisar sem realizar o login.
+
+Ao realizar o login:
+
+Rotas: O usuário terá a possibilidade de criar nenhuma ou várias rotas
+Cada rota possuirá um ou mais estados/cidades, podendo ainda conter nenhum ou vários estabelecimentos(pubs, restaurantes), entretenimento(teatro, esportes de aventura), evento(shows, fetivais, palestras)
+
+Comentários:

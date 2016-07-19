@@ -164,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `koaladb`.`ESTABELECIMENTO` (
   `telefone` INT NULL COMMENT '',
   `email` VARCHAR(45) NULL COMMENT '',
   `classificacao` DECIMAL(1,1) NULL COMMENT '',
-  `foto` LONGBLOB NOT NULL COMMENT '',
+  `foto` LONGBLOB NULL COMMENT '',
   `CIDADE_id_cidade` INT NOT NULL COMMENT '',
   PRIMARY KEY (`id_estabelecimento`)  COMMENT '',
   UNIQUE INDEX `id_estabelecimento_UNIQUE` (`id_estabelecimento` ASC)  COMMENT '',
@@ -303,7 +303,7 @@ CREATE TABLE IF NOT EXISTS `koaladb`.`ENTRETENIMENTO` (
   `about` VARCHAR(500) NOT NULL COMMENT '',
   `cep` DECIMAL(10,0) NOT NULL COMMENT '',
   `telefone` DECIMAL(10,0) NULL COMMENT '',
-  `foto` LONGBLOB NOT NULL COMMENT '',
+  `foto` LONGBLOB NULL COMMENT '',
   `classificacao` DECIMAL(1,1) NULL COMMENT '',
   `site` VARCHAR(75) NULL COMMENT '',
   PRIMARY KEY (`id_entretenimento`)  COMMENT '',
@@ -330,7 +330,7 @@ CREATE TABLE IF NOT EXISTS `koaladb`.`EVENTO` (
   `site` VARCHAR(65) NULL COMMENT '',
   `about` VARCHAR(500) NOT NULL COMMENT '',
   `telefone` DECIMAL(15) NULL COMMENT '',
-  `foto` LONGBLOB NOT NULL COMMENT '',
+  `foto` LONGBLOB NULL COMMENT '',
   PRIMARY KEY (`id_evento`)  COMMENT '',
   UNIQUE INDEX `id_evento_UNIQUE` (`id_evento` ASC)  COMMENT '')
 ENGINE = InnoDB;
