@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Registro de Usuario</title>
+		<title>Registro de Empresa</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -55,21 +55,59 @@
 				</div>
 
 			<!-- Main -->
-				<div class="wrapper style1" align="center">
+				<div class="wrapper style1">
 					<div class="container">
-						<h2>Quem é você?</a></h2></br>
+						<h2>Digite seus dados:</a></h2>
 						<div class="content">
 							<div class="8u 12u(mobile)" id="content">
 								<form>
-									<a href="cad_registrar.html" class="button circled scrolly">Pessoa Fisica</a>
-									<a href="cad_registrarEmpresa.html" class="button circled scrolly">Empresa</a>
-									<a href="index.html" class="button circled scrolly">Voltar</a>
+									Nome Empresa:<input type="text" name="nomeUsu"> 
+									Ramo de Atividade  
+									<select id="ramoAtividade" name="ramoAtividade">
+										<option value="nenhum">Selecione o Ramo de Atividade</option>
+										<option value="ramoPub">Pub</option>
+										<option value="ramoRestaurante">Restaurante</option>
+										<option value="ramoLanchonete">Lanchonete</option>
+									</select>
+									CNPJ:<input type="text" name="cnpj">
+									
+									Email:<input type="email" name="emailEmpresa">
+									Site:<input type="text" name="siteEmpresa">
+									
+									Estado  
+									<select id="cidade" name="cidade">
+										<option value="nenhum">Selecione o Estado</option>
+										<option value="santaCatarina">Santa Catarina</option>
+										<option value="parana">Parana</option>
+										<option value="rio">Rio de Janeiro</option>
+										<option value="sp">São Paulo</option>
+									</select>
+									Cidade  
+									<select id="cidade" name="cidade">
+										<option value="nenhum">Selecione a Cidade</option>
+										<option value="Blumenau">Blumenau</option>
+										<option value="Indaial">Indaial</option>
+										<option value="Ilhota">Ilhota</option>
+										<option value="Gaspar">Gaspar</option>
+									</select>
+									
+									Celular:<input type="text" name="celularUsu">
+									Senha:<input type="password" name="senhaUsu">
+									Confirme a senha:<input type="password" name="senhaConfiUsu">
+									<input type="checkbox" name="atualizacaoCelular" value="">Desejo receber atualizações por Celular</td></br>
+									<input type="checkbox" name="atualizacaoEmail" value="">Desejo receber atualizações por Email</td>
 								</form>
 							</div>
 						</div>
 					</div>
+									
+					<footer  align="center">
+						<a href="index.html" class="button circled scrolly">Cadastrar</a>
+						<a href="index.html" class="button circled scrolly">Cancelar</a>
+						<a href="cad_tipousuario.html" class="button circled scrolly">Voltar</a>
+					</footer>
 				</div>
-				
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
