@@ -1,4 +1,14 @@
-<!DOCTYPE HTML>
+<?php
+	session_start();
+
+	require 'config.php';
+	require 'classes/Db.class.php';
+	
+	//Criando obj da classe BD
+	$banco = new DB();
+?>
+
+<!doctype html>
 <!--
 	Helios by HTML5 UP
 	html5up.net | @ajlkn
@@ -6,7 +16,7 @@
 -->
 <html>
 	<head>
-		<title>BinBag</title>
+		<title> <?php echo NOME_SITE; ?> </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -22,7 +32,7 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">BinBag</a></h1>
+								<h1><a href="index.php" id="logo">BinBag</a></h1>
 								<hr />
 								<p>Planeje sua viagem</p>
 							</header>
@@ -34,7 +44,7 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.php">Home</a></li>
 								<!--<li>
 									<a href="#">Minhas rotas</a>
 									<ul>
@@ -52,9 +62,9 @@
 											</ul>
 									</ul>	
 								</li>-->
-								<li><a href="left-sidebar.html">Notícias</a></li>
-								<li><a href="right-sidebar.html">Login</a></li>
-								<li><a href="cad_tipousuario.html">Registrar</a></li>
+								<li><a href="left-sidebar.php">Notícias</a></li>
+								<li><a href="right-sidebar.php">Login</a></li>
+								<li><a href="cad_tipousuario.php">Registrar</a></li>
 							</ul>
 						</nav>
 				</div>
@@ -69,7 +79,7 @@
 						</p>
 					</header>
 					<footer>
-						<a href="cad_tipousuario.html" class="button circled scrolly">Cadastre-se</a>
+						<a href="cad_tipousuario.php" class="button circled scrolly">Cadastre-se</a>
 					</footer>
 				</section>
 
@@ -383,7 +393,7 @@
 								<!-- Copyright -->
 									<div class="copyright">
 										<ul class="menu">
-											<li>&copy; BinBag. All rights reserved.</li><li>Design: Boeing, William</a></li>
+											<li>&copy; <?php echo NOME_SITE; ?>. All rights reserved.</li><li>Design: Boeing, William</a></li>
 										</ul>
 									</div>
 

@@ -22,14 +22,14 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">Cadastro de Eventos</a></h1>
+								<h1><a href="index.php" id="logo">Cadastro de Eventos</a></h1>
 							</header>
 						</div>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.php">Home</a></li>
 								<!--<li>
 									<a href="#">Minhas rotas</a>
 									<ul>
@@ -47,9 +47,9 @@
 											</ul>
 									</ul>	
 								</li>-->
-								<li><a href="left-sidebar.html">Notícias</a></li>
-								<li><a href="right-sidebar.html">Login</a></li>
-								<li><a href="cad_registrar.html">Registrar</a></li>
+								<li><a href="left-sidebar.php">Notícias</a></li>
+								<li><a href="right-sidebar.php">Login</a></li>
+								<li><a href="cad_registrar.php">Registrar</a></li>
 							</ul>
 						</nav>
 				</div>
@@ -98,8 +98,8 @@
 					</div>
 									
 					<footer  align="center">
-						<a href="index.html" class="button circled scrolly">Cancelar</a>
-						<a href="index.html" class="button circled scrolly">Cadastrar</a>
+						<a href="index.php" class="button circled scrolly">Cancelar</a>
+						<a href="index.php" class="button circled scrolly">Cadastrar</a>
 					</footer>
 				</div>
 

@@ -1,0 +1,5 @@
+Time : 15:57:57
+SQLSTATE[HY000] [1049] Unknown database 'infor402'
+
+Time : 15:55:33
+SQLSTATE[HY000] [1049] Unknown database 'infor402'

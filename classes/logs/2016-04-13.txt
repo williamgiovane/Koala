@@ -1,0 +1,27 @@
+Time : 16:27:23
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'infor402.cidades' doesn't exist
+Raw SQL : select * from cidades
+
+Time : 16:19:41
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.cidade' in 'where clause'
+Raw SQL : select 
+			u.*,c.nm_cidade
+		from 
+			usuario u,
+			cidade c
+		where u.cd_cidade = c.cidade
+
+Time : 15:05:03
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'infor402.usuarios' doesn't exist
+Raw SQL : select * from usuarios where 
+			cd_usuario = :codigo
+
+Time : 15:05:02
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'infor402.usuarios' doesn't exist
+Raw SQL : select * from usuarios where 
+			cd_usuario = :codigo
+
+Time : 15:05:02
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'infor402.usuarios' doesn't exist
+Raw SQL : select * from usuarios where 
+			cd_usuario = :codigo

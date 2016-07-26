@@ -1,3 +1,11 @@
+<?php
+	require 'config.php';
+	require 'classes/Db.class.php';
+	
+	/* criando objeto da classe DB*/
+	$banco = new DB();
+?>
+
 <!DOCTYPE HTML>
 <!--
 	Helios by HTML5 UP
@@ -22,14 +30,14 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">Registre-se no BinBag</a></h1>
+								<h1><a href="index.php" id="logo">Registre-se no BinBag</a></h1>
 							</header>
 						</div>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.php">Home</a></li>
 								<!--<li>
 									<a href="#">Minhas rotas</a>
 									<ul>
@@ -47,9 +55,9 @@
 											</ul>
 									</ul>	
 								</li>-->
-								<li><a href="left-sidebar.html">Notícias</a></li>
-								<li><a href="right-sidebar.html">Login</a></li>
-								<li><a href="cad_registrar.html">Registrar</a></li>
+								<li><a href="left-sidebar.php">Notícias</a></li>
+								<li><a href="right-sidebar.php">Login</a></li>
+								<li><a href="cad_registrar.php">Registrar</a></li>
 							</ul>
 						</nav>
 				</div>
@@ -57,7 +65,7 @@
 			<!-- Main -->
 				<div class="wrapper style1">
 					<div class="container">
-						<h2>Digite seus dados:</a></h2>
+						<h2>Digite seus dados:</a></h2></br>
 						<div class="content">
 							<div class="8u 12u(mobile)" id="content">
 								<form>
@@ -74,21 +82,49 @@
 									Email:<input type="email" name="emailEmpresa">
 									Site:<input type="text" name="siteEmpresa">
 									
-									Estado  
-									<select id="cidade" name="cidade">
-										<option value="nenhum">Selecione o Estado</option>
-										<option value="santaCatarina">Santa Catarina</option>
-										<option value="parana">Parana</option>
-										<option value="rio">Rio de Janeiro</option>
-										<option value="sp">São Paulo</option>
+									Continente
+									<select id="Continente" name="Continente">
+										<option value="">Selecione o Continente</option>
+										<?php
+											$continente = $banco->query('select ds_continente from continente ORDER BY ds_continente');
+											$continenteDados = $banco->query('select id_continente from continente');
+											foreach($continente as $c){
+												echo '<option value="'.$c['ds_continente'].'">'.$c['ds_continente'].'</option>';
+											}
+										?>
 									</select>
+									
+									Pais
+									<select id="Pais" name="Pais">
+										<option value="">Selecione o Pais</option>
+										<?php
+											$continente = $banco->query('SELECT ds_pais FROM pais WHERE CONTINENTE_id_continente = 1 ORDER BY ds_pais');
+											foreach($continente as $p){
+												echo '<option value="'.$p['ds_pais'].'">'.$p['ds_pais'].'</option>';
+											}
+										?>
+									</select>
+									
+									Estado  
+									<select id="Estado" name="Estado">
+										<option value="">Selecione o Estado</option>
+										<?php
+											$estado = $banco->query('SELECT ds_estado FROM estado WHERE PAIS_id_pais = 10 ORDER BY ds_estado');
+											foreach($estado as $e){
+												echo '<option value="'.$e['ds_estado'].'">'.$e['ds_estado'].'</option>';
+											}
+										?>
+									</select>
+									
 									Cidade  
-									<select id="cidade" name="cidade">
-										<option value="nenhum">Selecione a Cidade</option>
-										<option value="Blumenau">Blumenau</option>
-										<option value="Indaial">Indaial</option>
-										<option value="Ilhota">Ilhota</option>
-										<option value="Gaspar">Gaspar</option>
+									<select id="Cidade" name="Cidade">
+										<option value="">Selecione o Cidade</option>
+										<?php
+											$cidade = $banco->query('SELECT ds_cidade FROM cidade WHERE ESTADO_id_estado = 24 ORDER BY ds_cidade');
+											foreach($cidade as $c){
+												echo '<option value="'.$c['ds_cidade'].'">'.$c['ds_cidade'].'</option>';
+											}
+										?>
 									</select>
 									
 									Celular:<input type="text" name="celularUsu">
@@ -102,9 +138,9 @@
 					</div>
 									
 					<footer  align="center">
-						<a href="index.html" class="button circled scrolly">Cadastrar</a>
-						<a href="index.html" class="button circled scrolly">Cancelar</a>
-						<a href="cad_tipousuario.html" class="button circled scrolly">Voltar</a>
+						<a href="index.php" class="button circled scrolly">Cadastrar</a>
+						<a href="index.php" class="button circled scrolly">Cancelar</a>
+						<a href="cad_tipousuario.php" class="button circled scrolly">Voltar</a>
 					</footer>
 				</div>
 

@@ -1,0 +1,910 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 4.5.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: 23-Jul-2016 às 17:51
+-- Versão do servidor: 5.7.11
+-- PHP Version: 5.6.19
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `koaladb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cidade`
+--
+
+CREATE TABLE `cidade` (
+  `id_cidade` int(11) NOT NULL,
+  `ds_cidade` varchar(65) NOT NULL,
+  `ESTADO_id_estado` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `id_comentario` int(11) NOT NULL,
+  `ds_comentario` varchar(500) NOT NULL,
+  `ESTABELECIMENTO_id_estabelecimento` int(11) DEFAULT NULL,
+  `ENTRETENIMENTO_id_entretenimento` int(11) DEFAULT NULL,
+  `USUARIO_id_usuario` int(11) NOT NULL,
+  `EVENTO_id_evento` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `continente`
+--
+
+CREATE TABLE `continente` (
+  `id_continente` int(11) NOT NULL,
+  `ds_continente` varchar(75) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `continente`
+--
+
+INSERT INTO `continente` (`id_continente`, `ds_continente`) VALUES
+(1, 'América'),
+(2, 'Africa'),
+(3, 'Europa'),
+(4, 'Ásia'),
+(5, 'Oceania'),
+(6, 'Eurásia');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dia_semana`
+--
+
+CREATE TABLE `dia_semana` (
+  `id_dia_semana` int(11) NOT NULL,
+  `ds_dia_semana` varchar(45) NOT NULL,
+  `horario_inicio` time NOT NULL,
+  `horario_fim` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `entretenimento`
+--
+
+CREATE TABLE `entretenimento` (
+  `id_entretenimento` int(11) NOT NULL,
+  `ds_entretenimento` varchar(45) NOT NULL,
+  `vl_entrada` decimal(15,2) DEFAULT NULL,
+  `vl_meia_entrada` decimal(15,2) DEFAULT NULL,
+  `about` varchar(500) NOT NULL,
+  `cep` decimal(10,0) NOT NULL,
+  `telefone` decimal(10,0) DEFAULT NULL,
+  `foto` longblob,
+  `classificacao` decimal(1,1) DEFAULT NULL,
+  `site` varchar(75) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `entretenimento_has_dia_semana`
+--
+
+CREATE TABLE `entretenimento_has_dia_semana` (
+  `ENTRETENIMENTO_id_entretenimento` int(11) NOT NULL,
+  `DIA_SEMANA_id_dia_semana` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `entretenimento_has_tipo_entretenimento`
+--
+
+CREATE TABLE `entretenimento_has_tipo_entretenimento` (
+  `ENTRETENIMENTO_id_entretenimento` int(11) NOT NULL,
+  `TIPO_ENTRETENIMENTO_id_tipo_entretenimento` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `estabelecimento`
+--
+
+CREATE TABLE `estabelecimento` (
+  `id_estabelecimento` int(11) NOT NULL,
+  `ds_estabelecimento` varchar(45) NOT NULL,
+  `cep` varchar(45) NOT NULL,
+  `about` varchar(500) NOT NULL,
+  `telefone` int(11) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `classificacao` decimal(1,1) DEFAULT NULL,
+  `foto` longblob,
+  `CIDADE_id_cidade` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `estabelecimento_has_dia_semana`
+--
+
+CREATE TABLE `estabelecimento_has_dia_semana` (
+  `ESTABELECIMENTO_id_estabelecimento` int(11) NOT NULL,
+  `DIAS_SEMANA_id_dia_semana` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `estabelecimento_has_tipo_estabelecimento`
+--
+
+CREATE TABLE `estabelecimento_has_tipo_estabelecimento` (
+  `ESTABELECIMENTO_id_estabelecimento` int(11) NOT NULL,
+  `TIPO_ESTABELECIMENTO_id_tipo_estabelecimento` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `estado`
+--
+
+CREATE TABLE `estado` (
+  `id_estado` int(11) NOT NULL,
+  `ds_estado` varchar(75) NOT NULL,
+  `capital` varchar(65) NOT NULL,
+  `PAIS_id_pais` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `evento`
+--
+
+CREATE TABLE `evento` (
+  `id_evento` int(11) NOT NULL,
+  `ds_evento` varchar(75) NOT NULL,
+  `dt_inicio` date NOT NULL,
+  `dt_fim` date NOT NULL,
+  `cep` decimal(10,0) NOT NULL,
+  `ds_local_evento` varchar(75) NOT NULL,
+  `horario_inicio` time NOT NULL,
+  `horario_fim` time NOT NULL,
+  `vl_entrada` decimal(15,2) DEFAULT NULL,
+  `vl_meia_entrada` decimal(15,2) DEFAULT NULL,
+  `site` varchar(65) DEFAULT NULL,
+  `about` varchar(500) NOT NULL,
+  `telefone` decimal(15,0) DEFAULT NULL,
+  `foto` longblob
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `evento_has_tipo_evento`
+--
+
+CREATE TABLE `evento_has_tipo_evento` (
+  `EVENTO_id_evento` int(11) NOT NULL,
+  `TIPO_EVENTO_id_tipo_evento` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `idioma`
+--
+
+CREATE TABLE `idioma` (
+  `id_idioma` int(11) NOT NULL,
+  `ds_idioma` varchar(75) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `idioma`
+--
+
+INSERT INTO `idioma` (`id_idioma`, `ds_idioma`) VALUES
+(1, 'Africâner'),
+(2, 'Albanês'),
+(3, 'Alemão'),
+(4, 'Árabe'),
+(5, 'Catalão'),
+(6, 'Chinês Mandarim'),
+(7, 'Coreano'),
+(8, 'Croata'),
+(9, 'Curdo'),
+(10, 'Dinamarquês'),
+(11, 'Eslovaco'),
+(12, 'Espanhol'),
+(13, 'Finlandês'),
+(14, 'Francês'),
+(15, 'Grego'),
+(16, 'Hebreu'),
+(18, 'Holandês'),
+(19, 'Húngaro'),
+(20, 'Inglês'),
+(21, 'Irlandês'),
+(22, 'Italiano'),
+(23, 'Japonês'),
+(24, 'Latim'),
+(25, 'Mandarim'),
+(26, 'Norueguês'),
+(27, 'Persa'),
+(28, 'Polonês'),
+(29, 'Português'),
+(30, 'Romeno'),
+(31, 'Russo'),
+(32, 'Sérvio'),
+(33, 'Somali'),
+(34, 'Sueco'),
+(35, 'Turco'),
+(36, 'Ucraniano');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `moeda`
+--
+
+CREATE TABLE `moeda` (
+  `id_moeda` int(11) NOT NULL,
+  `ds_moeda` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `moeda`
+--
+
+INSERT INTO `moeda` (`id_moeda`, `ds_moeda`) VALUES
+(1, 'Real'),
+(2, 'Dólar Americano'),
+(3, 'Euro'),
+(4, 'Libra Esterlina'),
+(5, 'Iene'),
+(6, 'Peso Argentino'),
+(7, 'Peso Chileno'),
+(8, 'Peso Mexicano'),
+(9, 'Afegane'),
+(10, 'Rand'),
+(11, 'Riyal'),
+(12, 'Dólar Australiano'),
+(13, 'Boliviano'),
+(14, 'Dólar Canadense'),
+(15, 'Renminbi'),
+(16, 'Won Norte-Coreano'),
+(17, 'Won Sul-Coreano'),
+(18, 'Coroa Dinamarquesa'),
+(19, 'Libra Egípcia'),
+(20, 'Dirham dos Emirados Árabes Unidos'),
+(21, 'Florim Húngaro'),
+(22, 'Rupia Indiana'),
+(23, 'Coroa Islandesa'),
+(24, 'Novo Shekel Israelense'),
+(25, 'Coroa Norueguesa'),
+(26, 'Dólar Neozelandês'),
+(27, 'Guarani'),
+(28, 'Novo Sol'),
+(29, 'Złoty'),
+(30, 'Rublo Russo'),
+(31, 'Coroa Sueca'),
+(32, 'Franco Suíço');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pais`
+--
+
+CREATE TABLE `pais` (
+  `id_pais` int(11) NOT NULL,
+  `ds_pais` varchar(45) NOT NULL,
+  `MOEDA_id_moeda` int(11) NOT NULL,
+  `CONTINENTE_id_continente` int(11) NOT NULL,
+  `capital` varchar(65) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `pais`
+--
+
+INSERT INTO `pais` (`id_pais`, `ds_pais`, `MOEDA_id_moeda`, `CONTINENTE_id_continente`, `capital`) VALUES
+(1, 'Afeganistão', 9, 2, 'Cabul'),
+(2, 'África do Sul', 10, 2, 'Pretória, Cidade do Cabo, Bloemfontein'),
+(3, 'Alemanha', 3, 3, 'Berlim'),
+(4, 'Arábia Saudita', 11, 4, 'Riade'),
+(5, 'Argentina', 6, 1, 'Buenos Aires'),
+(6, 'Austrália', 12, 5, 'Camberra'),
+(7, 'Áustria', 3, 3, ''),
+(8, 'Bélgica', 3, 3, 'Bruxelas'),
+(9, 'Bolívia', 13, 1, 'Sucre'),
+(10, 'Brasil', 1, 1, 'Brasília'),
+(11, 'Canadá', 14, 1, 'Ottawa'),
+(12, 'Chile', 7, 1, 'Santiago'),
+(13, 'China', 15, 4, 'Běijīng'),
+(14, 'Coreia do Norte', 16, 4, 'Yŏngyang'),
+(15, 'Coreia do Sul', 17, 4, 'Seoul'),
+(16, 'Dinamarca', 18, 3, 'København'),
+(17, 'Egito', 19, 2, 'Al-Qāhirah'),
+(18, 'Emirados Árabes Unidos', 20, 4, '‘Abū ẓabī'),
+(19, 'Equador', 2, 1, 'Quito'),
+(20, 'Eslováquia', 3, 3, 'Bratislava'),
+(21, 'Eslovénia', 3, 3, 'Ljubljana'),
+(22, 'Espanha', 3, 3, 'Madrid'),
+(23, 'Estados Unidos da América', 2, 1, 'Washington, D.C.'),
+(24, 'Finlândia', 3, 3, 'Helsinki'),
+(25, 'França', 3, 3, 'Paris'),
+(26, 'Grécia', 3, 3, 'Athinai'),
+(27, 'Hungria', 21, 3, 'Budapest'),
+(28, 'Índia', 22, 4, 'Nôtun Dilli'),
+(29, 'Irlanda', 3, 3, 'Dublin'),
+(30, 'Islândia', 23, 3, 'Reykjavík'),
+(31, 'Israel', 24, 4, 'Yerushalayim'),
+(32, 'Itália', 3, 3, 'Roma'),
+(33, 'Japão', 5, 4, 'Tōkyō'),
+(34, 'Luxemburgo', 3, 3, 'Lëtzebuerg'),
+(35, 'México', 8, 1, 'Ciudad de México'),
+(36, 'Noruega', 25, 3, 'Oslo'),
+(37, 'Nova Zelândia', 26, 5, 'Wellington'),
+(38, 'Paraguai', 27, 1, 'Asunción'),
+(39, 'Peru', 28, 1, 'Lima'),
+(40, 'Polônia', 29, 3, 'Warszawa'),
+(41, 'Portugal', 3, 3, 'Lisboa'),
+(42, 'Inglaterra', 4, 3, 'London'),
+(43, 'Rússia', 30, 6, 'Moskva'),
+(44, 'Suécia', 31, 3, 'Stockholm'),
+(45, 'Suíça', 32, 3, 'Bern');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pais_has_idioma`
+--
+
+CREATE TABLE `pais_has_idioma` (
+  `PAIS_id_pais` int(11) NOT NULL,
+  `IDIOMA_id_idioma` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `rota`
+--
+
+CREATE TABLE `rota` (
+  `id_rota` int(11) NOT NULL,
+  `ds_rota` varchar(45) NOT NULL,
+  `dt_inicio` date NOT NULL,
+  `dt_fim` date NOT NULL,
+  `USUARIO_id_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `rota_has_cidade`
+--
+
+CREATE TABLE `rota_has_cidade` (
+  `ROTA_id_rota` int(11) NOT NULL,
+  `CIDADE_id_cidade` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `rota_has_estabelecimento`
+--
+
+CREATE TABLE `rota_has_estabelecimento` (
+  `ROTA_id_rota` int(11) NOT NULL,
+  `ESTABELECIMENTO_id_estabelecimento` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `rota_has_estado`
+--
+
+CREATE TABLE `rota_has_estado` (
+  `ROTA_id_rota` int(11) NOT NULL,
+  `ESTADO_id_estado` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipo_entretenimento`
+--
+
+CREATE TABLE `tipo_entretenimento` (
+  `id_tipo_entretenimento` int(11) NOT NULL,
+  `ds_tipo_entretenimento` varchar(75) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipo_estabelecimento`
+--
+
+CREATE TABLE `tipo_estabelecimento` (
+  `id_tipo_estabelecimento` int(11) NOT NULL,
+  `ds_tipo_estabelecimento` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipo_evento`
+--
+
+CREATE TABLE `tipo_evento` (
+  `id_tipo_evento` int(11) NOT NULL,
+  `ds_tipo_evento` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipo_usuario`
+--
+
+CREATE TABLE `tipo_usuario` (
+  `id_tipo_usuario` int(11) NOT NULL,
+  `ds_tipo_usuario` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id_usuario` int(11) NOT NULL,
+  `nm_usuario` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `senha` varchar(45) NOT NULL,
+  `celular` int(11) NOT NULL,
+  `atualiza_celular` tinyint(1) DEFAULT NULL,
+  `atualiza_email` tinyint(1) DEFAULT NULL,
+  `TIPO_USUARIO_id_tipo_usuario` int(11) NOT NULL,
+  `foto` longblob
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cidade`
+--
+ALTER TABLE `cidade`
+  ADD PRIMARY KEY (`id_cidade`),
+  ADD UNIQUE KEY `id_cidades_UNIQUE` (`id_cidade`),
+  ADD KEY `fk_CIDADE_ESTADO1_idx` (`ESTADO_id_estado`);
+
+--
+-- Indexes for table `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`id_comentario`),
+  ADD UNIQUE KEY `id_comentario_UNIQUE` (`id_comentario`),
+  ADD KEY `fk_COMENTARIO_ESTABELECIMENTO1_idx` (`ESTABELECIMENTO_id_estabelecimento`),
+  ADD KEY `fk_COMENTARIO_ENTRETENIMENTO1_idx` (`ENTRETENIMENTO_id_entretenimento`),
+  ADD KEY `fk_COMENTARIO_USUARIO1_idx` (`USUARIO_id_usuario`),
+  ADD KEY `fk_COMENTARIO_EVENTO1_idx` (`EVENTO_id_evento`);
+
+--
+-- Indexes for table `continente`
+--
+ALTER TABLE `continente`
+  ADD PRIMARY KEY (`id_continente`),
+  ADD UNIQUE KEY `id_continente_UNIQUE` (`id_continente`);
+
+--
+-- Indexes for table `dia_semana`
+--
+ALTER TABLE `dia_semana`
+  ADD PRIMARY KEY (`id_dia_semana`),
+  ADD UNIQUE KEY `id_dias_semana_UNIQUE` (`id_dia_semana`);
+
+--
+-- Indexes for table `entretenimento`
+--
+ALTER TABLE `entretenimento`
+  ADD PRIMARY KEY (`id_entretenimento`),
+  ADD UNIQUE KEY `id_entretenimento_UNIQUE` (`id_entretenimento`);
+
+--
+-- Indexes for table `entretenimento_has_dia_semana`
+--
+ALTER TABLE `entretenimento_has_dia_semana`
+  ADD PRIMARY KEY (`ENTRETENIMENTO_id_entretenimento`,`DIA_SEMANA_id_dia_semana`),
+  ADD KEY `fk_ENTRETENIMENTO_has_DIA_SEMANA_DIA_SEMANA1_idx` (`DIA_SEMANA_id_dia_semana`),
+  ADD KEY `fk_ENTRETENIMENTO_has_DIA_SEMANA_ENTRETENIMENTO1_idx` (`ENTRETENIMENTO_id_entretenimento`);
+
+--
+-- Indexes for table `entretenimento_has_tipo_entretenimento`
+--
+ALTER TABLE `entretenimento_has_tipo_entretenimento`
+  ADD PRIMARY KEY (`ENTRETENIMENTO_id_entretenimento`,`TIPO_ENTRETENIMENTO_id_tipo_entretenimento`),
+  ADD KEY `fk_ENTRETENIMENTO_has_TIPO_ENTRETENIMENTO_TIPO_ENTRETENIMEN_idx` (`TIPO_ENTRETENIMENTO_id_tipo_entretenimento`),
+  ADD KEY `fk_ENTRETENIMENTO_has_TIPO_ENTRETENIMENTO_ENTRETENIMENTO1_idx` (`ENTRETENIMENTO_id_entretenimento`);
+
+--
+-- Indexes for table `estabelecimento`
+--
+ALTER TABLE `estabelecimento`
+  ADD PRIMARY KEY (`id_estabelecimento`),
+  ADD UNIQUE KEY `id_estabelecimento_UNIQUE` (`id_estabelecimento`),
+  ADD KEY `fk_ESTABELECIMENTO_CIDADE1_idx` (`CIDADE_id_cidade`);
+
+--
+-- Indexes for table `estabelecimento_has_dia_semana`
+--
+ALTER TABLE `estabelecimento_has_dia_semana`
+  ADD PRIMARY KEY (`ESTABELECIMENTO_id_estabelecimento`,`DIAS_SEMANA_id_dia_semana`),
+  ADD KEY `fk_ESTABELECIMENTO_has_DIAS_SEMANA_DIAS_SEMANA1_idx` (`DIAS_SEMANA_id_dia_semana`),
+  ADD KEY `fk_ESTABELECIMENTO_has_DIAS_SEMANA_ESTABELECIMENTO1_idx` (`ESTABELECIMENTO_id_estabelecimento`);
+
+--
+-- Indexes for table `estabelecimento_has_tipo_estabelecimento`
+--
+ALTER TABLE `estabelecimento_has_tipo_estabelecimento`
+  ADD PRIMARY KEY (`ESTABELECIMENTO_id_estabelecimento`,`TIPO_ESTABELECIMENTO_id_tipo_estabelecimento`),
+  ADD KEY `fk_ESTABELECIMENTO_has_TIPO_ESTABELECIMENTO_TIPO_ESTABELECI_idx` (`TIPO_ESTABELECIMENTO_id_tipo_estabelecimento`),
+  ADD KEY `fk_ESTABELECIMENTO_has_TIPO_ESTABELECIMENTO_ESTABELECIMENTO_idx` (`ESTABELECIMENTO_id_estabelecimento`);
+
+--
+-- Indexes for table `estado`
+--
+ALTER TABLE `estado`
+  ADD PRIMARY KEY (`id_estado`),
+  ADD UNIQUE KEY `id_estados_UNIQUE` (`id_estado`),
+  ADD KEY `fk_ESTADO_PAIS1_idx` (`PAIS_id_pais`);
+
+--
+-- Indexes for table `evento`
+--
+ALTER TABLE `evento`
+  ADD PRIMARY KEY (`id_evento`),
+  ADD UNIQUE KEY `id_evento_UNIQUE` (`id_evento`);
+
+--
+-- Indexes for table `evento_has_tipo_evento`
+--
+ALTER TABLE `evento_has_tipo_evento`
+  ADD PRIMARY KEY (`EVENTO_id_evento`,`TIPO_EVENTO_id_tipo_evento`),
+  ADD KEY `fk_EVENTO_has_TIPO_EVENTO_TIPO_EVENTO1_idx` (`TIPO_EVENTO_id_tipo_evento`),
+  ADD KEY `fk_EVENTO_has_TIPO_EVENTO_EVENTO1_idx` (`EVENTO_id_evento`);
+
+--
+-- Indexes for table `idioma`
+--
+ALTER TABLE `idioma`
+  ADD PRIMARY KEY (`id_idioma`),
+  ADD UNIQUE KEY `id_linguas_UNIQUE` (`id_idioma`);
+
+--
+-- Indexes for table `moeda`
+--
+ALTER TABLE `moeda`
+  ADD PRIMARY KEY (`id_moeda`),
+  ADD UNIQUE KEY `id_moeda_UNIQUE` (`id_moeda`);
+
+--
+-- Indexes for table `pais`
+--
+ALTER TABLE `pais`
+  ADD PRIMARY KEY (`id_pais`),
+  ADD UNIQUE KEY `id_pais_UNIQUE` (`id_pais`),
+  ADD KEY `fk_PAIS_MOEDA1_idx` (`MOEDA_id_moeda`),
+  ADD KEY `fk_PAIS_CONTINENTE1_idx` (`CONTINENTE_id_continente`);
+
+--
+-- Indexes for table `pais_has_idioma`
+--
+ALTER TABLE `pais_has_idioma`
+  ADD PRIMARY KEY (`PAIS_id_pais`,`IDIOMA_id_idioma`),
+  ADD KEY `fk_PAIS_has_IDIOMA_IDIOMA1_idx` (`IDIOMA_id_idioma`),
+  ADD KEY `fk_PAIS_has_IDIOMA_PAIS1_idx` (`PAIS_id_pais`);
+
+--
+-- Indexes for table `rota`
+--
+ALTER TABLE `rota`
+  ADD PRIMARY KEY (`id_rota`),
+  ADD UNIQUE KEY `id_rota_UNIQUE` (`id_rota`),
+  ADD KEY `fk_ROTA_USUARIO1_idx` (`USUARIO_id_usuario`);
+
+--
+-- Indexes for table `rota_has_cidade`
+--
+ALTER TABLE `rota_has_cidade`
+  ADD PRIMARY KEY (`ROTA_id_rota`,`CIDADE_id_cidade`),
+  ADD KEY `fk_ROTA_has_CIDADE_CIDADE1_idx` (`CIDADE_id_cidade`),
+  ADD KEY `fk_ROTA_has_CIDADE_ROTA1_idx` (`ROTA_id_rota`);
+
+--
+-- Indexes for table `rota_has_estabelecimento`
+--
+ALTER TABLE `rota_has_estabelecimento`
+  ADD PRIMARY KEY (`ROTA_id_rota`,`ESTABELECIMENTO_id_estabelecimento`),
+  ADD KEY `fk_ROTA_has_ESTABELECIMENTO_ESTABELECIMENTO1_idx` (`ESTABELECIMENTO_id_estabelecimento`),
+  ADD KEY `fk_ROTA_has_ESTABELECIMENTO_ROTA1_idx` (`ROTA_id_rota`);
+
+--
+-- Indexes for table `rota_has_estado`
+--
+ALTER TABLE `rota_has_estado`
+  ADD PRIMARY KEY (`ROTA_id_rota`,`ESTADO_id_estado`),
+  ADD KEY `fk_ROTA_has_ESTADO_ESTADO1_idx` (`ESTADO_id_estado`),
+  ADD KEY `fk_ROTA_has_ESTADO_ROTA1_idx` (`ROTA_id_rota`);
+
+--
+-- Indexes for table `tipo_entretenimento`
+--
+ALTER TABLE `tipo_entretenimento`
+  ADD PRIMARY KEY (`id_tipo_entretenimento`),
+  ADD UNIQUE KEY `id_tipo_entretenimento_UNIQUE` (`id_tipo_entretenimento`);
+
+--
+-- Indexes for table `tipo_estabelecimento`
+--
+ALTER TABLE `tipo_estabelecimento`
+  ADD PRIMARY KEY (`id_tipo_estabelecimento`),
+  ADD UNIQUE KEY `id_tipo_estabelecimento_UNIQUE` (`id_tipo_estabelecimento`);
+
+--
+-- Indexes for table `tipo_evento`
+--
+ALTER TABLE `tipo_evento`
+  ADD PRIMARY KEY (`id_tipo_evento`),
+  ADD UNIQUE KEY `id_tipo_evento_UNIQUE` (`id_tipo_evento`);
+
+--
+-- Indexes for table `tipo_usuario`
+--
+ALTER TABLE `tipo_usuario`
+  ADD PRIMARY KEY (`id_tipo_usuario`),
+  ADD UNIQUE KEY `id_tipo_usuario_UNIQUE` (`id_tipo_usuario`);
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD UNIQUE KEY `idUsuario_UNIQUE` (`id_usuario`),
+  ADD KEY `fk_Usuario_TIPO_USUARIO_idx` (`TIPO_USUARIO_id_tipo_usuario`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cidade`
+--
+ALTER TABLE `cidade`
+  MODIFY `id_cidade` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `continente`
+--
+ALTER TABLE `continente`
+  MODIFY `id_continente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `dia_semana`
+--
+ALTER TABLE `dia_semana`
+  MODIFY `id_dia_semana` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `entretenimento`
+--
+ALTER TABLE `entretenimento`
+  MODIFY `id_entretenimento` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `estabelecimento`
+--
+ALTER TABLE `estabelecimento`
+  MODIFY `id_estabelecimento` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `estado`
+--
+ALTER TABLE `estado`
+  MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `evento`
+--
+ALTER TABLE `evento`
+  MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `idioma`
+--
+ALTER TABLE `idioma`
+  MODIFY `id_idioma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+--
+-- AUTO_INCREMENT for table `moeda`
+--
+ALTER TABLE `moeda`
+  MODIFY `id_moeda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+--
+-- AUTO_INCREMENT for table `pais`
+--
+ALTER TABLE `pais`
+  MODIFY `id_pais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+--
+-- AUTO_INCREMENT for table `rota`
+--
+ALTER TABLE `rota`
+  MODIFY `id_rota` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tipo_entretenimento`
+--
+ALTER TABLE `tipo_entretenimento`
+  MODIFY `id_tipo_entretenimento` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tipo_estabelecimento`
+--
+ALTER TABLE `tipo_estabelecimento`
+  MODIFY `id_tipo_estabelecimento` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tipo_evento`
+--
+ALTER TABLE `tipo_evento`
+  MODIFY `id_tipo_evento` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tipo_usuario`
+--
+ALTER TABLE `tipo_usuario`
+  MODIFY `id_tipo_usuario` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `cidade`
+--
+ALTER TABLE `cidade`
+  ADD CONSTRAINT `fk_CIDADE_ESTADO1` FOREIGN KEY (`ESTADO_id_estado`) REFERENCES `estado` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `comentario`
+--
+ALTER TABLE `comentario`
+  ADD CONSTRAINT `fk_COMENTARIO_ENTRETENIMENTO1` FOREIGN KEY (`ENTRETENIMENTO_id_entretenimento`) REFERENCES `entretenimento` (`id_entretenimento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_COMENTARIO_ESTABELECIMENTO1` FOREIGN KEY (`ESTABELECIMENTO_id_estabelecimento`) REFERENCES `estabelecimento` (`id_estabelecimento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_COMENTARIO_EVENTO1` FOREIGN KEY (`EVENTO_id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_COMENTARIO_USUARIO1` FOREIGN KEY (`USUARIO_id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `entretenimento_has_dia_semana`
+--
+ALTER TABLE `entretenimento_has_dia_semana`
+  ADD CONSTRAINT `fk_ENTRETENIMENTO_has_DIA_SEMANA_DIA_SEMANA1` FOREIGN KEY (`DIA_SEMANA_id_dia_semana`) REFERENCES `dia_semana` (`id_dia_semana`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_ENTRETENIMENTO_has_DIA_SEMANA_ENTRETENIMENTO1` FOREIGN KEY (`ENTRETENIMENTO_id_entretenimento`) REFERENCES `entretenimento` (`id_entretenimento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `entretenimento_has_tipo_entretenimento`
+--
+ALTER TABLE `entretenimento_has_tipo_entretenimento`
+  ADD CONSTRAINT `fk_ENTRETENIMENTO_has_TIPO_ENTRETENIMENTO_ENTRETENIMENTO1` FOREIGN KEY (`ENTRETENIMENTO_id_entretenimento`) REFERENCES `entretenimento` (`id_entretenimento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_ENTRETENIMENTO_has_TIPO_ENTRETENIMENTO_TIPO_ENTRETENIMENTO1` FOREIGN KEY (`TIPO_ENTRETENIMENTO_id_tipo_entretenimento`) REFERENCES `tipo_entretenimento` (`id_tipo_entretenimento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `estabelecimento`
+--
+ALTER TABLE `estabelecimento`
+  ADD CONSTRAINT `fk_ESTABELECIMENTO_CIDADE1` FOREIGN KEY (`CIDADE_id_cidade`) REFERENCES `cidade` (`id_cidade`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `estabelecimento_has_dia_semana`
+--
+ALTER TABLE `estabelecimento_has_dia_semana`
+  ADD CONSTRAINT `fk_ESTABELECIMENTO_has_DIAS_SEMANA_DIAS_SEMANA1` FOREIGN KEY (`DIAS_SEMANA_id_dia_semana`) REFERENCES `dia_semana` (`id_dia_semana`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_ESTABELECIMENTO_has_DIAS_SEMANA_ESTABELECIMENTO1` FOREIGN KEY (`ESTABELECIMENTO_id_estabelecimento`) REFERENCES `estabelecimento` (`id_estabelecimento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `estabelecimento_has_tipo_estabelecimento`
+--
+ALTER TABLE `estabelecimento_has_tipo_estabelecimento`
+  ADD CONSTRAINT `fk_ESTABELECIMENTO_has_TIPO_ESTABELECIMENTO_ESTABELECIMENTO1` FOREIGN KEY (`ESTABELECIMENTO_id_estabelecimento`) REFERENCES `estabelecimento` (`id_estabelecimento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_ESTABELECIMENTO_has_TIPO_ESTABELECIMENTO_TIPO_ESTABELECIME1` FOREIGN KEY (`TIPO_ESTABELECIMENTO_id_tipo_estabelecimento`) REFERENCES `tipo_estabelecimento` (`id_tipo_estabelecimento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `estado`
+--
+ALTER TABLE `estado`
+  ADD CONSTRAINT `fk_ESTADO_PAIS1` FOREIGN KEY (`PAIS_id_pais`) REFERENCES `pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `evento_has_tipo_evento`
+--
+ALTER TABLE `evento_has_tipo_evento`
+  ADD CONSTRAINT `fk_EVENTO_has_TIPO_EVENTO_EVENTO1` FOREIGN KEY (`EVENTO_id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_EVENTO_has_TIPO_EVENTO_TIPO_EVENTO1` FOREIGN KEY (`TIPO_EVENTO_id_tipo_evento`) REFERENCES `tipo_evento` (`id_tipo_evento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `pais`
+--
+ALTER TABLE `pais`
+  ADD CONSTRAINT `fk_PAIS_CONTINENTE1` FOREIGN KEY (`CONTINENTE_id_continente`) REFERENCES `continente` (`id_continente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_PAIS_MOEDA1` FOREIGN KEY (`MOEDA_id_moeda`) REFERENCES `moeda` (`id_moeda`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `pais_has_idioma`
+--
+ALTER TABLE `pais_has_idioma`
+  ADD CONSTRAINT `fk_PAIS_has_IDIOMA_IDIOMA1` FOREIGN KEY (`IDIOMA_id_idioma`) REFERENCES `idioma` (`id_idioma`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_PAIS_has_IDIOMA_PAIS1` FOREIGN KEY (`PAIS_id_pais`) REFERENCES `pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `rota`
+--
+ALTER TABLE `rota`
+  ADD CONSTRAINT `fk_ROTA_USUARIO1` FOREIGN KEY (`USUARIO_id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `rota_has_cidade`
+--
+ALTER TABLE `rota_has_cidade`
+  ADD CONSTRAINT `fk_ROTA_has_CIDADE_CIDADE1` FOREIGN KEY (`CIDADE_id_cidade`) REFERENCES `cidade` (`id_cidade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_ROTA_has_CIDADE_ROTA1` FOREIGN KEY (`ROTA_id_rota`) REFERENCES `rota` (`id_rota`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `rota_has_estabelecimento`
+--
+ALTER TABLE `rota_has_estabelecimento`
+  ADD CONSTRAINT `fk_ROTA_has_ESTABELECIMENTO_ESTABELECIMENTO1` FOREIGN KEY (`ESTABELECIMENTO_id_estabelecimento`) REFERENCES `estabelecimento` (`id_estabelecimento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_ROTA_has_ESTABELECIMENTO_ROTA1` FOREIGN KEY (`ROTA_id_rota`) REFERENCES `rota` (`id_rota`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `rota_has_estado`
+--
+ALTER TABLE `rota_has_estado`
+  ADD CONSTRAINT `fk_ROTA_has_ESTADO_ESTADO1` FOREIGN KEY (`ESTADO_id_estado`) REFERENCES `estado` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_ROTA_has_ESTADO_ROTA1` FOREIGN KEY (`ROTA_id_rota`) REFERENCES `rota` (`id_rota`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `fk_Usuario_TIPO_USUARIO` FOREIGN KEY (`TIPO_USUARIO_id_tipo_usuario`) REFERENCES `tipo_usuario` (`id_tipo_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

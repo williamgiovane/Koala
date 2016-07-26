@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Cadastro de Nova Rota</title>
+		<title>Registro de Usuario</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -17,27 +17,27 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<div id="headerPlacas">
+				<div id="header">
 
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">Nova Rota</a></h1>
+								<h1><a href="index.php" id="logo">Registre-se no BinBag</a></h1>
 							</header>
 						</div>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li>
+								<li><a href="index.php">Home</a></li>
+								<!--<li>
 									<a href="#">Minhas rotas</a>
 									<ul>
 										<li><a href="#">Rota 1</a></li>
 										<li><a href="#">Rota 2</a></li>
 										<li><a href="#">Rota 3</a></li>
 										<li></li>
-											<!--
+											
 											<a href="#">Todas as Rotas</a>
 											<ul>
 												<li><a href="#">Lorem ipsum dolor</a></li>
@@ -45,43 +45,39 @@
 												<li><a href="#">Magna phasellus</a></li>
 												<li><a href="#">Etiam dolore nisl</a></li>
 											</ul>
-											-->
-									</ul>
-								</li>
-								<li><a href="left-sidebar.html">Nova Rota</a></li>
-								<li><a href="right-sidebar.html">Favoritos</a></li>
-								<li><a href="no-sidebar.html">Eventos</a></li>
+									</ul>	
+								</li>-->
+								<li><a href="left-sidebar.php">Notícias</a></li>
+								<li><a href="right-sidebar.php">Login</a></li>
+								<li><a href="cad_registrar.php">Registrar</a></li>
 							</ul>
 						</nav>
 				</div>
 
 			<!-- Main -->
 				<div class="wrapper style1">
-
 					<div class="container">
-						<div class="row 200%">
-								<article id="main" class="special">
-									<header>
-										<h2>Para começar digite o nome da rota e seu período de viagem</a></h2>
-									</header>
-								</article>
-						</div>
-					</div>
-					<div class="container">
+						<h2>Digite seus dados:</a></h2></br>
 						<div class="content">
 							<div class="8u 12u(mobile)" id="content">
 								<form>
-									Digite o nome da rota:<input type="text" name="nomerota"></br>
-									Período Inicial:&nbsp <input type="date" name="periodoInicial">
-									Período Final:&nbsp <input type="date" name="periodoFinal">
+									Nome Completo:<input type="text" name="nomeUsu"> 
+									Email:<input type="email" name="emailUsu">
+									Senha:<input type="password" name="senhaUsu">
+									Confirme a senha:<input type="password" name="senhaConfiUsu">
+									Celular:<input type="text" name="celularUsu">
+									
+									<input type="checkbox" name="atualizacaoCelular" value="">Desejo receber atualizações por Celular</td></br>
+									<input type="checkbox" name="atualizacaoEmail" value="">Desejo receber atualizações por Email</td>
 								</form>
 							</div>
 						</div>
 					</div>
 									
 					<footer  align="center">
-						<a href="index.html" class="button circled scrolly">Cancelar</a>
-						<a href="estados.html" class="button circled scrolly">Próximo</a>
+						<a href="index.php" class="button circled scrolly">Cadastrar</a>
+						<a href="index.php" class="button circled scrolly">Cancelar</a>
+						<a href="cad_tipousuario.php" class="button circled scrolly">Voltar</a>
 					</footer>
 				</div>
 

@@ -22,14 +22,14 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">Planejando</a></h1>
+								<h1><a href="index.php" id="logo">Planejando</a></h1>
 							</header>
 						</div>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.php">Home</a></li>
 								<li>
 									<a href="#">Minhas rotas</a>
 									<ul>
@@ -48,9 +48,9 @@
 											-->
 									</ul>
 								</li>
-								<li><a href="left-sidebar.html">Nova Rota</a></li>
-								<li><a href="right-sidebar.html">Favoritos</a></li>
-								<li><a href="no-sidebar.html">Eventos</a></li>
+								<li><a href="left-sidebar.php">Nova Rota</a></li>
+								<li><a href="right-sidebar.php">Favoritos</a></li>
+								<li><a href="no-sidebar.php">Eventos</a></li>
 							</ul>
 						</nav>
 
@@ -124,13 +124,13 @@
 					</div>
 										
 					<footer >
-						<a href="novarota.html" class="button circled scrolly">Voltar</a>
+						<a href="novarota.php" class="button circled scrolly">Voltar</a>
 					</footer>
 					<footer>
-						<a href="index.html" class="button circled scrolly">Cancelar</a>
+						<a href="index.php" class="button circled scrolly">Cancelar</a>
 					</footer>
 					<footer>
-						<a href="cidades.html" class="button circled scrolly">Próximo</a>
+						<a href="cidades.php" class="button circled scrolly">Próximo</a>
 					</footer>	
 				</div>
 

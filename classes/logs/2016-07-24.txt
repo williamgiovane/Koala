@@ -1,0 +1,19 @@
+Time : 17:57:55
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : SELECT ds_pais FROM pais WHERE CONTINENTE_id_continente =
+
+Time : 17:57:53
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : SELECT ds_pais FROM pais WHERE CONTINENTE_id_continente =
+
+Time : 17:57:44
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : SELECT ds_pais FROM pais WHERE CONTINENTE_id_continente =
+
+Time : 17:57:38
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : SELECT ds_pais FROM pais WHERE CONTINENTE_id_continente =
+
+Time : 17:57:11
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : SELECT ds_pais FROM pais WHERE CONTINENTE_id_continente =

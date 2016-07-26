@@ -1,0 +1,33 @@
+Time : 14:47:55
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'infor402.usuarios' doesn't exist
+Raw SQL : select * from usuarios
+
+Time : 14:41:20
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 14:41:20
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 14:41:20
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 14:41:20
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 14:41:19
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+Time : 14:41:08
+SQLSTATE[HY000] [1044] Access denied for user ''@'localhost' to database 'infor402'
+
+Time : 14:41:07
+SQLSTATE[HY000] [1044] Access denied for user ''@'localhost' to database 'infor402'
+
+Time : 14:41:07
+SQLSTATE[HY000] [1044] Access denied for user ''@'localhost' to database 'infor402'
+
+Time : 14:40:34
+SQLSTATE[HY000] [1049] Unknown database 'infor402dsdsedsdsd'
+
+Time : 14:40:10
+SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Este host não é conhecido. 

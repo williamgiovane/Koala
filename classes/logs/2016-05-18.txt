@@ -1,0 +1,2 @@
+Time : 22:30:29
+SQLSTATE[HY000] [1049] Unknown database 'infor402'
