@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 23-Jul-2016 às 17:51
+-- Generation Time: 26-Jul-2016 às 12:23
 -- Versão do servidor: 5.7.11
 -- PHP Version: 5.6.19
 
@@ -31,6 +31,15 @@ CREATE TABLE `cidade` (
   `ds_cidade` varchar(65) NOT NULL,
   `ESTADO_id_estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `cidade`
+--
+
+INSERT INTO `cidade` (`id_cidade`, `ds_cidade`, `ESTADO_id_estado`) VALUES
+(1, 'Blumenau', 24),
+(2, 'Ilhota', 24),
+(3, 'Urubici', 24);
 
 -- --------------------------------------------------------
 
@@ -176,6 +185,39 @@ CREATE TABLE `estado` (
   `capital` varchar(65) NOT NULL,
   `PAIS_id_pais` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `estado`
+--
+
+INSERT INTO `estado` (`id_estado`, `ds_estado`, `capital`, `PAIS_id_pais`) VALUES
+(1, 'Acre', 'Rio Branco', 10),
+(2, 'Alagoas', 'Maceió', 10),
+(3, 'Amapá', 'Macapá', 10),
+(4, 'Amazonas', 'Manaus', 10),
+(5, 'Bahia', 'Salvador', 10),
+(6, 'Ceará', 'Fortaleza', 10),
+(7, 'Distrito Federal', 'Brasília', 10),
+(8, 'Espírito Santo', 'Vitória', 10),
+(9, 'Goiás', 'Goiânia	', 10),
+(10, 'Maranhão', 'São Luís', 10),
+(11, 'Mato Grosso', 'Cuiabá', 10),
+(12, 'Mato Grosso do Sul', 'Campo Grande', 10),
+(13, 'Minas Gerais', 'Belo Horizonte', 10),
+(14, 'Pará', 'Belém', 10),
+(15, 'Paraíba', 'João Pessoa', 10),
+(16, 'Paraná', 'Curitiba', 10),
+(17, 'Pernambuco', 'Recife', 10),
+(18, 'Piauí', 'Teresina', 10),
+(19, 'Rio de Janeiro', 'Rio de Janeiro', 10),
+(20, 'Rio Grande do Norte', 'Natal', 10),
+(21, 'Rio Grande do Sul', 'Porto Alegre', 10),
+(22, 'Rondônia', 'Porto Velho', 10),
+(23, 'Roraima', 'Boa Vista', 10),
+(24, 'Santa Catarina', 'Florianópolis', 10),
+(25, 'São Paulo', 'São Paulo', 10),
+(26, 'Sergipe', 'Aracaju', 10),
+(27, 'Tocantins', 'Palmas', 10);
 
 -- --------------------------------------------------------
 
@@ -344,7 +386,7 @@ INSERT INTO `pais` (`id_pais`, `ds_pais`, `MOEDA_id_moeda`, `CONTINENTE_id_conti
 (11, 'Canadá', 14, 1, 'Ottawa'),
 (12, 'Chile', 7, 1, 'Santiago'),
 (13, 'China', 15, 4, 'Běijīng'),
-(14, 'Coreia do Norte', 16, 4, 'yŏngyang'),
+(14, 'Coreia do Norte', 16, 4, 'Yŏngyang'),
 (15, 'Coreia do Sul', 17, 4, 'Seoul'),
 (16, 'Dinamarca', 18, 3, 'København'),
 (17, 'Egito', 19, 2, 'Al-Qāhirah'),
@@ -416,6 +458,17 @@ CREATE TABLE `rota_has_cidade` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `rota_has_entretenimento`
+--
+
+CREATE TABLE `rota_has_entretenimento` (
+  `ROTA_id_rota` int(11) NOT NULL,
+  `ENTRETENIMENTO_id_entretenimento` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `rota_has_estabelecimento`
 --
 
@@ -434,6 +487,17 @@ CREATE TABLE `rota_has_estado` (
   `ROTA_id_rota` int(11) NOT NULL,
   `ESTADO_id_estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `rota_has_evento`
+--
+
+CREATE TABLE `rota_has_evento` (
+  `ROTA_id_rota` int(11) NOT NULL,
+  `EVENTO_id_evento` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -652,6 +716,14 @@ ALTER TABLE `rota_has_cidade`
   ADD KEY `fk_ROTA_has_CIDADE_ROTA1_idx` (`ROTA_id_rota`);
 
 --
+-- Indexes for table `rota_has_entretenimento`
+--
+ALTER TABLE `rota_has_entretenimento`
+  ADD PRIMARY KEY (`ROTA_id_rota`,`ENTRETENIMENTO_id_entretenimento`),
+  ADD KEY `fk_ROTA_has_ENTRETENIMENTO_ENTRETENIMENTO1_idx` (`ENTRETENIMENTO_id_entretenimento`),
+  ADD KEY `fk_ROTA_has_ENTRETENIMENTO_ROTA1_idx` (`ROTA_id_rota`);
+
+--
 -- Indexes for table `rota_has_estabelecimento`
 --
 ALTER TABLE `rota_has_estabelecimento`
@@ -666,6 +738,14 @@ ALTER TABLE `rota_has_estado`
   ADD PRIMARY KEY (`ROTA_id_rota`,`ESTADO_id_estado`),
   ADD KEY `fk_ROTA_has_ESTADO_ESTADO1_idx` (`ESTADO_id_estado`),
   ADD KEY `fk_ROTA_has_ESTADO_ROTA1_idx` (`ROTA_id_rota`);
+
+--
+-- Indexes for table `rota_has_evento`
+--
+ALTER TABLE `rota_has_evento`
+  ADD PRIMARY KEY (`ROTA_id_rota`,`EVENTO_id_evento`),
+  ADD KEY `fk_ROTA_has_EVENTO_EVENTO1_idx` (`EVENTO_id_evento`),
+  ADD KEY `fk_ROTA_has_EVENTO_ROTA1_idx` (`ROTA_id_rota`);
 
 --
 -- Indexes for table `tipo_entretenimento`
@@ -711,7 +791,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `cidade`
 --
 ALTER TABLE `cidade`
-  MODIFY `id_cidade` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cidade` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `comentario`
 --
@@ -741,7 +821,7 @@ ALTER TABLE `estabelecimento`
 -- AUTO_INCREMENT for table `estado`
 --
 ALTER TABLE `estado`
-  MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `evento`
 --
@@ -886,6 +966,13 @@ ALTER TABLE `rota_has_cidade`
   ADD CONSTRAINT `fk_ROTA_has_CIDADE_ROTA1` FOREIGN KEY (`ROTA_id_rota`) REFERENCES `rota` (`id_rota`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
+-- Limitadores para a tabela `rota_has_entretenimento`
+--
+ALTER TABLE `rota_has_entretenimento`
+  ADD CONSTRAINT `fk_ROTA_has_ENTRETENIMENTO_ENTRETENIMENTO1` FOREIGN KEY (`ENTRETENIMENTO_id_entretenimento`) REFERENCES `entretenimento` (`id_entretenimento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_ROTA_has_ENTRETENIMENTO_ROTA1` FOREIGN KEY (`ROTA_id_rota`) REFERENCES `rota` (`id_rota`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Limitadores para a tabela `rota_has_estabelecimento`
 --
 ALTER TABLE `rota_has_estabelecimento`
@@ -898,6 +985,13 @@ ALTER TABLE `rota_has_estabelecimento`
 ALTER TABLE `rota_has_estado`
   ADD CONSTRAINT `fk_ROTA_has_ESTADO_ESTADO1` FOREIGN KEY (`ESTADO_id_estado`) REFERENCES `estado` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_ROTA_has_ESTADO_ROTA1` FOREIGN KEY (`ROTA_id_rota`) REFERENCES `rota` (`id_rota`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `rota_has_evento`
+--
+ALTER TABLE `rota_has_evento`
+  ADD CONSTRAINT `fk_ROTA_has_EVENTO_EVENTO1` FOREIGN KEY (`EVENTO_id_evento`) REFERENCES `evento` (`id_evento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_ROTA_has_EVENTO_ROTA1` FOREIGN KEY (`ROTA_id_rota`) REFERENCES `rota` (`id_rota`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `usuario`
