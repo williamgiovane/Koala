@@ -30,7 +30,7 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.php" id="logo">Registre-se no BinBag</a></h1>
+								<h1><a href="index.php" id="logo">Registre-se no</a><?php echo NOME_SITE; ?></h1>
 							</header>
 						</div>
 
@@ -72,11 +72,17 @@
 									Nome Empresa:<input type="text" name="nomeUsu"> 
 									Ramo de Atividade  
 									<select id="ramoAtividade" name="ramoAtividade">
-										<option value="nenhum">Selecione o Ramo de Atividade</option>
-										<option value="ramoPub">Pub</option>
-										<option value="ramoRestaurante">Restaurante</option>
-										<option value="ramoLanchonete">Lanchonete</option>
+										<option value="">Selecione o Ramo de Atividade</option>
+										<?php
+											$ramoAtividade = $banco->query('SELECT ds_tipo_estabelecimento FROM tipo_estabelecimento ORDER BY ds_tipo_estabelecimento');
+											foreach($ramoAtividade as $r){
+												echo '<option value="'.$r['ds_tipo_estabelecimento'].'">'.$r['ds_tipo_estabelecimento'].'</option>';
+											}
+										?>
 									</select>
+									
+									
+									
 									CNPJ:<input type="text" name="cnpj">
 									
 									Email:<input type="email" name="emailEmpresa">
