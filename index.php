@@ -258,37 +258,37 @@
 									<ul class="divided">
 										<li>
 											<article class="tweet">
-												#Linker Planejei diversas viajens.
+												#BinBag Planejei diversas viajens.
 												<span class="timestamp">5 minutos atras</span>
 											</article>
 										</li>
 										<li>
 											<article class="tweet">
-												#Linker Site lindo e funcional... Adoreiii.
+												#BinBag Site lindo e funcional... Adoreiii.
 												<span class="timestamp">30 minutos atras</span>
 											</article>
 										</li>
 										<li>
 											<article class="tweet">
-												#Linker Mistura de um site moderno com as funcionalidades que estava procurando para gerenciar minhas viajens.
+												#BinBag Mistura de um site moderno com as funcionalidades que estava procurando para gerenciar minhas viajens.
 												<span class="timestamp">1 hora atras</span>
 											</article>
 										</li>
 										<li>
 											<article class="tweet">
-												#Linker Sem palavras, conheci diversas cidades que quero visitar um dia.
+												#BinBag Sem palavras, conheci diversas cidades que quero visitar um dia.
 												<span class="timestamp">1 hora atras</span>
 											</article>
 										</li>
 										<li>
 											<article class="tweet">
-												#Linker Varias reportagens incriveis.
+												#BinBag Varias reportagens incriveis.
 												<span class="timestamp">2 horas atras</span>
 											</article>
 										</li>
 										<li>
 											<article class="tweet">
-												#Linker Estava procurando um site assim a tempo.
+												#BinBag Estava procurando um site assim a tempo.
 												<span class="timestamp">5 horas atras</span>
 											</article>
 										</li>
