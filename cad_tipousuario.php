@@ -1,3 +1,13 @@
+<?php
+	session_start();
+
+	require 'config.php';
+	require 'classes/Db.class.php';
+	
+	//Criando obj da classe BD
+	$banco = new DB();
+?>
+
 <!DOCTYPE HTML>
 <!--
 	Helios by HTML5 UP
@@ -26,32 +36,9 @@
 							</header>
 						</div>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="index.php">Home</a></li>
-								<!--<li>
-									<a href="#">Minhas rotas</a>
-									<ul>
-										<li><a href="#">Rota 1</a></li>
-										<li><a href="#">Rota 2</a></li>
-										<li><a href="#">Rota 3</a></li>
-										<li></li>
-											
-											<a href="#">Todas as Rotas</a>
-											<ul>
-												<li><a href="#">Lorem ipsum dolor</a></li>
-												<li><a href="#">Phasellus consequat</a></li>
-												<li><a href="#">Magna phasellus</a></li>
-												<li><a href="#">Etiam dolore nisl</a></li>
-											</ul>
-									</ul>	
-								</li>-->
-								<li><a href="left-sidebar.php">Notícias</a></li>
-								<li><a href="right-sidebar.php">Login</a></li>
-								<li><a href="cad_registrar.php">Registrar</a></li>
-							</ul>
-						</nav>
+					<?php
+						require 'cabecalho.php';
+					?>
 				</div>
 
 			<!-- Main -->
@@ -70,15 +57,6 @@
 					</div>
 				</div>
 				
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.onvisible.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+<?php
+	require 'rodape.php'
+?>
