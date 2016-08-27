@@ -78,7 +78,7 @@
 									</header>
 									<p>Cristo Redentor, Copacabana, Pão de Açúcar, Corcovado, Ipanema e o Estádio Maracanã.</p>
 									</br><input type="button" name="adicionarpararota" value="Eventos"></br>
-									</br><input type="button" name="adicionarpararota" value="Pontos"></br>
+									</br><input type="button" name="adicionarpararota" value="Pontos Turisticos"></br>
 									</br><input type="button" name="adicionarpararota" value="Pub's"></br>
 									</br><input type="button" name="adicionarpararota" value="Restaurantes"></br>
 								</article>
