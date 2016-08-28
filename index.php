@@ -56,7 +56,8 @@
 						</p>
 					</header>
 					<footer>
-						<a href="cad_tipousuario.php" class="button circled scrolly">Cadastre-se</a>
+						<a href="cad_escolheTPusuario.php" class="button circled scrolly">Cadastre-se</a>
+						<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
 					</footer>
 				</section>
 

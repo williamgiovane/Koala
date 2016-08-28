@@ -40,7 +40,7 @@
 				</div>
 
 			<!-- Main -->
-				<div class="wrapper style1" align= "center">
+				<div class="wrapper style1">
 					<div class="container">
 						<h2>Digite seus dados:</a></h2></br>
 						<div class="content">
@@ -123,7 +123,7 @@
 					<footer  align="center">
 						<a href="index.php" class="button circled scrolly">Cadastrar</a>
 						<a href="index.php" class="button circled scrolly">Cancelar</a>
-						<a href="cad_tipousuario.php" class="button circled scrolly">Voltar</a>
+						<a href="cad_escolheTPusuario.php" class="button circled scrolly">Voltar</a>
 					</footer>
 				</div>
 				
