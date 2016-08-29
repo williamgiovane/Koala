@@ -167,7 +167,7 @@
 							com duplicador, amplia o alcance da lente para 800mm.
 						</p>
 						<footer>
-							<a href="#" class="button">Continue Lendo</a>
+							<a href="noticias.php" class="button">Continue Lendo</a>
 						</footer>
 					</article>
 

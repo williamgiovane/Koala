@@ -19,8 +19,8 @@
 											</ul>
 									</ul>	
 								</li>-->
-								<li><a href="left-sidebar.php">Notícias</a></li>
-								<li><a href="right-sidebar.php">Entrar</a></li>
-								<li><a href="cad_tipousuario.php">Registrar</a></li>
+								<li><a href="noticias.php">Notícias</a></li>
+								<li><a href="login.php">Login</a></li>
+								<li><a href="cad_escolheTPusuario.php">Registrar</a></li>
 							</ul>
 						</nav>
