@@ -6,6 +6,54 @@
 	
 	//Criando obj da classe BD
 	$banco = new DB();
+
+	if( $_POST )
+	{
+
+		$nomeEvento = $_POST["nomeEvento"];
+		$dataInicial = $_POST["dataInicial"];
+		$dataFinal = $_POST["dataFinal"];
+		$horarioInicio = $_POST["horarioInicio"];
+		$horarioFinal = $_POST["horarioFinal"];
+		$cidade = $_POST["cidade"];		
+		$cep = $_POST["cep"];		
+		$localEvento = $_POST["localEvento"];
+		$telefone = $_POST["telefone"];
+		$valorIngresso = $_POST["valorIngresso"];				
+		$valorIngressoMeia = $_POST["valorIngressoMeia"];				
+		$siteEvento = $_POST["siteEvento"];				
+		$pontosDeVenda = $_POST["pontosDeVenda"];
+		$sobreEvento = $_POST["sobreEvento"];
+
+		$eventoMusical = $_POST["eventoMusical"];
+		$eventoCultural = $_POST["eventoCultural"];
+		$eventoTecnologico = $_POST["eventoTecnologico"];
+		$eventoGastronomico = $_POST["eventoGastronomico"];
+		$eventoDataComerativo = $_POST["eventoDataComerativo"];
+
+		$eventoEsportivo = $_POST["eventoEsportivo"];		
+		$eventoPalestra = $_POST["eventoPalestra"];		
+		$eventoWorkshop = $_POST["eventoWorkshop"];		
+		$eventoCorporativo = $_POST["eventoCorporativo"];
+		$eventoFestival = $_POST["eventoFestival"];
+
+		$banco->bind("evento", $nomeEvento);
+		$banco->bind("dataInicio", $dataInicio);
+		$banco->bind("dataFinal", $dataFinal);
+		$banco->bind("cep", $cep);
+		$banco->bind("localEvento", $localEvento);
+		$banco->bind("horarioInicio", $horarioInicio);
+		$banco->bind("horarioFinal", $horarioFinal);
+		$banco->bind("valorIngresso", $valorIngresso);
+		$banco->bind("valorIngressoMeia", $valorIngressoMeia);
+		$banco->bind("siteEvento", $siteEvento);
+		$banco->bind("sobreEvento", $sobreEvento);
+		$banco->bind("classificadao", '');
+		$banco->bind("telefone", $telefone);
+		$banco->bind("Foto", "");
+
+	}
+
 ?>
 
 <!DOCTYPE HTML>
@@ -49,15 +97,25 @@
 							<div class="8u 12u(mobile)" id="content">
 								<form>
 									Nome Evento:<input type="text" name="nomeEvento"></br>
-									Data Inicio:&nbsp&nbsp&nbsp&nbsp<input type="date" name="dataInicio">
-									Data Final:&nbsp&nbsp&nbsp&nbsp<input type="date" name="dataFinal"></br></br>
+									Data Inicio:<input type="date" name="dataInicio">
+									Data Final:<input type="date" name="dataFinal"></br></br>
 									Horario Inicio:<input type="time" name="horarioInicio">
-									&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHorario Final:<input type="time" name="horarioFinal"></br></br>
-									Cidade:<input type="text" name="cidade"></br>
-									Cep:<input type="text" name="cep" placeholder="00000-000"></br>
+									Horario Final:<input type="time" name="horarioFinal"></br></br>
+									Cidade  
+									<select id="Cidade" name="Cidade">
+										<option value="">Selecione o Cidade</option>
+										<?php
+											$cidade = $banco->query('SELECT id_cidade, ds_cidade FROM cidade WHERE ESTADO_id_estado = 24 ORDER BY ds_cidade');
+											foreach($cidade as $c){
+												echo '<option value="'.$c['id_cidade'].'">'.$c['ds_cidade'].'</option>';
+											}
+										?>
+									</select>
+									Cep:<input type="text" name="cep" class="cep"></br>
 									Local Evento:<input type="text" name="localEvento"></br>
 									Telefone:<input type="text" name="telefone"></br>
 									Valor Ingreso:<input type="text" name="valorIngresso"></br>
+									Valor Meia Entrada:<input type="text" name="valorIngressoMeia"></br>
 									Site Evento:<input type="text" name="siteEvento"></br>
 									Pontos de Venda:<input type="text" name="pontosDeVenda"></br>
 									Tipo do Evento:
@@ -77,7 +135,7 @@
 											<td><input type="checkbox" name="eventoFestival" 	   value="">Festival</td>	
 										</tr>
 									</table>
-									Sobre Evento:<textarea name="Mensagem" rows="10" cols="60" wrap="virtual"></textarea></p>
+									Sobre Evento:<textarea name="sobreEvento" rows="10" cols="60" wrap="virtual"></textarea></p>
 									Upload Foto:<input type="text" name="uploadFoto">
 								</form>
 							</div>

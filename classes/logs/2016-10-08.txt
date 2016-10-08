@@ -1,0 +1,51 @@
+Time : 23:14:35
+SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'atualiza_celular' at row 1
+Raw SQL : insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '')
+
+Time : 23:01:16
+SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'atualiza_celular' at row 1
+Raw SQL : insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '')
+
+Time : 23:00:55
+SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'sim' for column 'atualiza_celular' at row 1
+Raw SQL : insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '')
+
+Time : 23:00:24
+SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'sim' for column 'atualiza_celular' at row 1
+Raw SQL : insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '')
+
+Time : 22:59:08
+SQLSTATE[01000]: Warning: 1265 Data truncated for column 'celular' at row 1
+Raw SQL : insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '')
+
+Time : 22:53:51
+SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '(33) 3333-3333' for column 'celular' at row 1
+Raw SQL : insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '')
+
+Time : 22:53:01
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email' at line 1
+Raw SQL : insert into (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto)
+					   values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '')
+
+Time : 22:52:02
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email' at line 1
+Raw SQL : insert into (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto)
+					   values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '')
+
+Time : 22:51:51
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email' at line 1
+Raw SQL : insert into (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto)
+					   values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '')
+
+Time : 22:51:44
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email' at line 1
+Raw SQL : insert into (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto)
+					   values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '')
+
+Time : 20:33:16
+SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+
+
+Time : 20:33:10
+SQLSTATE[HY000] [2002] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+
