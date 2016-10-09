@@ -30,12 +30,12 @@
 				<!-- Inner -->
 					<div class="inner">
 						<header>
-							<h1><a href="index.php" id="logo">BinBag</a></h1>
+							<h1>BinBag</h1>
 							<hr />
 							<p>Planeje sua viagem</p>
 						</header>
 						<footer>
-							<a href="#banner" class="button circled scrolly">Comece</a>
+							<a href="#banner" class="button circled scrolly">Começar</a>
 						</footer>
 					</div>
 					
@@ -46,10 +46,10 @@
 			<!-- Banner -->
 			<section id="banner">
 				<header>
-					<h2>Olá, você já pensou em sair do Netflix e viajar pelo mundo com a <strong>BinBag</strong>?</h2>
+					<h2>Você já pensou em sair de casa e viajar pelo mundo?</h2>
 					<p>
-						Um serviço feito para você planejar sua viagem do começo ao fim e ter a melhor experiencia possivel...
-						O mundo o aguarda!!!
+						<strong>Binbag</strong> é um serviço feito para você planejar sua viagem do começo ao fim e ter a melhor experiencia possivel.</br>
+						<strong>O mundo o aguarda!</strong>
 					</p>
 				</header>
 				<footer>
