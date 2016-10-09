@@ -25,46 +25,42 @@
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
-
 			<!-- Header -->
-				<div id="header">
-
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="index.php" id="logo">BinBag</a></h1>
-								<hr />
-								<p>Planeje sua viagem</p>
-							</header>
-							<footer>
-								<a href="#banner" class="button circled scrolly">Comece</a>
-							</footer>
-						</div>
-						
-					<?php 
-						require 'cabecalho.php'
-					?>
-				
-				</div>
+			<div id="header">
+				<!-- Inner -->
+					<div class="inner">
+						<header>
+							<h1><a href="index.php" id="logo">BinBag</a></h1>
+							<hr />
+							<p>Planeje sua viagem</p>
+						</header>
+						<footer>
+							<a href="#banner" class="button circled scrolly">Comece</a>
+						</footer>
+					</div>
+					
+				<?php 
+					require 'cabecalho.php'
+				?>
+			</div>
 			<!-- Banner -->
-				<section id="banner">
-					<header>
-						<h2>Olá, você já pensou em sair do Netflix e viajar pelo mundo com a <strong>BinBag</strong>?</h2>
-						<p>
-							Um serviço feito para você planejar sua viagem do começo ao fim e ter a melhor experiencia possivel...
-							O mundo o aguarda!!!
-						</p>
-					</header>
-					<footer>
-						<a href="cad_escolheTPusuario.php" class="button circled scrolly">Cadastre-se</a>
-						<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
-					</footer>
-				</section>
+			<section id="banner">
+				<header>
+					<h2>Olá, você já pensou em sair do Netflix e viajar pelo mundo com a <strong>BinBag</strong>?</h2>
+					<p>
+						Um serviço feito para você planejar sua viagem do começo ao fim e ter a melhor experiencia possivel...
+						O mundo o aguarda!!!
+					</p>
+				</header>
+				<footer>
+					<a href="cad_escolheTPusuario.php" class="button circled scrolly">Cadastre-se</a>
+					<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
+				</footer>
+			</section>
 
 			<!-- Carousel -->
 				<section class="carousel">
 					<div class="reel">
-
 						<article>
 							<a href="#" class="image featured"><img src="images/rio2.jpg" alt="" /></a>
 							<header>
@@ -144,38 +140,34 @@
 							</header>
 							<p>Teatro Amazonas, Encontro das Águas, Arquipélago de Anavilhanas e Espaço Cultural Largo de São Sebastião</p>
 						</article>
-
 					</div>
 				</section>
 
 			<!-- Main -->
-				<div class="wrapper style2">
-
-					<article id="main" class="container special">
-						<a href="#" class="image featured"><img src="images/eventododia.jpg" alt="" /></a>
-						<header>
-							<h2><a href="#">Acredite é no Brasil</a></h2>
-							<p>
-								A foto do Morro do Cambirela coberto de neve acabou ocupando a capa dos principais jornais do Brasil nesta quarta-feira(24/07/13) 
-							</p>
-						</header>
+			<div class="wrapper style2">
+				<article id="main" class="container special">
+					<a href="#" class="image featured"><img src="images/eventododia.jpg" alt="" /></a>
+					<header>
+						<h2><a href="#">Acredite é no Brasil</a></h2>
 						<p>
-							A plasticidade da imagem e o cenário surpreendente ao lado de Florianópolis, na Serra do Tabuleiro, 
-							chegaram a provocar em alguns usuários das redes sociais a impressão de que não podia se tratar de um fato real. 
-
-							O registro histórico do fotógrafo Alvarelio Kurossu foi produzido com o uso de uma lente 400mm que, 
-							com duplicador, amplia o alcance da lente para 800mm.
+							A foto do Morro do Cambirela coberto de neve acabou ocupando a capa dos principais jornais do Brasil nesta quarta-feira(24/07/13) 
 						</p>
-						<footer>
-							<a href="noticias.php" class="button">Continue Lendo</a>
-						</footer>
-					</article>
+					</header>
+					<p>
+						A plasticidade da imagem e o cenário surpreendente ao lado de Florianópolis, na Serra do Tabuleiro, 
+						chegaram a provocar em alguns usuários das redes sociais a impressão de que não podia se tratar de um fato real. 
 
-				</div>
+						O registro histórico do fotógrafo Alvarelio Kurossu foi produzido com o uso de uma lente 400mm que, 
+						com duplicador, amplia o alcance da lente para 800mm.
+					</p>
+					<footer>
+						<a href="noticias.php" class="button">Continue Lendo</a>
+					</footer>
+				</article>
+			</div>
 
 			<!-- Features -->
 				<div class="wrapper style1">
-
 					<section id="features" class="container special">
 						<header>
 							<h2>Eventos do Mês</h2>
@@ -220,7 +212,6 @@
 							</article>
 						</div>
 					</section>
-
 				</div>
 <?php
 	require 'rodape.php'

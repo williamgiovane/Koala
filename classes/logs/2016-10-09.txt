@@ -1,3 +1,0 @@
-Time : 00:43:50
-SQLSTATE[42S22]: Column not found: 1054 Unknown column 'cd_cidade' in 'field list'
-Raw SQL : SELECT cd_cidade, ds_cidade FROM cidade WHERE ESTADO_id_estado = 24 ORDER BY ds_cidade

@@ -25,42 +25,39 @@
 	</head>
 	<body class="right-sidebar">
 		<div id="page-wrapper">
-
 			<!-- Header -->
-				<div id="header">
-
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="index.php" id="logo">Login</a></h1>
-							</header>
-						</div>
-
-					<?php
-						require 'cabecalho.php';
-					?>
+			<div id="header">
+				<!-- Inner -->
+				<div class="inner">
+					<header>
+						<h1><a href="index.php" id="logo">Login</a></h1>
+					</header>
 				</div>
+				<?php
+					require 'cabecalho.php';
+				?>
+			</div>
 
 			<!-- Main -->
-				<div class="wrapper style1">
-					<div class="container">
-						<h2>Digite os dados de Login:</a></h2></br>
-						<div class="content">
-							<div class="8u 12u(mobile)" id="content">
-								<form>
-									Usuario ou Email:<input type="text" name="usuEmail"></br>
-									Senha:<input type="password" name="senha1"></br>
-									Confirmação da senha:<input type="password" name="senha2"></br>
-								</form>
-							</div>
+			<div class="wrapper style1">
+				<div class="container">
+					<h2>Digite os dados de Login:</a></h2></br>
+					<div class="content">
+						<div class="8u 12u(mobile)" id="content">
+							<form>
+								Usuario ou Email:<input type="text" name="usuEmail"></br>
+								Senha:<input type="password" name="senha1"></br>
+								Confirmação da senha:<input type="password" name="senha2"></br>
+							</form>
 						</div>
 					</div>
-									
-					<footer  align="center">
-						<a href="index.php" class="button circled scrolly">Cancelar</a>
-						<a href="index.php" class="button circled scrolly">Login</a>
-					</footer>
 				</div>
+								
+				<footer  align="center">
+					<a href="index.php" class="button circled scrolly">Cancelar</a>
+					<a href="index.php" class="button circled scrolly">Login</a>
+				</footer>
+			</div>
 				
 <?php
 	require 'rodape.php'

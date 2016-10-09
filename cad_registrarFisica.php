@@ -7,7 +7,7 @@
 	//Criando obj da classe BD
 	$banco = new DB();
 
-	if( $_POST )
+	if($_POST)
 	{
 		$nome 				= $_POST["nomeUsu"];
 		$email 				= $_POST["emailUsu"];
@@ -24,7 +24,7 @@
 		$banco->bind("atuCel",$atualizacaoCelular);
 		$banco->bind("atuEmail",$atualizacaoEmail);
 
-		$banco->query("insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '') ");		
+		$banco->query("insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, 			  foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '') ");		
 	}
 
 ?>
@@ -46,10 +46,8 @@
 	</head>
 	<body class="right-sidebar">
 		<div id="page-wrapper">
-
 			<!-- Header -->
 				<div id="header">
-
 					<!-- Inner -->
 						<div class="inner">
 							<header>
@@ -62,31 +60,31 @@
 					?>
 				</div>
 			<!-- Main -->
-				<div class="wrapper style1">
-					<div class="container">
-						<h2>Digite seus dados:</a></h2></br>
-						<div class="content">
-							<div class="8u 12u(mobile)" id="content">
-								<form action="cad_registrarFisica.php" method="post" id="formCadUsuario">
-									Nome Completo:<input type="text" name="nomeUsu" id="nomeUsu" class="required" maxlength="45"> 
-									Email:<input type="email" name="emailUsu" class="required">
-									Senha:<input type="password" name="senhaUsu">
-									Confirme a senha:<input type="password" name="senhaConfiUsu">
-									Celular:<input type="text" name="celularUsu" class="phone">
-									
-									<input type="checkbox" name="atualizacaoCelular" value="1">Desejo receber atualizações por Celular</td></br>
-									<input type="checkbox" name="atualizacaoEmail" value="1">Desejo receber atualizações por Email</td>
-							</div>
+			<div class="wrapper style1">
+				<div class="container">
+					<h2>Digite seus dados:</a></h2></br>
+					<div class="content">
+						<div class="8u 12u(mobile)" id="content">
+							<form action="cad_registrarFisica.php" method="post" id="formCadUsuario">
+								Nome Completo:<input type="text" name="nomeUsu" id="nomeUsu" class="required" maxlength="45"> 
+								Email:<input type="email" name="emailUsu" class="required">
+								Senha:<input type="password" name="senhaUsu">
+								Confirme a senha:<input type="password" name="senhaConfiUsu">
+								Celular:<input type="text" name="celularUsu" class="phone">
+								
+								<input type="checkbox" name="atualizacaoCelular" value="1">Desejo receber atualizações por Celular</td></br>
+								<input type="checkbox" name="atualizacaoEmail" value="1">Desejo receber atualizações por Email</td>
 						</div>
 					</div>
-									<footer  align="center">
-										<input type="submit" value="Cadastrar" name="cadastrar" class="button">
-										<!-- <a href="index.php" class="button">Cadastrar</a>
-										<a href="index.php" class="button">Cancelar</a>
-										<a href="cad_escolheTPusuario.php" class="button">Voltar</a> -->
-									</footer>
-								</form>
 				</div>
+								<footer  align="center">
+									<input type="submit" value="Cadastrar" name="cadastrar" class="button">
+									<!-- <a href="index.php" class="button">Cadastrar</a>
+									<a href="index.php" class="button">Cancelar</a>
+									<a href="cad_escolheTPusuario.php" class="button">Voltar</a> -->
+								</footer>
+							</form>
+			</div>
 
 <?php
 	require 'rodape.php'

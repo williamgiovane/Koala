@@ -26,23 +26,20 @@
 	</head>
 	<body class="no-sidebar">
 		<div id="page-wrapper">
-
 			<!-- Header -->
-				<div id="header">
-
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="index.html" id="logo">Noticias</a></h1>
-							</header>
-						</div>
-
-					<!-- Nav -->
-					<?php
-						require 'cabecalho.php';
-					?>
-
+			<div id="header">
+				<!-- Inner -->
+				<div class="inner">
+					<header>
+						<h1><a href="index.html" id="logo">Noticias</a></h1>
+					</header>
 				</div>
+				<!-- Nav -->
+				<?php
+					require 'cabecalho.php';
+				?>
+
+			</div>
 
 			<!-- Main -->
 			<div class="wrapper style1">
@@ -112,9 +109,9 @@
 								</footer>
 							</article>
 						</div>
+					</div>
 				</div>
 			</div>
-		</div>
 
 <?php
 	require 'rodape.php'

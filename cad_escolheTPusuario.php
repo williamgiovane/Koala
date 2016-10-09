@@ -25,37 +25,35 @@
 	</head>
 	<body class="right-sidebar">
 		<div id="page-wrapper">
-
 			<!-- Header -->
-				<div id="header">
+			<div id="header">
+				<!-- Inner -->
+					<div class="inner">
+						<header>
+							<h1><a href="index.php" id="logo">Registre-se no BinBag</a></h1>
+						</header>
+					</div>
 
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="index.php" id="logo">Registre-se no BinBag</a></h1>
-							</header>
-						</div>
-
-					<?php
-						require 'cabecalho.php';
-					?>
-				</div>
+				<?php
+					require 'cabecalho.php';
+				?>
+			</div>
 
 			<!-- Main -->
-				<div class="wrapper style1" align="center">
-					<div class="container">
-						<h2>Quem é você?</a></h2></br>
-						<div class="content">
-							<div class="8u 12u(mobile)" id="content">
-								<form>
-									<a href="cad_registrarFisica.php" class="button circled scrolly">Pessoa Fisica</a>
-									<a href="cad_registrarEmpresa.php" class="button circled scrolly">Empresa</a>
-									<a href="index.php" class="button circled scrolly">Voltar</a>
-								</form>
-							</div>
+			<div class="wrapper style1" align="center">
+				<div class="container">
+					<h2>Quem é você?</a></h2></br>
+					<div class="content">
+						<div class="8u 12u(mobile)" id="content">
+							<form>
+								<a href="cad_registrarFisica.php" class="button circled scrolly">Pessoa Fisica</a>
+								<a href="cad_registrarEmpresa.php" class="button circled scrolly">Empresa</a>
+								<a href="index.php" class="button circled scrolly">Voltar</a>
+							</form>
 						</div>
 					</div>
 				</div>
+			</div>
 				
 <?php
 	require 'rodape.php'

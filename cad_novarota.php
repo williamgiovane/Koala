@@ -25,51 +25,48 @@
 	</head>
 	<body class="right-sidebar">
 		<div id="page-wrapper">
-
 			<!-- Header -->
-				<div id="headerPlacas">
+			<div id="headerPlacas">
+				<!-- Inner -->
+					<div class="inner">
+						<header>
+							<h1><a href="index.php" id="logo">Nova Rota</a></h1>
+						</header>
+					</div>
 
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="index.php" id="logo">Nova Rota</a></h1>
-							</header>
-						</div>
-
-					<?php
-						require 'cabecalho.php';
-					?>
-				</div>
+				<?php
+					require 'cabecalho.php';
+				?>
+			</div>
 
 			<!-- Main -->
-				<div class="wrapper style1">
-
-					<div class="container">
-						<div class="row 200%">
-								<article id="main" class="special">
-									<header>
-										<h2>Para começar digite o nome da rota e seu período de viagem</a></h2>
-									</header>
-								</article>
-						</div>
+			<div class="wrapper style1">
+				<div class="container">
+					<div class="row 200%">
+						<article id="main" class="special">
+							<header>
+								<h2>Para começar digite o nome da rota e seu período de viagem</a></h2>
+							</header>
+						</article>
 					</div>
-					<div class="container">
-						<div class="content">
-							<div class="8u 12u(mobile)" id="content">
-								<form>
-									Digite o nome da rota:<input type="text" name="nomerota"></br>
-									Período Inicial:&nbsp <input type="date" name="periodoInicial">
-									Período Final:&nbsp <input type="date" name="periodoFinal">
-								</form>
-							</div>
-						</div>
-					</div>
-									
-					<footer  align="center">
-						<a href="index.php" class="button circled scrolly">Cancelar</a>
-						<a href="cad_escolheEstados.php" class="button circled scrolly">Próximo</a>
-					</footer>
 				</div>
+				<div class="container">
+					<div class="content">
+						<div class="8u 12u(mobile)" id="content">
+							<form>
+								Digite o nome da rota:<input type="text" name="nomerota"></br>
+								Período Inicial:&nbsp <input type="date" name="periodoInicial">
+								Período Final:&nbsp <input type="date" name="periodoFinal">
+							</form>
+						</div>
+					</div>
+				</div>
+								
+				<footer  align="center">
+					<a href="index.php" class="button circled scrolly">Cancelar</a>
+					<a href="cad_escolheEstados.php" class="button circled scrolly">Próximo</a>
+				</footer>
+			</div>
 
 <?php
 	require 'rodape.php'
