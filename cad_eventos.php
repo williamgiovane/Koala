@@ -7,35 +7,34 @@
 	//Criando obj da classe BD
 	$banco = new DB();
 
-	if( $_POST )
+	if($_POST)
 	{
 
-		$nomeEvento = $_POST["nomeEvento"];
-		$dataInicial = $_POST["dataInicial"];
-		$dataFinal = $_POST["dataFinal"];
-		$horarioInicio = $_POST["horarioInicio"];
-		$horarioFinal = $_POST["horarioFinal"];
-		$cidade = $_POST["cidade"];		
-		$cep = $_POST["cep"];		
-		$localEvento = $_POST["localEvento"];
-		$telefone = $_POST["telefone"];
-		$valorIngresso = $_POST["valorIngresso"];				
-		$valorIngressoMeia = $_POST["valorIngressoMeia"];				
-		$siteEvento = $_POST["siteEvento"];				
-		$pontosDeVenda = $_POST["pontosDeVenda"];
-		$sobreEvento = $_POST["sobreEvento"];
+		$nomeEvento 		  = $_POST["nomeEvento"];
+		$dataInicial 		  = str_replace("/","",$_POST["dataInicial"]);
+		$dataFinal 			  = str_replace("/","",$_POST["dataFinal"]);
+		$horarioInicio   	  = str_replace(":","",$_POST["horarioInicio"]);
+		$horarioFinal 		  = str_replace(":","",$_POST["horarioFinal"]);
+		$cidade    	 		  = $_POST["cidade"];		
+		$cep 				  = $_POST["cep"];		
+		$localEvento 		  = $_POST["localEvento"];
+		$telefone 			  = str_replace("-","",str_replace(")","", str_replace("(","",$_POST["telefone"])));
+		$valorIngresso 		  = $_POST["valorIngresso"];				
+		$valorIngressoMeia 	  = $_POST["valorIngressoMeia"];				
+		$siteEvento 		  = $_POST["siteEvento"];				
+		$pontosDeVenda 		  = $_POST["pontosDeVenda"];
+		$sobreEvento 		  = $_POST["sobreEvento"];
 
-		$eventoMusical = $_POST["eventoMusical"];
-		$eventoCultural = $_POST["eventoCultural"];
-		$eventoTecnologico = $_POST["eventoTecnologico"];
-		$eventoGastronomico = $_POST["eventoGastronomico"];
+		$eventoMusical 		  = $_POST["eventoMusical"];
+		$eventoCultural 	  = $_POST["eventoCultural"];
+		$eventoTecnologico 	  = $_POST["eventoTecnologico"];
+		$eventoGastronomico   = $_POST["eventoGastronomico"];
 		$eventoDataComerativo = $_POST["eventoDataComerativo"];
-
-		$eventoEsportivo = $_POST["eventoEsportivo"];		
-		$eventoPalestra = $_POST["eventoPalestra"];		
-		$eventoWorkshop = $_POST["eventoWorkshop"];		
-		$eventoCorporativo = $_POST["eventoCorporativo"];
-		$eventoFestival = $_POST["eventoFestival"];
+		$eventoEsportivo 	  = $_POST["eventoEsportivo"];		
+		$eventoPalestra 	  = $_POST["eventoPalestra"];		
+		$eventoWorkshop 	  = $_POST["eventoWorkshop"];		
+		$eventoCorporativo 	  = $_POST["eventoCorporativo"];
+		$eventoFestival 	  = $_POST["eventoFestival"];
 
 		$banco->bind("evento", $nomeEvento);
 		$banco->bind("dataInicio", $dataInicio);
@@ -51,7 +50,6 @@
 		$banco->bind("classificadao", '');
 		$banco->bind("telefone", $telefone);
 		$banco->bind("Foto", "");
-
 	}
 
 ?>
@@ -96,14 +94,15 @@
 						<div class="content">
 							<div class="8u 12u(mobile)" id="content">
 								<form>
-									Nome Evento:<input type="text" name="nomeEvento"></br>
-									Data Inicio:<input type="date" name="dataInicio">
-									Data Final:<input type="date" name="dataFinal"></br></br>
-									Horario Inicio:<input type="time" name="horarioInicio">
-									Horario Final:<input type="time" name="horarioFinal"></br></br>
+									Nome Evento:<input type="text" name="nomeEvento">
+									Data Inicio:<input type="text" name="dataInicio" class="data">
+									Data Final:<input type="text" name="dataFinal" class="data">
+									Horario Inicio:<input type="text" name="horarioInicio" class="hora">
+									Horario Final:<input type="text" name="horarioFinal" class="hora">
+									Cep:<input type="text" name="cep" class="cep">
 									Cidade  
 									<select id="Cidade" name="Cidade">
-										<option value="">Selecione o Cidade</option>
+										<option value="">Selecione a cidade</option>
 										<?php
 											$cidade = $banco->query('SELECT id_cidade, ds_cidade FROM cidade WHERE ESTADO_id_estado = 24 ORDER BY ds_cidade');
 											foreach($cidade as $c){
@@ -111,13 +110,12 @@
 											}
 										?>
 									</select>
-									Cep:<input type="text" name="cep" class="cep"></br>
-									Local Evento:<input type="text" name="localEvento"></br>
-									Telefone:<input type="text" name="telefone"></br>
-									Valor Ingreso:<input type="text" name="valorIngresso"></br>
-									Valor Meia Entrada:<input type="text" name="valorIngressoMeia"></br>
-									Site Evento:<input type="text" name="siteEvento"></br>
-									Pontos de Venda:<input type="text" name="pontosDeVenda"></br>
+									Local Evento:<input type="text" name="localEvento">
+									Telefone:<input type="text" name="telefone">
+									Valor Ingreso:<input type="text" name="valorIngresso">
+									Valor Meia Entrada:<input type="text" name="valorIngressoMeia">
+									Site Evento:<input type="text" name="siteEvento">
+									Pontos de Venda:<input type="text" name="pontosDeVenda">
 									Tipo do Evento:
 									<table>
 										<tr>

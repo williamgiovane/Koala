@@ -30,7 +30,7 @@
 				<!-- Inner -->
 					<div class="inner">
 						<header>
-							<h1><a href="index.php" id="logo">Registre-se no BinBag</a></h1>
+							<h1>Escolha o tipo de usuario no <?php echo NOME_SITE; ?></h1>
 						</header>
 					</div>
 
