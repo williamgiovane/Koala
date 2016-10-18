@@ -24,7 +24,7 @@
 		$banco->bind("atuCel",$atualizacaoCelular);
 		$banco->bind("atuEmail",$atualizacaoEmail);
 
-		$banco->query("insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, 			  foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '') ");		
+		$banco->query("insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) 			   values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '') ");		
 	}
 
 ?>
@@ -79,6 +79,7 @@
 				</div>
 								<footer  align="center">
 									<input type="submit" value="Cadastrar" name="cadastrar" class="button">
+									<input type="submit" value="Cancelar" name="cancelar" class="button">
 									<!-- <a href="index.php" class="button">Cadastrar</a>
 									<a href="index.php" class="button">Cancelar</a>
 									<a href="cad_escolheTPusuario.php" class="button">Voltar</a> -->

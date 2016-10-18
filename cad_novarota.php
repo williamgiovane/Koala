@@ -54,15 +54,15 @@
 					<div class="content">
 						<div class="8u 12u(mobile)" id="content">
 							<form>
-								Digite o nome da rota:<input type="text" name="nomerota"></br>
-								Período Inicial:&nbsp <input type="date" name="periodoInicial">
-								Período Final:&nbsp <input type="date" name="periodoFinal">
+								Digite o nome da rota:<input type="text" name="nomerota">
+								Período Inicial:<input type="text" name="periodoInicio" class="data">
+								Período Final:<input type="text" name="periodoFinal" class="data">
 							</form>
 						</div>
 					</div>
 				</div>
 								
-				<footer  align="center">
+				<footer align="center">
 					<a href="index.php" class="button circled scrolly">Cancelar</a>
 					<a href="cad_escolheEstados.php" class="button circled scrolly">Próximo</a>
 				</footer>

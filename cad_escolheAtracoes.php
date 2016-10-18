@@ -154,9 +154,10 @@
 					
 					<!--BOTÕES-->			
 					<footer align="center">
-						<a href="cad_escolheCidades.php" class="button circled scrolly">Voltar</a>&nbsp&nbsp<a href="cad_escolheAtracoes.php" class="button circled scrolly">Próximo</a></br>
-						</br><a href="index.php" class="button circled scrolly">Cancelar</a>
-					</footer>					
+						<a href="index.php" class="button circled scrolly">Cancelar</a>
+						<a href="cad_escolheCidades.php" class="button circled scrolly">Voltar</a>
+						<a href="cad_escolheAtracoes.php" class="button circled scrolly">Próximo</a>
+					</footer>
 				</div>
 						
 <?php
