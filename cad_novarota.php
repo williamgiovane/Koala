@@ -57,6 +57,8 @@
 								Digite o nome da rota:<input type="text" name="nomerota">
 								Período Inicial:<input type="text" name="periodoInicial" class="data">
 								Período Final:<input type="text" name="periodoFinal" class="data">
+
+								<?php echo date("Y-m-d"); ?>
 							</form>
 						</div>
 					</div>
