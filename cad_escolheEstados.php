@@ -104,8 +104,8 @@
 								</tr>
 							</table>
 						</div>
-
-						<footer>
+											
+						<footer >
 							<a href="cad_novarota.php" class="button circled scrolly">Voltar</a>
 						</footer>
 						<footer>
