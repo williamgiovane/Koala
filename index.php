@@ -53,10 +53,14 @@
 					</p>
 				</header>
 				<footer>
-					<a href="cad_escolheTPusuario.php" class="button circled scrolly">Cadastre-se</a>
-					<?php if( $_SESSION["logado"] != true )
-					{ ?>
-					<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
+					<?php if($_SESSION["logado"] != true)
+						  { ?>
+						    <a href="cad_escolheTPusuario.php" class="button circled scrolly">Cadastre-se</a>
+					<?php } ?>
+					
+					<?php if($_SESSION["logado"] == true)
+						  { ?>
+						    <a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
 					<?php } ?>
 				</footer>
 			</section>

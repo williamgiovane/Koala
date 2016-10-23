@@ -144,7 +144,7 @@
 							<!-- Copyright -->
 							<div class="copyright">
 								<ul class="menu">
-									<li>&copy; <?php echo NOME_SITE; ?>. All rights reserved.</li><li>Design: Boeing, William</a></li>
+									<li>&copy; <?php echo NOME_SITE; ?>. All rights reserved.</li><li>Design: <?php echo NOME_SITE; ?></a></li>
 								</ul>
 							</div>
 						</div>

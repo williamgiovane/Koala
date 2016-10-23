@@ -1,17 +1,15 @@
 <?php
-
 	$_SESSION["logado"] = ( isset( $_SESSION["logado"] ) ) ? $_SESSION["logado"] : '';
 ?>			
 
 			<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li><a href="index.php">Inicio</a></li>
-						<?php 
-
-							if( $_SESSION["logado"] == true ){
-
-						 ?>
+			<nav id="nav">
+				<ul>
+					<li><a href="index.php">Inicio</a></li>
+					<?php 
+						if($_SESSION["logado"] == true)
+						{
+					 ?>
 							<li>
 								<a href="#">Minhas rotas</a>
 								<ul>
@@ -29,21 +27,20 @@
 										</ul>
 								</ul>	
 							</li>
-						<?php } ?>
-						<li><a href="noticias.php">Notícias</a></li>
-						<?php 
+					<?php } ?>
 
-							if( $_SESSION["logado"] != true ){
-
-						 ?>
-						<li><a href="login.php">Login</a></li>
-
-						<?php } ?>
-						<li><a href="cad_escolheTPusuario.php">Registrar</a></li>
-						
-						<?php if( $_SESSION["logado"] == true ){ ?>
-							<li><a href="sair.php?sair=s">Sair</a></li>
-						<?php } ?>
+					<li><a href="noticias.php">Notícias</a></li>
 					
-					</ul>
-				</nav>
+					<?php if($_SESSION["logado"] != true)
+						  { ?>
+							<li><a href="login.php">Login</a></li>
+							<li><a href="cad_escolheTPusuario.php">Registrar</a></li>
+					<?php } ?>
+					
+					<?php if( $_SESSION["logado"] == true)
+					      { ?>
+							<li><a href="sair.php?sair=s">Sair</a></li>
+					<?php } ?>
+				
+				</ul>
+			</nav>

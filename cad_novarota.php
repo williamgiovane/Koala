@@ -6,8 +6,20 @@
 	
 	//Criando obj da classe BD
 	$banco = new DB();
-?>
 
+	if($_POST)
+	{
+		$nome  		    = $_POST["nomeRota"];
+		$periodoInicial = $_POST["periodoInicial"];
+		$periodoFinal   = $_POST["periodoFinal"];
+
+		$banco->bind("nome",$nome);
+		$banco->bind("periodoInicial",$periodoInicial);
+		$banco->bind("periodoFinal",$periodoFinal);
+
+		$banco->query("insert into rota(id_rota, ds_rota, dt_inicio, dt_fim, USUARIO_id_usuario) VALUES ();");		
+	}
+?>
 <!DOCTYPE HTML>
 <!--
 	Helios by HTML5 UP
@@ -54,11 +66,9 @@
 					<div class="content">
 						<div class="8u 12u(mobile)" id="content">
 							<form>
-								Digite o nome da rota:<input type="text" name="nomerota">
-								Período Inicial:<input type="text" name="periodoInicial" class="data">
-								Período Final:<input type="text" name="periodoFinal" class="data">
-
-								<?php echo date("Y-m-d"); ?>
+								Digite o nome da rota:<input type="text" name="nomerota" id="nomeRota">
+								Período Inicial:<input type="text" name="periodoInicial" id="periodoInicial" class="data">
+								Período Final:<input type="text" name="periodoFinal" id="periodoFinal" class="data">
 							</form>
 						</div>
 					</div>
