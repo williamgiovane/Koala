@@ -1,0 +1,99 @@
+Time : 00:31:45
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : select id_usuario from usuario where email = :email
+
+Time : 00:22:27
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:27
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:27
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:27
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:26
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:26
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:26
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:26
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:26
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:25
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:12
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:12
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:11
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:11
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:11
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:11
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:22:10
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+Raw SQL : select id_usuario from usuario where
+
+Time : 00:09:43
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : select id_usuario from usuario where email = :email
+
+Time : 00:09:31
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : select id_usuario from usuario where email = :email
+
+Time : 00:08:37
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : select id_usuario from usuario where email = :email
+
+Time : 00:07:17
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : select id_usuario from usuario where email = :email
+
+Time : 00:06:38
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : select id_usuario from usuario where email = :email
+
+Time : 00:05:59
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : select id_usuario from usuario where email = :email
+
+Time : 00:05:21
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : select id_usuario from usuario where email = :email

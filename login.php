@@ -7,25 +7,25 @@
 	//Criando obj da classe BD
 	$banco = new DB();
 
-	if( $_POST ){
+	if($_POST){
 
-		$nome = $_POST["usuEmail"];
+		$usuEmail = $_POST["usuEmail"];
 		$senha = $_POST["senha1"];
 
-		$banco->bind("email", $nome);
+		$banco->bind("email", $usuEmail);
 		$banco->bind("senha", $senha);
 
 		$row = $banco->query("select * from usuario where email = :email and senha = :senha");
 
-		if( count($row) > 0 )
+		$id_usuario = $banco-> query("select id_usuario from usuario where email = ':email'");
+		$_SESSION['idUsuario'] = $id_usuario;
+
+		if(count($row) > 0)
 		{
 			$_SESSION["logado"] = true;
 			header("Location: index.php");
-
 		}else{
-
 			header("Location: login.php");
-
 		}
 	}
 
@@ -68,9 +68,9 @@
 					<div class="content">
 						<div class="8u 12u(mobile)" id="content">
 							<form action="login.php" method="post" >
-								Usuario ou Email:<input type="text" name="usuEmail"></br>
-								Senha:<input type="password" name="senha1"></br>
-								Confirmação da senha:<input type="password" name="senha2"></br>
+								Usuario ou Email:<input type="text" name="usuEmail" id="usuEmail">
+								Senha:<input type="password" name="senha1" id="senha1">
+								Confirmação da senha:<input type="password" name="senha2" id="senha2"></br>
 									
 								<input type="submit" name="login" id="login" class="button circled scrolly" />	
 

@@ -66,7 +66,7 @@
 						<div class="8u 12u(mobile)" id="content">
 							<form action="cad_registrarFisica.php" method="post" id="formCadUsuario">
 								Nome Completo:<input type="text" name="nomeUsu" id="nomeUsu" class="required" maxlength="45"> 
-								CNPJ:<input type="email" name="cnpj" class="cnpj">
+								CNPJ:<input type="text" name="cnpj" class="cnpj">
 								Email:<input type="email" name="emailUsu" class="required">
 								Senha:<input type="password" name="senhaUsu">
 								Confirme a senha:<input type="password" name="senhaConfiUsu">
