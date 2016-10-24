@@ -22,8 +22,8 @@
 		$senha      		= $_POST["senhaUsu"];
 		$senha2     		= $_POST["senhaConfiUsu"];
 		$about				= $_POST["sobreEmpresa"];
-		$atualizacaoCelular = ( isset($_POST["atualizacaoCelular"]) )? $_POST["atualizacaoCelular"] : "0" ;
-		$atualizacaoEmail 	= ( isset($_POST["atualizacaoEmail"]) )? $_POST["atualizacaoEmail"] : "0" ;
+		$atualizacaoCelular = (isset($_POST["atualizacaoCelular"]))? $_POST["atualizacaoCelular"] : "0" ;
+		$atualizacaoEmail 	= (isset($_POST["atualizacaoEmail"]))? $_POST["atualizacaoEmail"] : "0" ;
 
 		$banco->bind("nome",$nome);
 		$banco->bind("ramo",$ramo);
@@ -43,6 +43,12 @@
 		$banco->bind("atuEmail",$atualizacaoEmail);
 
 		$banco->query("insert into estabelecimento (id_estabelecimento, ds_estabelecimento, cnpj, cep, about, telefone, email, classificacao, foto, CIDADE_id_cidade, values (null, $nome, $cnpj, $cep, $about, $celular, $email, null, null, $cidade)");		
+
+		//for para cada opção do check box selecionado (tipo de estabelecimento)
+		$banco->query("insert into estabelecimento_has_tipo_estabelecimento (ESTABELECIMENTO_id_estabelecimento, TIPO_ESTABELECIMENTO_id_tipo_estabelecimento) values (id_estabelecimento, id_tipo_estabelecimento)");	
+
+		//for para cada opção do check box selecionado (dia de semana)
+		$banco->query("insert into estabelecimento_has_dia_semana (ESTABELECIMENTO_id_estabelecimento, DIAS_SEMANA_id_dia_semana) values (id_estabelecimento, id_dia_semana)");	
 	}
 ?>
 
@@ -86,12 +92,36 @@
 							<form>
 								Nome Empresa:<input type="text" name="nomeEmp"> 
 								CNPJ:<input type="text" name="cnpj" class="cnpj">
+								Estado: 
+								<select id="Estado" name="Estado">
+									<option value="">Selecione o Estado</option>
+									<?php
+										$estado = $banco->query('SELECT id_estado, ds_estado FROM estado WHERE PAIS_id_pais = 10 ORDER BY ds_estado');
+										foreach($estado as $e)
+										{
+											echo '<option value="'.$e['id_estado'].'">'.$e['ds_estado'].'</option>';
+										}
+									?>
+								</select>
+								Cidade:
+								<select id="Cidade" name="Cidade">
+									<option value="">Selecione o Cidade</option>
+									<?php
+										$cidade = $banco->query('SELECT id_cidade, ds_cidade FROM cidade WHERE ESTADO_id_estado = 24 ORDER BY ds_cidade');
+										foreach($cidade as $c)
+										{
+											echo '<option value="'.$c['id_cidade'].'">'.$c['ds_cidade'].'</option>';
+										}
+										//$idCidade = value="'.$c['id_cidade'].'">;
+									?>
+								</select>
 								Ramo de Atividade:  
 								<select id="ramoAtividade" name="ramoAtividade">
 									<option value="">Selecione o Ramo de Atividade</option>
 									<?php
 										$ramoAtividade = $banco->query('SELECT ds_tipo_estabelecimento FROM tipo_estabelecimento ORDER BY ds_tipo_estabelecimento');
-										foreach($ramoAtividade as $r){
+										foreach($ramoAtividade as $r)
+										{
 											echo '<option value="'.$r['ds_tipo_estabelecimento'].'">'.$r['ds_tipo_estabelecimento'].'</option>';
 										}
 									?>
@@ -103,12 +133,19 @@
 								Cep:<input type="text" name="cep" class="cep">	
 								
 								Dias de funcionamento:
-								<select id="diasFuncionamento" name="diasFuncionamento">
-									<option value="">Selecione os dias de funcionamento</option>
-								  	<option value="segSexta">Seg à Sexta</option>
-								  	<option value="terSexta">Terça à Sexta</option>
-								  	<option value="all">Todos</option>
-								</select>	
+								<table>
+									<tr>
+										<td><input type="checkbox" name="domingo" id="domingo">Domingo</td>
+										<td><input type="checkbox" name="segunda" id="segunda">Segunda</td>
+										<td><input type="checkbox" name="terca" id="terca">Terça</td>	
+										<td><input type="checkbox" name="quarta" id="quarta">Quarta</td>
+										<td><input type="checkbox" name="quinta" id="quinta">Quinta</td>	
+										<td><input type="checkbox" name="sexta" id="sexta">Sexta</td>
+										<td><input type="checkbox" name="sabado" id="sabado">Sabado</td>
+										<td><input type="checkbox" name="todos" id="todos">Todos</td>
+									</tr>
+								</table>
+							
 
 								Celular ou Telefone:<input type="text" name="celularUsu" class="phone">
 								Senha:<input type="password" name="senhaUsu">

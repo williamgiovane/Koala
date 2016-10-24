@@ -63,88 +63,99 @@
 <html>
 	<head>
 		<title>Cadastro de Eventos</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css"/>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body class="right-sidebar">
 		<div id="page-wrapper">
-
 			<!-- Header -->
-				<div id="headerEventos">
-
-					<!-- Inner -->
-						<div class="inner">
-							<header>
-								<h1><a href="index.php" id="logo">Cadastro de Eventos</a></h1>
-							</header>
-						</div>
-
-					<?php
-						require 'cabecalho.php';
-					?>
+			<div id="headerEventos">
+				<!-- Inner -->
+				<div class="inner">
+					<header>
+						<h1><a href="index.php" id="logo">Cadastro de Eventos</a></h1>
+					</header>
 				</div>
+
+				<?php
+					require 'cabecalho.php';
+				?>
+			</div>
 
 			<!-- Main -->
-				<div class="wrapper style1">
-					<div class="container">
-						<h2>Digite os dados do evento:</a></h2></br>
-						<div class="content">
-							<div class="8u 12u(mobile)" id="content">
-								<form>
-									Nome Evento:<input type="text" name="nomeEvento">
-									Data Inicio:<input type="text" name="dataInicio" class="data">
-									Data Final:<input type="text" name="dataFinal" class="data">
-									Horario Inicio:<input type="text" name="horarioInicio" class="hora">
-									Horario Final:<input type="text" name="horarioFinal" class="hora">
-									Cep:<input type="text" name="cep" class="cep">
-									Cidade  
-									<select id="Cidade" name="Cidade">
-										<option value="">Selecione a cidade</option>
-										<?php
-											$cidade = $banco->query('SELECT id_cidade, ds_cidade FROM cidade WHERE ESTADO_id_estado = 24 ORDER BY ds_cidade');
-											foreach($cidade as $c){
-												echo '<option value="'.$c['id_cidade'].'">'.$c['ds_cidade'].'</option>';
-											}
-										?>
-									</select>
-									Local Evento:<input type="text" name="localEvento">
-									Telefone:<input type="text" name="telefone">
-									Valor Ingreso:<input type="text" name="valorIngresso">
-									Valor Meia Entrada:<input type="text" name="valorIngressoMeia">
-									Site Evento:<input type="text" name="siteEvento">
-									Pontos de Venda:<input type="text" name="pontosDeVenda">
-									Tipo do Evento:
-									<table>
-										<tr>
-											<td><input type="checkbox" name="eventoMusical" 	   value="">Musical</td>
-											<td><input type="checkbox" name="eventoCultural" 	   value="">Cultural</td>
-											<td><input type="checkbox" name="eventoTecnologico"    value="">Tecnológico</td>	
-											<td><input type="checkbox" name="eventoGastronomico"   value="">Gastronômico</td>
-											<td><input type="checkbox" name="eventoDataComerativo" value="">Datas Comemorativas</td>	
-										</tr>
-										<tr>
-											<td><input type="checkbox" name="eventoEsportivo" 	   value="">Esportivo</td>
-											<td><input type="checkbox" name="eventoPalestra" 	   value="">Palestras</td>
-											<td><input type="checkbox" name="eventoWorkshop" 	   value="">Workshops</td>
-											<td><input type="checkbox" name="eventoCorporativo"    value="">Corporativos</td>
-											<td><input type="checkbox" name="eventoFestival" 	   value="">Festival</td>	
-										</tr>
-									</table>
-									Sobre Evento:<textarea name="sobreEvento" rows="10" cols="60" wrap="virtual"></textarea></p>
-									Upload Foto:<input type="text" name="uploadFoto">
-								</form>
-							</div>
+			<div class="wrapper style1">
+				<div class="container">
+					<h2>Digite os dados do evento:</a></h2></br>
+					<div class="content">
+						<div class="8u 12u(mobile)" id="content">
+							<form>
+								Nome Evento:<input type="text" name="nomeEvento">
+								Data Inicio:<input type="text" name="dataInicio" class="data">
+								Data Final:<input type="text" name="dataFinal" class="data">
+								Horario Inicio:<input type="text" name="horarioInicio" class="hora">
+								Horario Final:<input type="text" name="horarioFinal" class="hora">
+								Cep:<input type="text" name="cep" class="cep">
+								Estado: 
+								<select id="Estado" name="Estado">
+									<option value="">Selecione o Estado</option>
+									<?php
+										$estado = $banco->query('SELECT id_estado, ds_estado FROM estado WHERE PAIS_id_pais = 10 ORDER BY ds_estado');
+										foreach($estado as $e)
+										{
+											echo '<option value="'.$e['id_estado'].'">'.$e['ds_estado'].'</option>';
+										}
+									?>
+								</select>
+								Cidade:
+								<select id="Cidade" name="Cidade">
+									<option value="">Selecione o Cidade</option>
+									<?php
+										$cidade = $banco->query('SELECT id_cidade, ds_cidade FROM cidade WHERE ESTADO_id_estado = 24 ORDER BY ds_cidade');
+										foreach($cidade as $c)
+										{
+											echo '<option value="'.$c['id_cidade'].'">'.$c['ds_cidade'].'</option>';
+										}
+										//$idCidade = value="'.$c['id_cidade'].'">;
+									?>
+								</select>
+								Local Evento:<input type="text" name="localEvento">
+								Telefone:<input type="text" name="telefone" class="phone">
+								Valor Ingreso:<input type="text" name="valorIngresso">
+								Valor Meia Entrada:<input type="text" name="valorIngressoMeia">
+								Site Evento:<input type="text" name="siteEvento">
+								Pontos de Venda:<input type="text" name="pontosDeVenda">
+								Tipo do Evento:
+								<table>
+									<tr>
+										<td><input type="checkbox" name="eventoMusical" 	   value="1">Musical</td>
+										<td><input type="checkbox" name="eventoCultural" 	   value="2">Cultural</td>
+										<td><input type="checkbox" name="eventoTecnologico"    value="3">Tecnológico</td>	
+										<td><input type="checkbox" name="eventoGastronomico"   value="4">Gastronômico</td>
+										<td><input type="checkbox" name="eventoFestival" 	   value="5">Festival</td>
+									</tr>
+									<tr>
+										<td><input type="checkbox" name="eventoEsportivo" 	   value="6">Esportivo</td>
+										<td><input type="checkbox" name="eventoPalestra" 	   value="7">Palestras</td>
+										<td><input type="checkbox" name="eventoWorkshop" 	   value="8">Workshops</td>
+										<td><input type="checkbox" name="eventoCorporativo"    value="10">Corporativos</td>
+										<td><input type="checkbox" name="eventoDataComerativo" value="9">Datas Comemorativas</td>		
+									</tr>
+								</table>
+								Sobre Evento:<textarea name="sobreEvento" rows="10" cols="60" wrap="virtual"></textarea></p>
+								<!--Upload Foto:<input type="text" name="uploadFoto">-->
+							</form>
 						</div>
 					</div>
-									
-					<footer  align="center">
-						<a href="index.php" class="button circled scrolly">Cancelar</a>
-						<a href="index.php" class="button circled scrolly">Cadastrar</a>
-					</footer>
 				</div>
+								
+				<footer  align="center">
+					<a href="index.php" class="button circled scrolly">Cancelar</a>
+					<a href="index.php" class="button circled scrolly">Cadastrar</a>
+				</footer>
+			</div>
 				
 <?php
 	require 'rodape.php'

@@ -47,13 +47,10 @@
 					<h2>Quem é você?</a></h2></br>
 					<div class="content">
 						<div class="8u 12u(mobile)" id="content">
-							<form>
-								<?php if($_SESSION["logado"] != true)
-									  { ?>
-										<a href="cad_registrarFisica.php" class="button circled scrolly">Pessoa Fisica</a>
-										<a href="cad_registrarEmpresa.php" class="button circled scrolly">Empresa</a>
-										<a href="index.php" class="button circled scrolly">Voltar</a>
-								<?php } ?>
+							<form>								
+								<a href="cad_registrarFisica.php" class="button circled scrolly">Pessoa Fisica</a>
+								<a href="cad_registrarJuridica.php" class="button circled scrolly">Pessoa Juridica</a>
+								<a href="index.php" class="button circled scrolly">Voltar</a>
 							</form>
 						</div>
 					</div>
