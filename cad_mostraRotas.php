@@ -33,16 +33,19 @@
 				<!-- Inner -->
 				<div class="inner">
 					<header>
-						<h1><a href="index.php" id="logo">Selecione as datas</a></h1>
+						<h1><a href="index.php" id="logo">Nome rota</a></h1>
 					</header>
 				</div>
 			</div>
 			<!-- Main -->
 			<div class="wrapper style1">
-				<?php require 'calendario\demos\calendario.php' ?>
-				<!--BOTÃ•ES-->			
+				<!--BOTÕES-->			
 				<footer align="center">
-					<a href="cad_escolheAtracoesFloripa.php" class="button circled scrolly">Voltar</a>&nbsp&nbsp<a href="index.php" class="button circled scrolly">Cancelar</a>&nbsp&nbsp<a href="cad_mostraRotas.php" class="button circled scrolly">Montar rota</a>
+					<a href="cad_escolheDatas.php" class="button circled scrolly">Voltar</a>&nbsp&nbsp<a href="index.php" class="button circled scrolly">Cancelar</a>&nbsp&nbsp<a href="perfil.php" class="button circled scrolly">Salvar</a>
 				</footer>
 			</div>				
 		</div>
+		
+<?php
+	require 'rodape.php'
+?>

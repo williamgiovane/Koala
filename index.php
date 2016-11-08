@@ -28,16 +28,16 @@
 			<!-- Header -->
 			<div id="header">
 				<!-- Inner -->
-					<div class="inner">
-						<header>
-							<h1>BinBag</h1>
-							<hr />
-							<p>Planeje sua viagem</p>
-						</header>
-						<footer>
-							<a href="#banner" class="button circled scrolly">Começar</a>
-						</footer>
-					</div>
+				<div class="inner">
+					<header>
+						<h1>BinBag</h1>
+						<hr />
+						<p>Planeje sua viagem</p>
+					</header>
+					<footer>
+						<a href="#banner" class="button circled scrolly">Começar</a>
+					</footer>
+				</div>
 					
 				<?php 
 					require 'cabecalho.php'
@@ -66,89 +66,57 @@
 			</section>
 
 			<!-- Carousel -->
-				<section class="carousel">
-					<div class="reel">
-						<article>
-							<a href="#" class="image featured"><img src="images/rio2.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Rio de Janeiro</a></h3>
-							</header>
-							<p>Cristo Redentor, Copacabana, Pão de Açúcar, Corcovado, Ipanema e o Estádio Maracanã.</p>
-						</article>
+			<section class="carousel">
+				<div class="reel">
+					<article>
+						<a href="#" class="image featured"><img src="images/blumenau.jpg" alt="" /></a>
+						<header>
+							<h3><a href="#">Blumenau</a></h3>
+						</header>
+						<p>Vila Germânica, Catedral São Paulo Apóstolo,Teatro Carlos Gomes e Parque Ramiro e Oktoberfest</p>
+					</article>
 
-						<article>
-							<a href="#" class="image featured"><img src="images/blumenau.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Blumenau</a></h3>
-							</header>
-							<p>Vila Germânica, Catedral São Paulo Apóstolo,Teatro Carlos Gomes, Parque Ramiro e Oktoberfest</p>
-						</article>
+					<article>
+						<a href="#" class="image featured"><img src="images/joinville.jpg" alt="" /></a>
+						<header>
+							<h3><a href="#">Joinville</a></h3>
+						</header>
+						<p>Usina Hidrelétrica do Piraí, Praça das Orquídeas, Instituto Internacional Juarez Machado e Parque Morro do Finder</p>
+					</article>
 
-						<article>
-							<a href="#" class="image featured"><img src="images/sp.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">São Paulo</a></h3>
-							</header>
-							<p>Parque do Ibirapuera, Morumbi, Avenida Paulista, Sala São Paulo e Teatro Municipal de São Paulo</p>
-						</article>
+					<article>
+						<a href="#" class="image featured"><img src="images/Floripa.jpg" alt="" /></a>
+						<header>
+							<h3><a href="#">Florianopólis</a></h3>
+						</header>
+						<p>Praia dos Ingleses, Mesorregião da Grande Florianópolis, Museu de Arte de Santa Catarina e Estádio Orlando Scarpelli</p>
+					</article>
 
-						<article>
-							<a href="#" class="image featured"><img src="images/pgali.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Porto de Galinhas</a></h3>
-							</header>
-							<p>Praia de Muro Alto, Praia da Vila de Porto de Galinhas e Piscinas Naturais de Porto de Galinhas</p>
-						</article>
+					<article>
+						<a href="#" class="image featured"><img src="images/saojose.jpg" alt="" /></a>
+						<header>
+							<h3><a href="#">São José</a></h3>
+						</header>
+						<p>Beira Mar de São José, Igreja Matriz de São José, Praça Hercílio Luz e Museu Histórico Municipal São José</p>
+					</article>
 
-						<article>
-							<a href="#" class="image featured"><img src="images/curitiba.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Curitiba</a></h3>
-							</header>
-							<p>Museu Oscar Niemeyer, Jardim Botânico de Curitiba, Bosque Alemão, Ópera de Arame e Bosque Alemão</p>
-						</article>
+					<article>
+						<a href="#" class="image featured"><img src="images/criciuma.jpg" alt="" /></a>
+						<header>
+							<h3><a href="#">Criciúma</a></h3>
+						</header>
+						<p>Parque das Nações Cincinato Naspolini, Estádio Heriberto Hulse, Praça Nereu Ramos e Nações Shopping</p>
+					</article>
 
-						<article>
-							<a href="#" class="image featured"><img src="images/salvador.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Salvador</a></h3>
-							</header>
-							<p>Centro Histórico de Salvador, Igreja do Senhor do Bonfim, Rio Vermelho e Praia do Porto da Barra</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/Floripa.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Florianópolis</a></h3>
-							</header>
-							<p>Praia dos Ingleses, Museu de Arte de Santa Catarina, Estádio Orlando Scarpelli e Ressacada</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/brasilia.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Brasília</a></h3>
-							</header>
-							<p>Ponte Juscelino Kubitschek, Palácio Itamaraty, Palácio do Planalto e Palácio da Alvorada</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/bh.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Belo Horizonte</a></h3>
-							</header>
-							<p>Mineirão, Igreja da Pampulha, Estádio Olímpico Monumental e Museu Inimá de Paula</p>
-						</article>
-
-						<article>
-							<a href="#" class="image featured"><img src="images/manaus.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">Manaus</a></h3>
-							</header>
-							<p>Teatro Amazonas, Encontro das Águas, Arquipélago de Anavilhanas e Espaço Cultural Largo de São Sebastião</p>
-						</article>
-					</div>
-				</section>
+					<article>
+						<a href="#" class="image featured"><img src="images/chapeco.jpg" alt="" /></a>
+						<header>
+							<h3><a href="#">Chapecó</a></h3>
+						</header>
+						<p>Monumento o Desbravador, Ecoparque, Arena Condá e Catedral Santo Antonio e Praça Coronel Bertaso</p>
+					</article>
+				</div>
+			</section>
 
 			<!-- Main -->
 			<div class="wrapper style2">

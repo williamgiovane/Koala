@@ -1,0 +1,5 @@
+Time : 12:25:40
+SQLSTATE[HY000] [1049] Base 'koaladb' inconnue
+
+Time : 12:25:34
+SQLSTATE[HY000] [1049] Base 'koaladb' inconnue

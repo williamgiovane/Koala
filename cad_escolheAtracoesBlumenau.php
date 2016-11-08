@@ -48,7 +48,8 @@
 								<a href="#" class="image featured"><img src="images/blumenau/parqueVG.jpg"/></a>
 								<header>
 									<h3>Parque Vila Germânica</a></h3>
-									</br><input type="button" name="adicionarpararota" value="Adicionar"></br>
+									<input type="checkbox" name="vilaGermanica" value="vilaGermanica">Adicionar
+									<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 								</header>
 							</article>
 
@@ -56,7 +57,8 @@
 								<a href="#" class="image featured"><img src="images/blumenau/igrejaM.jpg"/></a>
 								<header>
 									<h3>Catedral São Paulo Apóstolo</a></h3>
-									</br><input type="button" name="adicionarpararota" value="Adicionar"></br>
+									<input type="checkbox" name="vilaGermanica" value="igrejaM">Adicionar
+									<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 								</header>
 							</article>
 
@@ -64,7 +66,8 @@
 								<a href="#" class="image featured"><img src="images/blumenau/teatroCG.jpg"/></a>
 								<header>
 									<h3>Teatro Carlos Gomes</a></h3>
-									</br><input type="button" name="adicionarpararota" value="Adicionar"></br>
+									<input type="checkbox" name="vilaGermanica" value="teatroCG">Adicionar
+									<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 								</header>
 							</article>
 							
@@ -72,7 +75,8 @@
 							<a href="#" class="image featured"><img src="images/blumenau/parqueRR.jpg"/></a>
 							<header>
 								<h3>Parque Ramiro Ruediger</a></h3>
-								</br><input type="button" name="adicionarpararota" value="Adicionar"></br>
+								<input type="checkbox" name="vilaGermanica" value="parqueRR">Adicionar
+								<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 							</header>
 						</article>
 						</div>
@@ -85,7 +89,8 @@
 								<a href="#" class="image featured"><img src="images/blumenau/restauranteThapyoka.jpg"/></a>
 								<header>
 									<h3><a href="#">Thapyoka</a></h3>
-									</br><input type="button" name="adicionarpararota" value="Adicionar"></br>
+									<input type="checkbox" name="vilaGermanica" value="restauranteThapyoka">Adicionar
+									<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 								</header>
 							</article>
 
@@ -93,7 +98,8 @@
 								<a href="#" class="image featured"><img src="images/blumenau/restauranteMV.jpg"/></a>
 								<header>
 									<h3><a href="#">Moinho do Vale</a></h3>
-									</br><input type="button" name="adicionarpararota" value="Adicionar"></br>
+									<input type="checkbox" name="vilaGermanica" value="restauranteMV">Adicionar
+									<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 								</header>
 							</article>
 
@@ -101,7 +107,8 @@
 								<a href="#" class="image featured"><img src="images/blumenau/restaurnteAT.jpg"/></a>
 								<header>
 									<h3><a href="#">Ataliba</a></h3>
-									</br><input type="button" name="adicionarpararota" value="Adicionar"></br>
+									<input type="checkbox" name="vilaGermanica" value="restaurnteAT">Adicionar
+									<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 								</header>
 							</article>
 							
@@ -109,7 +116,8 @@
 							<a href="#" class="image featured"><img src="images/blumenau/restaurntePJ.jpg"/></a>
 							<header>
 								<h3><a href="#">Pepper Jack</a></h3>
-								</br><input type="button" name="adicionarpararota" value="Adicionar"></br>
+								<input type="checkbox" name="vilaGermanica" value="restaurntePJ">Adicionar
+								<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 							</header>
 						</article>
 						</div>
@@ -122,7 +130,8 @@
 								<a href="#" class="image featured"><img src="images/blumenau/pubBEP.jpg"/></a>
 								<header>
 									<h3><a href="#">The Basement English Pub</a></h3>
-									</br><input type="button" name="adicionarpararota" value="Adicionar"></br>
+									<input type="checkbox" name="vilaGermanica" value="pubBEP">Adicionar
+									<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 								</header>
 							</article>
 
@@ -130,7 +139,8 @@
 								<a href="#" class="image featured"><img src="images/blumenau/pubAHOY.jpg"/></a>
 								<header>
 									<h3><a href="#">Ahoy Tavern Club</a></h3>
-									</br><input type="button" name="adicionarpararota" value="Adicionar"></br>
+									<input type="checkbox" name="vilaGermanica" value="pubAHOY">Adicionar
+									<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 								</header>
 							</article>
 
@@ -138,7 +148,8 @@
 								<a href="#" class="image featured"><img src="images/blumenau/parqueWIN.jpg"/></a>
 								<header>
 									<h3><a href="#">Winchester Pub</a></h3>
-									</br><input type="button" name="adicionarpararota" value="Adicionar"></br>
+									<input type="checkbox" name="vilaGermanica" value="parqueWIN">Adicionar
+									<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 								</header>
 							</article>
 							
@@ -146,7 +157,8 @@
 							<a href="#" class="image featured"><img src="images/blumenau/rivage.jpg"/></a>
 							<header>
 								<h3><a href="#">Rivage</a></h3>
-								</br><input type="button" name="adicionarpararota" value="Adicionar"></br>
+								<input type="checkbox" name="vilaGermanica" value="rivage">Adicionar
+								<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 							</header>
 						</article>
 						</div>
@@ -154,7 +166,7 @@
 					
 					<!--BOTÕES-->			
 					<footer align="center">
-						<a href="cad_escolheEstados.php" class="button circled scrolly">Voltar</a>&nbsp&nbsp<a href="index.php" class="button circled scrolly">Cancelar</a>&nbsp&nbsp<a href="cad_escolheDatas.php" class="button circled scrolly">Próximo</a>
+						<a href="cad_escolheCidades.php" class="button circled scrolly">Voltar</a>&nbsp&nbsp<a href="index.php" class="button circled scrolly">Cancelar</a>&nbsp&nbsp<a href="cad_escolheAtracoesFloripa.php" class="button circled scrolly">Próximo</a>
 					</footer>					
 				</div>
 						

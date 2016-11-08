@@ -78,7 +78,8 @@
 								
 				<footer  align="center">
 					<a href="index.php" class="button circled scrolly">Cancelar</a>
-					<a href="cad_escolheEstados.php" class="button circled scrolly">Próximo</a>
+					<!--<a href="cad_escolheEstados.php" class="button circled scrolly">Próximo</a>-->
+					<a href="cad_escolheCidades.php" class="button circled scrolly">Próximo</a>
 				</footer>
 			</div>
 

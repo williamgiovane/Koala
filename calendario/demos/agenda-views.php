@@ -1,4 +1,3 @@
-
 <meta charset='utf-8' />
 <link href='calendario/fullcalendar.css' rel='stylesheet' />
 <script src='calendario/lib/moment.min.js'></script>
@@ -101,4 +100,3 @@
 	<div id='calendar'></div>
 
 </body>
-</html>

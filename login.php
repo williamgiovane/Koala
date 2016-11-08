@@ -69,8 +69,7 @@
 						<div class="8u 12u(mobile)" id="content">
 							<form action="login.php" method="post" >
 								Usuario ou Email:<input type="text" name="usuEmail" id="usuEmail">
-								Senha:<input type="password" name="senha1" id="senha1">
-								Confirmação da senha:<input type="password" name="senha2" id="senha2"></br>
+								Senha:<input type="password" name="senha1" id="senha1"></br>
 									
 								<input type="submit" name="login" id="login" class="button circled scrolly" />	
 
