@@ -39,10 +39,10 @@
 			</div>
 			<!-- Main -->
 			<div class="wrapper style1">
-				<?php require 'calendario\demos\calendario.php' ?>
+				<?php require 'calendario\demos\calendarioFinal.php' ?>
 				<!--BOTÕES-->			
 				<footer align="center">
-					<a href="cad_escolheAtracoesFloripa.php" class="button circled scrolly">Voltar</a>&nbsp&nbsp<a href="index.php" class="button circled scrolly">Cancelar</a>&nbsp&nbsp<a href="cad_mostraRotaFinal.php" class="button circled scrolly">Montar rota</a>
+					<a href="cad_escolheAtracoesFloripa.php" class="button circled scrolly">Voltar</a>&nbsp&nbsp<a href="index.php" class="button circled scrolly">Cancelar</a>&nbsp&nbsp<a href="cad_mostraRotas.php" class="button circled scrolly">Montar rota</a>
 				</footer>
 			</div>				
 		</div>
