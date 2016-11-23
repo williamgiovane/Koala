@@ -7,22 +7,23 @@
 	//Criando obj da classe BD
 	$banco = new DB();
 
-	if($_POST){
-
+	if($_POST)
+	{
 		$usuEmail = $_POST["usuEmail"];
 		$senha = $_POST["senha1"];
 
 		$banco->bind("email", $usuEmail);
 		$banco->bind("senha", $senha);
 
-		$row = $banco->query("select * from usuario where email = :email and senha = :senha");
+		//$row = $banco->query("select * from usuario where email = :email and senha = :senha");
 
-		$id_usuario = $banco-> query("select id_usuario from usuario where email = ':email'");
-		$_SESSION['idUsuario'] = $id_usuario;
+		$usuario2 = $banco->row("select id_usuario, TIPO_USUARIO_id_tipo_usuario as 'tipo' from usuario where email = :email and senha = :senha");
 
-		if(count($row) > 0)
+		if($usuario2)
 		{
-			$_SESSION["logado"] = true;
+			$_SESSION["logado"] = true;	
+			$_SESSION['idUsuario'] = $usuario2["id_usuario"];
+			$_SESSION['tipoUsu'] = $usuario2["tipo"];	
 			header("Location: index.php");
 		}else{
 			header("Location: login.php");

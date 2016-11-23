@@ -6,6 +6,8 @@
 	
 	//Criando obj da classe BD
 	$banco = new DB();
+
+
 ?>
 
 <!doctype html>
@@ -59,9 +61,32 @@
 					<?php } ?>
 					
 					<?php if($_SESSION["logado"] == true)
-						  { ?>
-						    <a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
-					<?php } ?>
+						  { 
+							switch ($_SESSION['tipoUsu']) {
+						  		case '1':
+						  			echo '<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
+								    <a href="cad_eventos.php" class="button circled scrolly">Eventos</a>
+								    <a href="cad_registrarEstabelecimento.php" class="button circled scrolly">Estabelecimento</a>';
+						  			break;
+
+						  		case '2':
+								    echo '<a href="cad_eventos.php" class="button circled scrolly">Eventos</a>
+								    <a href="cad_registrarEstabelecimento.php" class="button circled scrolly">Estabelecimento</a>';
+						  			break;
+						  		
+						  		default:
+						  			echo '<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>';
+						  			break;
+						  	}	  	
+
+
+						  	if($_SESSION['tipoUsu'] == 1)
+						  	{
+					?>
+						    
+					<?php 	} 
+						}
+					?>
 				</footer>
 			</section>
 
@@ -81,7 +106,7 @@
 						<header>
 							<h3><a href="#">Joinville</a></h3>
 						</header>
-						<p>Usina Hidrelétrica do Piraí, Praça das Orquídeas, Instituto Internacional Juarez Machado e Parque Morro do Finder</p>
+						<p>Usina Hidrelétrica do Piraí, Instituto Internacional Juarez Machado e Parque Morro do Finder</p>
 					</article>
 
 					<article>
@@ -89,7 +114,7 @@
 						<header>
 							<h3><a href="#">Florianopólis</a></h3>
 						</header>
-						<p>Praia dos Ingleses, Mesorregião da Grande Florianópolis, Museu de Arte de Santa Catarina e Estádio Orlando Scarpelli</p>
+						<p>Praia dos Ingleses, Mesorregião da Grande Florianópolis e Museu de Arte de Santa Catarina</p>
 					</article>
 
 					<article>
@@ -188,6 +213,7 @@
 						</div>
 					</section>
 				</div>
+
 <?php
 	require 'rodape.php'
 ?>

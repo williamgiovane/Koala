@@ -6,11 +6,15 @@
 			<nav id="nav">
 				<ul>
 					<li><a href="index.php">Inicio</a></li>
+
+					<li><a href="noticias.php">Notícias</a></li>
+					
 					<?php 
 						if($_SESSION["logado"] == true)
 						{
 					 ?>
-							<li>
+					 		<li><a href="perfilUsu.php">Perfil</a></li>
+							<!--<li>
 								<a href="#">Minhas rotas</a>
 								<ul>
 									<li><a href="#">Rota 1</a></li>
@@ -26,11 +30,9 @@
 											<li><a href="#">Etiam dolore nisl</a></li>
 										</ul>
 								</ul>	
-							</li>
+							</li>-->
 					<?php } ?>
-
-					<li><a href="noticias.php">Notícias</a></li>
-					
+			
 					<?php if($_SESSION["logado"] != true)
 						  { ?>
 							<li><a href="login.php">Login</a></li>

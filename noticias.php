@@ -69,7 +69,7 @@
 						<hr />
 						<div class="row">
 							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img src="images/rio2.jpg" alt="" /></a>
+								<a href="#" class="image featured"><img src="images/blumenau.jpg" alt="" /></a>
 								<header>
 									<h3><a href="#">Noticia 1</a></h3>
 								</header>
@@ -83,7 +83,7 @@
 								</footer>
 							</article>
 							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img src="images/rio2.jpg" alt="" /></a>
+								<a href="#" class="image featured"><img src="images/chapeco.jpg" alt="" /></a>
 								<header>
 									<h3><a href="#">Noticia 2</a></h3>
 								</header>
@@ -96,7 +96,7 @@
 								</footer>
 							</article>
 							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img src="images/rio2.jpg" alt="" /></a>
+								<a href="#" class="image featured"><img src="images/joinville.jpg" alt="" /></a>
 								<header>
 									<h3><a href="#">Noticia 3</a></h3>
 								</header>

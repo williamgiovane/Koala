@@ -1,0 +1,15 @@
+Time : 13:22:05
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : select id_usuario, TIPO_USUARIO_id_tipo_usuario from usuario where email = :email
+
+Time : 12:42:24
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : select id_usuario, TIPO_USUARIO_id_tipo_usuario from usuario where email = :email
+
+Time : 12:42:20
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : select id_usuario, TIPO_USUARIO_id_tipo_usuario from usuario where email = :email
+
+Time : 11:12:30
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Array' in 'where clause'
+Raw SQL : select TIPO_USUARIO_id_tipo_usuario from usuario where id_usuario = Array
