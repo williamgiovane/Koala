@@ -10,7 +10,7 @@
 	if($_POST)
 	{
 		$usuEmail = $_POST["usuEmail"];
-		$senha = $_POST["senha1"];
+		$senha = sha1($_POST['senha1']);
 
 		$banco->bind("email", $usuEmail);
 		$banco->bind("senha", $senha);

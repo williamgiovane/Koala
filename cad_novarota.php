@@ -9,18 +9,6 @@
 
 	//echo $_SESSION['idUsuario'];
 
-	if($_POST)
-	{
-		$nome  		    = $_POST["nomeRota"];
-		$periodoInicial = $_POST["periodoInicial"];
-		$periodoFinal   = $_POST["periodoFinal"];
-
-		$banco->bind("nome",$nome);
-		$banco->bind("periodoInicial",$periodoInicial);
-		$banco->bind("periodoFinal",$periodoFinal);
-
-		$banco->query("insert into rota(id_rota, ds_rota, dt_inicio, dt_fim, USUARIO_id_usuario) VALUES (null, :nome, :periodoInicial, :periodoFinal);");		
-	}
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -67,10 +55,12 @@
 				<div class="container">
 					<div class="content">
 						<div class="8u 12u(mobile)" id="content">
-							<form>
+							<form action="cad_escolheDatas.php" method="post">
 								Digite o nome da rota:<input type="text" name="nomerota" id="nomeRota">
 								Período Inicial:<input type="text" name="periodoInicial" id="periodoInicial" class="data">
 								Período Final:<input type="text" name="periodoFinal" id="periodoFinal" class="data">
+
+								<input type="submit" name="login" id="login" class="button circled scrolly" />	
 							</form>
 						</div>
 					</div>

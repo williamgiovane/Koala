@@ -11,8 +11,8 @@
 	{
 		$nome 				= $_POST["nomeUsu"];
 		$email 				= $_POST["emailUsu"];
-		$senha 				= $_POST["senhaUsu"];
-		$senhaConfiUsu 		= $_POST["senhaConfiUsu"];
+		$senha 				= sha1($_POST['senhaUsu']);
+		$senhaConfiUsu 		= sha1($_POST["senhaConfiUsu"]);
 		$celular 			= str_replace("-","",str_replace(")","", str_replace("(","",$_POST["celularUsu"])));
 		$atualizacaoCelular = ( isset($_POST["atualizacaoCelular"]) )? $_POST["atualizacaoCelular"] : "0" ;
 		$atualizacaoEmail 	= ( isset($_POST["atualizacaoEmail"]) )? $_POST["atualizacaoEmail"] : "0" ;
@@ -24,7 +24,7 @@
 		$banco->bind("atuCel",$atualizacaoCelular);
 		$banco->bind("atuEmail",$atualizacaoEmail);
 
-		$banco->query("insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '') ");		
+		$banco->query("insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 1, '') ");		
 		header('Location:index.php');
 	}
 ?>

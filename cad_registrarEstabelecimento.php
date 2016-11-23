@@ -19,8 +19,8 @@
 		$cep     			= $_POST["cep"];
 		$diasFuncionamento  = $_POST["diasFuncionamento"];
 		$celular 			= str_replace("-","",str_replace(")","", str_replace("(","",$_POST["celularUsu"])));
-		$senha      		= $_POST["senhaUsu"];
-		$senha2     		= $_POST["senhaConfiUsu"];
+		//$senha      		= $_POST["senhaUsu"];
+		//$senha2     		= $_POST["senhaConfiUsu"];
 		$about				= $_POST["sobreEmpresa"];
 		$atualizacaoCelular = (isset($_POST["atualizacaoCelular"]))? $_POST["atualizacaoCelular"] : "0" ;
 		$atualizacaoEmail 	= (isset($_POST["atualizacaoEmail"]))? $_POST["atualizacaoEmail"] : "0" ;
@@ -36,8 +36,8 @@
 		$banco->bind("cep",$cep);
 		$banco->bind("diasFuncionamento",$diasFuncionamento);
 		$banco->bind("celular",$celular);
-		$banco->bind("senha",$senha);
-		$banco->bind("senha2",$senha2);
+		//$banco->bind("senha",$senha);
+		//$banco->bind("senha2",$senha2);
 		$banco->bind("about",$about);
 		$banco->bind("atuCel",$atualizacaoCelular);
 		$banco->bind("atuEmail",$atualizacaoEmail);
@@ -74,7 +74,7 @@
 				<!-- Inner -->
 					<div class="inner">
 						<header>
-							<h1>Registre sua empresa no <?php echo NOME_SITE; ?></h1>
+							<h1>Registre seu estabelecimento no <?php echo NOME_SITE; ?></h1>
 						</header>
 					</div>
 
@@ -92,7 +92,7 @@
 							<form>
 								Nome Empresa:<input type="text" name="nomeEmp"> 
 								CNPJ:<input type="text" name="cnpj" class="cnpj">
-								Estado: 
+								<!--Estado: 
 								<select id="Estado" name="Estado">
 									<option value="">Selecione o Estado</option>
 									<?php
@@ -102,18 +102,25 @@
 											echo '<option value="'.$e['id_estado'].'">'.$e['ds_estado'].'</option>';
 										}
 									?>
-								</select>
+								</select>-->
 								Cidade:
 								<select id="Cidade" name="Cidade">
 									<option value="">Selecione o Cidade</option>
-									<?php
+										<option value="">Blumenau</option>
+										<option value="">Criciúma</option>
+										<option value="">Chapecó</option>
+										<option value="">Florianopólis</option>
+										<option value="">Joinville</option>
+										<option value="">São José</option>
+
+									<!--<?php
 										$cidade = $banco->query('SELECT id_cidade, ds_cidade FROM cidade WHERE ESTADO_id_estado = 24 ORDER BY ds_cidade');
 										foreach($cidade as $c)
 										{
 											echo '<option value="'.$c['id_cidade'].'">'.$c['ds_cidade'].'</option>';
 										}
 										//$idCidade = value="'.$c['id_cidade'].'">;
-									?>
+									?>-->
 								</select>
 								Ramo de Atividade:  
 								<select id="ramoAtividade" name="ramoAtividade">
@@ -148,8 +155,8 @@
 							
 
 								Celular ou Telefone:<input type="text" name="celularUsu" class="phone">
-								Senha:<input type="password" name="senhaUsu">
-								Confirme a senha:<input type="password" name="senhaConfiUsu">
+								<!--Senha:<input type="password" name="senhaUsu">
+								Confirme a senha:<input type="password" name="senhaConfiUsu">-->
 								Sobre a empresa:<textarea name="sobreEmpresa" rows="10" cols="60" wrap="virtual"></textarea></p>
 								<input type="checkbox" name="atualizacaoCelular" value="">Desejo receber atualizações por Celular</td></br>
 								<input type="checkbox" name="atualizacaoEmail" value="">Desejo receber atualizações por Email</td>

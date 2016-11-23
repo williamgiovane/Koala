@@ -6,6 +6,19 @@
 	
 	//Criando obj da classe BD
 	$banco = new DB();
+
+	if($_POST)
+	{
+		$nomeRota  	 	= $_POST["nomeRota"];
+		$periodoInicial = $_POST["periodoInicial"];
+		$periodoFinal   = $_POST["periodoFinal"];
+
+		$banco->bind("nome",$nomeRota);
+		$banco->bind("periodoInicial",$periodoInicial);
+		$banco->bind("periodoFinal",$periodoFinal);
+
+		//$banco->query("insert into rota id_rota, ds_rota, dt_inicio, dt_fim, USUARIO_id_usuario VALUES (null, :nome, :periodoInicial, :periodoFinal);");		
+	}
 ?>
 <!DOCTYPE HTML>
 <!--

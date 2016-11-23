@@ -11,8 +11,8 @@
 	{
 		$nome 				= $_POST["nomeUsu"];
 		$email 				= $_POST["emailUsu"];
-		$senha 				= $_POST["senhaUsu"];
-		$senhaConfiUsu 		= $_POST["senhaConfiUsu"];
+		$senha 				= sha1($_POST["senhaUsu"]);
+		$senhaConfiUsu 		= sha1($_POST["senhaConfiUsu"]);
 		$celular 			= str_replace("-","",str_replace(")","", str_replace("(","",$_POST["celularUsu"])));
 		$atualizacaoCelular = ( isset($_POST["atualizacaoCelular"]) )? $_POST["atualizacaoCelular"] : "0" ;
 		$atualizacaoEmail 	= ( isset($_POST["atualizacaoEmail"]) )? $_POST["atualizacaoEmail"] : "0" ;
