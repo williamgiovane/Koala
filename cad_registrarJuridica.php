@@ -24,7 +24,8 @@
 		$banco->bind("atuCel",$atualizacaoCelular);
 		$banco->bind("atuEmail",$atualizacaoEmail);
 
-		$banco->query("insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '') ");		
+		$banco->query("insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 2, '') ");	
+		header('Location:index.php');	
 	}
 ?>
 
@@ -64,7 +65,7 @@
 					<h2>Digite seus dados:</a></h2></br>
 					<div class="content">
 						<div class="8u 12u(mobile)" id="content">
-							<form action="cad_registrarFisica.php" method="post" id="formCadUsuario">
+							<form action="cad_registrarJuridica.php" method="post" id="formCadUsuario">
 								Nome Completo:<input type="text" name="nomeUsu" id="nomeUsu" class="required" maxlength="45"> 
 								CNPJ:<input type="text" name="cnpj" class="cnpj">
 								Email:<input type="email" name="emailUsu" class="required">

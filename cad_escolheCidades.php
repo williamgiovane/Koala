@@ -6,6 +6,18 @@
 	
 	//Criando obj da classe BD
 	$banco = new DB();
+
+	if($_POST)
+	{
+		$_SESSION["nomeRota"] = $_POST["nomeRota"];
+		$periodoInicial = $_POST["periodoInicial"];
+		$periodoFinal   = $_POST["periodoFinal"];
+
+		$banco->bind("nome",$nomeRota);
+		$banco->bind("periodoInicial",$periodoInicial);
+		$banco->bind("periodoFinal",$periodoFinal);
+
+	}
 ?>
 
 <!DOCTYPE HTML>

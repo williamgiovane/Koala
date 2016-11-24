@@ -33,7 +33,7 @@
 				<!-- Inner -->
 				<div class="inner">
 					<header>
-						<h1><a href="index.php" id="logo">Selecione as datas</a></h1>
+						<h1><a href="index.php" id="logo">Nome Rota</a></h1>
 					</header>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 				<?php require 'calendario\demos\calendarioFinal.php' ?>
 				<!--BOTÕES-->			
 				<footer align="center">
-					<a href="cad_escolheAtracoesFloripa.php" class="button circled scrolly">Voltar</a>&nbsp&nbsp<a href="index.php" class="button circled scrolly">Cancelar</a>&nbsp&nbsp<a href="cad_mostraRotas.php" class="button circled scrolly">Montar rota</a>
+					<a href="perfilUsu.php" class="button circled scrolly">Voltar</a>
 				</footer>
 			</div>				
 		</div>
