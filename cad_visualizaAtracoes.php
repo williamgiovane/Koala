@@ -16,7 +16,7 @@
 -->
 <html>
 	<head>
-		<title>Selecione as cidades</title>
+		<title>Blumenau</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -54,9 +54,11 @@
 							</p>
 						</header>
 					</article>
+					<h2 align="center">Onde fica?</h2>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d455548.86611485074!2d-49.3869307788051!3d-26.872518953277506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df193144e17bf1%3A0x282a8b2473efe630!2sBlumenau+-+SC!5e0!3m2!1spt-BR!2sbr!4v1477156735218" width="1200" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
 				</div>
 				<!-- CIDADES ESCOLHA -->
-				<h2 align="center">Pontos Turisticos</h2>
+				</br><h2 align="center">Pontos Turisticos</h2>
 					<section class="carousel">
 						<div class="reel">
 							<article>
@@ -88,7 +90,7 @@
 								<header>
 									<h3><a href="http://www.thapyoka.com.br">Parque Ramiro Ruediger</a></h3>
 								</header>
-								<p>Praia de Muro Alto, Praia da Vila de Porto de Galinhas e Piscinas Naturais de Porto de Galinhas</p>
+								<p>Com 45 mil metros quadrados de área, o Parque Ramiro Ruediger é a maior área de lazer da cidade. O espaço foi revitalizado nos anos de 2007 e 2008, sendo contemplado com um lago de 3.500 metros quadrados e com uma academia ao ar livre, numa parceria inédita com a cooperativa de saúde Unimed.</p>
 							</article>
 						</div>
 					</section>

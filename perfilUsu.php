@@ -30,7 +30,7 @@
 				<!-- Inner -->
 					<div class="inner">
 						<header>
-							<h1>Seu Perfil</h1>
+							<h1><?php print_r($_SESSION["nmUsu"]) ?></h1>
 						</header>
 					</div>
 
@@ -39,48 +39,207 @@
 				?>
 			</div>
 
-			<!-- Main -->
-			<div class="wrapper style1">
-				<!-- Rotas -->
-				<h2 align="center">Minhas Rotas</h2>
-				<section class="carousel">
-					<div class="reel">
-						<article>
-							<a href="cad_mostraRotaFinal.php" class="image featured"><img src="images/blumenau/parqueVG.jpg"/></a>
-							<header>
-								<h3>Rota Blumenau</a></h3>
-							</header>
-						</article>
+			<?php 
+			if($_SESSION["logado"])
+			{ 
+				switch ($_SESSION['tipoUsu']) 
+				{
+			  		case '1':
+			  			echo '
+			  				<!-- Main -->
+							<div class="wrapper style1">
+								<footer align="center">
+									<h2 align="center">Cadastre</h2>
+									<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
+								</footer>
 
-						<article>
-							<a href="#" class="image featured"><img src="images/Floripa/praiaIngleses.jpg"/></a>
-							<header>
-								<h3>Rota Floripa</a></h3>
-							</header>
-						</article>
+								<!-- Rotas -->
+								</br><h2 align="center">Minhas Rotas</h2>
+								<section class="carousel">
+									<div class="reel">
+										<article>
+											<a href="cad_mostraRotaFinal.php" class="image featured"><img src="images/blumenau/parqueVG.jpg"/></a>
+											<header>
+												<h3>Rota Blumenau</a></h3>
+											</header>
+										</article>
 
-						<article>
-							<a href="#" class="image featured"><img src="images/chapeco.jpg"/></a>
-							<header>
-								<h3>Rota Chapeco</a></h3>
-							</header>
-						</article>
-						
-						<article>
-						<a href="#" class="image featured"><img src="images/joinville.jpg"/></a>
-							<header>
-								<h3>Rota Joinville</a></h3>
-							</header>
-					</article>
-					</div>
-				</section>
-				
-				<!--BOTÕES-->			
-				<footer align="center">
-					<a href="index.php" class="button circled scrolly">Voltar</a>
-				</footer>					
-			</div>
+										<article>
+											<a href="#" class="image featured"><img src="images/Floripa/praiaIngleses.jpg"/></a>
+											<header>
+												<h3>Rota Floripa</a></h3>
+											</header>
+										</article>
+
+										<article>
+											<a href="#" class="image featured"><img src="images/chapeco.jpg"/></a>
+											<header>
+												<h3>Rota Chapeco</a></h3>
+											</header>
+										</article>
+										
+										<article>
+										<a href="#" class="image featured"><img src="images/joinville.jpg"/></a>
+											<header>
+												<h3>Rota Joinville</a></h3>
+											</header>
+									</article>
+									</div>
+								</section>
+								
+								<!--BOTÕES-->			
+								<footer align="center">
+									<a href="index.php" class="button circled scrolly">Voltar</a>
+								</footer>					
+							</div>';
+			  			break;
+
+			  		case '2':
+					    echo '
+					    	<!-- Main -->
+							<div class="wrapper style1">
+								
+								<footer align="center">
+									<h2 align="center">Cadastre</h2>
+									<a href="cad_eventos.php" class="button circled scrolly">Eventos</a>
+						    		<a href="cad_registrarEstabelecimento.php" class="button circled scrolly">Estabelecimento</a>
+								</footer>
+
+								<!-- Rotas -->
+								</br><h2 align="center">Meus Estabelecimentos</h2>
+								<section class="carousel">
+									<div class="reel">
+										<article>
+											<a href="cad_mostraRotaFinal.php" class="image featured"><img src="images/blumenau/parqueVG.jpg"/></a>
+											<header>
+												<h3>Rota Blumenau</a></h3>
+											</header>
+										</article>
+
+										<article>
+											<a href="#" class="image featured"><img src="images/Floripa/praiaIngleses.jpg"/></a>
+											<header>
+												<h3>Rota Floripa</a></h3>
+											</header>
+										</article>
+
+										<article>
+											<a href="#" class="image featured"><img src="images/chapeco.jpg"/></a>
+											<header>
+												<h3>Rota Chapeco</a></h3>
+											</header>
+										</article>
+										
+										<article>
+										<a href="#" class="image featured"><img src="images/joinville.jpg"/></a>
+											<header>
+												<h3>Rota Joinville</a></h3>
+											</header>
+									</article>
+									</div>
+								</section>
+
+								<h2 align="center">Meus Eventos</h2>
+								<section class="carousel">
+									<div class="reel">
+										<article>
+											<a href="cad_mostraRotaFinal.php" class="image featured"><img src="images/blumenau/parqueVG.jpg"/></a>
+											<header>
+												<h3>Rota Blumenau</a></h3>
+											</header>
+										</article>
+
+										<article>
+											<a href="#" class="image featured"><img src="images/Floripa/praiaIngleses.jpg"/></a>
+											<header>
+												<h3>Rota Floripa</a></h3>
+											</header>
+										</article>
+
+										<article>
+											<a href="#" class="image featured"><img src="images/chapeco.jpg"/></a>
+											<header>
+												<h3>Rota Chapeco</a></h3>
+											</header>
+										</article>
+										
+										<article>
+										<a href="#" class="image featured"><img src="images/joinville.jpg"/></a>
+											<header>
+												<h3>Rota Joinville</a></h3>
+											</header>
+									</article>
+									</div>
+								</section>
+								
+								
+								<!--BOTÕES-->			
+								<footer align="center">
+									<a href="index.php" class="button circled scrolly">Voltar</a>
+								</footer>					
+							</div>';
+			  			break;
+			  		
+			  		default:
+			  			echo '
+			  				<!-- Main -->
+							<div class="wrapper style1">
+								<footer align="center">
+									<h2 align="center">Cadastre</h2>
+									<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
+								</footer>
+
+								<!-- Rotas -->
+								</br><h2 align="center">Minhas Rotas</h2>
+								<section class="carousel">
+									<div class="reel">
+										<article>
+											<a href="cad_mostraRotaFinal.php" class="image featured"><img src="images/blumenau/parqueVG.jpg"/></a>
+											<header>
+												<h3>Rota Blumenau</a></h3>
+											</header>
+										</article>
+
+										<article>
+											<a href="#" class="image featured"><img src="images/Floripa/praiaIngleses.jpg"/></a>
+											<header>
+												<h3>Rota Floripa</a></h3>
+											</header>
+										</article>
+
+										<article>
+											<a href="#" class="image featured"><img src="images/chapeco.jpg"/></a>
+											<header>
+												<h3>Rota Chapeco</a></h3>
+											</header>
+										</article>
+										
+										<article>
+										<a href="#" class="image featured"><img src="images/joinville.jpg"/></a>
+											<header>
+												<h3>Rota Joinville</a></h3>
+											</header>
+									</article>
+									</div>
+								</section>
+								
+								<!--BOTÕES-->			
+								<footer align="center">
+									<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
+									<a href="index.php" class="button circled scrolly">Voltar</a>
+								</footer>					
+							</div>';
+			  			
+			  			break;
+			?>
+						    
+			<?php 	
+				} 
+			}
+			?>
+					
+			
 
 <?php
-	require 'rodape.php'
+	require 'rodape.php';
 ?>

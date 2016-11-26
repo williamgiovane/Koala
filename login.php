@@ -15,15 +15,14 @@
 		$banco->bind("email", $usuEmail);
 		$banco->bind("senha", $senha);
 
-		//$row = $banco->query("select * from usuario where email = :email and senha = :senha");
+		$selectUsu = $banco->row("select id_usuario, nm_usuario, TIPO_USUARIO_id_tipo_usuario as 'tipo' from usuario where email = :email and senha = :senha");
 
-		$usuario2 = $banco->row("select id_usuario, TIPO_USUARIO_id_tipo_usuario as 'tipo' from usuario where email = :email and senha = :senha");
-
-		if($usuario2)
+		if($selectUsu)
 		{
 			$_SESSION["logado"] = true;	
-			$_SESSION['idUsuario'] = $usuario2["id_usuario"];
-			$_SESSION['tipoUsu'] = $usuario2["tipo"];	
+			$_SESSION["nmUsu"] = $selectUsu["nm_usuario"];	
+			$_SESSION["idUsuario"] = $selectUsu["id_usuario"];
+			$_SESSION["tipoUsu"] = $selectUsu["tipo"];	
 			header("Location: index.php");
 		}else{
 			header("Location: login.php");
@@ -69,7 +68,7 @@
 					<div class="content">
 						<div class="8u 12u(mobile)" id="content">
 							<form action="login.php" method="post" >
-								Usuario ou Email:<input type="text" name="usuEmail" id="usuEmail">
+								Usuário ou Email:<input type="text" name="usuEmail" id="usuEmail">
 								Senha:<input type="password" name="senha1" id="senha1"></br>
 									
 								<input type="submit" name="login" id="login" class="button circled scrolly" />	

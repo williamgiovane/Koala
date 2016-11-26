@@ -32,7 +32,7 @@
 				<!-- Inner -->
 					<div class="inner">
 						<header>
-							<h1>Escolha o tipo de usuario no <?php echo NOME_SITE; ?></h1>
+							<h1>Escolha o tipo de usuário no <?php echo NOME_SITE; ?></h1>
 						</header>
 					</div>
 

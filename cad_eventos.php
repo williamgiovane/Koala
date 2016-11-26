@@ -98,7 +98,7 @@
 								Horario Inicio:<input type="text" name="horarioInicio" class="hora">
 								Horario Final:<input type="text" name="horarioFinal" class="hora">
 								Cep:<input type="text" name="cep" class="cep">
-								Estado: 
+								<!--Estado: 
 								<select id="Estado" name="Estado">
 									<option value="">Selecione o Estado</option>
 									<?php
@@ -108,7 +108,7 @@
 											echo '<option value="'.$e['id_estado'].'">'.$e['ds_estado'].'</option>';
 										}
 									?>
-								</select>
+								</select>-->
 								Cidade:
 								<select id="Cidade" name="Cidade">
 									<option value="">Selecione o Cidade</option>

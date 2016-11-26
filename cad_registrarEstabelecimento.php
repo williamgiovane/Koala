@@ -1,8 +1,10 @@
 <?php
+	session_start();
+
 	require 'config.php';
 	require 'classes/Db.class.php';
 	
-	/* criando objeto da classe DB*/
+	//Criando obj da classe BD
 	$banco = new DB();
 
 	if($_POST)
@@ -106,21 +108,14 @@
 								Cidade:
 								<select id="Cidade" name="Cidade">
 									<option value="">Selecione o Cidade</option>
-										<option value="">Blumenau</option>
-										<option value="">Criciúma</option>
-										<option value="">Chapecó</option>
-										<option value="">Florianopólis</option>
-										<option value="">Joinville</option>
-										<option value="">São José</option>
-
-									<!--<?php
+									<?php
 										$cidade = $banco->query('SELECT id_cidade, ds_cidade FROM cidade WHERE ESTADO_id_estado = 24 ORDER BY ds_cidade');
 										foreach($cidade as $c)
 										{
 											echo '<option value="'.$c['id_cidade'].'">'.$c['ds_cidade'].'</option>';
 										}
 										//$idCidade = value="'.$c['id_cidade'].'">;
-									?>-->
+									?>
 								</select>
 								Ramo de Atividade:  
 								<select id="ramoAtividade" name="ramoAtividade">

@@ -56,11 +56,11 @@
 					<div class="content">
 						<div class="8u 12u(mobile)" id="content">
 							<form action="cad_escolheCidades.php" method="post">
-								Digite o nome da rota:<input type="text" name="nomerota" id="nomeRota">
+								Digite o nome da rota:<input type="text" name="nomerota" id="nomeRota" >
 								Período Inicial:<input type="text" name="periodoInicial" id="periodoInicial" class="data">
 								Período Final:<input type="text" name="periodoFinal" id="periodoFinal" class="data">
 
-								<input type="submit" name="login" id="login" class="button circled scrolly"/>
+								<!-- <input type="submit" name="login" id="login" class="button circled scrolly"/> -->
 							</form>
 						</div>
 					</div>

@@ -32,7 +32,7 @@
 				<!-- Inner -->
 				<div class="inner">
 					<header>
-						<h1>BinBag</h1>
+						<h1><?php echo NOME_SITE; ?></h1>
 						<hr />
 						<p>Planeje sua viagem</p>
 					</header>
@@ -47,46 +47,62 @@
 			</div>
 			<!-- Banner -->
 			<section id="banner">
-				<header>
-					<h2>Você já pensou em sair de casa e viajar pelo mundo?</h2>
-					<p>
-						<strong>Binbag</strong> é um serviço feito para você planejar sua viagem do começo ao fim e ter a melhor experiencia possivel.</br>
-						<strong>O mundo o aguarda!</strong>
-					</p>
-				</header>
-				<footer>
-					<?php if($_SESSION["logado"] != true)
-						  { ?>
+				<?php 
+					if($_SESSION["logado"] != true)
+					{ ?>
+						<header>
+							<h2>Você já pensou em sair de casa e viajar pelo mundo?</h2>
+							<p>
+								<strong>Binbag</strong> é um serviço feito para você planejar sua viagem do começo ao fim e ter a melhor experiencia possivel.</br>
+								<strong>O mundo o aguarda!</strong>
+							</p>
+						</header>
+						<footer>
 						    <a href="cad_escolheTPusuario.php" class="button circled scrolly">Cadastre-se</a>
-					<?php } ?>
-					
-					<?php if($_SESSION["logado"] == true)
-						  { 
-							switch ($_SESSION['tipoUsu']) {
-						  		case '1':
-						  			echo '<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
-								    <a href="cad_eventos.php" class="button circled scrolly">Eventos</a>
-								    <a href="cad_registrarEstabelecimento.php" class="button circled scrolly">Estabelecimento</a>';
-						  			break;
+				<?php 
+					}else{
+						switch ($_SESSION['tipoUsu'])
+							{
+								case '1':
+									echo '
+										<header>
+											<h2>Usuário Admin</h2>
+										</header>
+										<footer>
+										<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
+										<a href="cad_eventos.php" class="button circled scrolly">Eventos</a>
+										<a href="cad_registrarEstabelecimento.php" class="button circled scrolly">Estabelecimento</a>';
+									break;
 
-						  		case '2':
-								    echo '<a href="cad_eventos.php" class="button circled scrolly">Eventos</a>
-								    <a href="cad_registrarEstabelecimento.php" class="button circled scrolly">Estabelecimento</a>';
-						  			break;
-						  		
-						  		default:
-						  			echo '<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>';
-						  			break;
-						  	}	  	
+								case '2':
+									echo '
+										<header>
+											<h2>Você já pensou em mostrar seus eventos e estabelecimento para o mundo?</h2>
+											<p>
+												<strong>Binbag</strong> é um serviço feito para você mostrar sua empresa, eventos e estabelecimentos e ter a melhor experiência possivel.</br>
+												<strong>O mundo o aguarda!</strong>
+											</p>
+										</header>
+										<footer>
+										<a href="cad_eventos.php" class="button circled scrolly">Eventos</a>
+										<a href="cad_registrarEstabelecimento.php" class="button circled scrolly">Estabelecimento</a>';
+									break;
 
-
-						  	if($_SESSION['tipoUsu'] == 1)
-						  	{
-					?>
-						    
-					<?php 	} 
-						}
-					?>
+								default:
+									echo '
+										<header>
+											<h2>Você já pensou em sair de casa e viajar pelo mundo?</h2>
+											<p>
+												<strong>Binbag</strong> é um serviço feito para você planejar sua viagem do começo ao fim e ter a melhor experiência possivel.</br>
+												<strong>O mundo o aguarda!</strong>
+											</p>
+										</header>
+										<footer>
+										<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>';
+									break;
+							}
+					}
+				?>
 				</footer>
 			</section>
 
@@ -148,7 +164,7 @@
 				<article id="main" class="container special">
 					<a href="#" class="image featured"><img src="images/eventododia.jpg" alt="" /></a>
 					<header>
-						<h2><a href="#">Acredite é no Brasil</a></h2>
+						<h2><a href="#">Acredite, é no Brasil!</a></h2>
 						<p>
 							A foto do Morro do Cambirela coberto de neve acabou ocupando a capa dos principais jornais do Brasil nesta quarta-feira(24/07/13) 
 						</p>
