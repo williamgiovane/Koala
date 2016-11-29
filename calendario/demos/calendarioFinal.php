@@ -23,15 +23,15 @@
 			},
 
 			defaultView: 'listDay',
-			defaultDate: '2016-12-30',
+			defaultDate: '2016-11-30',
 			navLinks: true, // can click day/week names to navigate views
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
 			events: [
 				{
 					title: 'Ahoy',
-					start: '2016-09-11',
-					end: '2016-09-13'
+					start: '2016-11-01T22:30:00',
+					end: '2016-11-02T04:00:00'
 				},
 				{
 					title: 'FURB',

@@ -1,0 +1,7 @@
+Time : 23:27:26
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'values (null, Teste, 13.412.351/2345-12, , teste, 67 89765678, william@gmail.com' at line 1
+Raw SQL : insert into estabelecimento (id_estabelecimento, ds_estabelecimento, cnpj, cep, about, telefone, email, classificacao, foto, CIDADE_id_cidade, values (null, Teste, 13.412.351/2345-12, , teste, 67 89765678, william@gmail.com, null, null, 1)
+
+Time : 15:35:29
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`koaladb`.`rota_has_cidade`, CONSTRAINT `fk_ROTA_has_CIDADE_ROTA1` FOREIGN KEY (`ROTA_id_rota`) REFERENCES `rota` (`id_rota`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Raw SQL : insert into rota_has_cidade(ROTA_id_rota, CIDADE_id_cidade) values (1, 1)

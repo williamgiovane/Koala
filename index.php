@@ -58,6 +58,7 @@
 							</p>
 						</header>
 						<footer>
+						    <a href="login.php" class="button circled scrolly">Login</a>
 						    <a href="cad_escolheTPusuario.php" class="button circled scrolly">Cadastre-se</a>
 				<?php 
 					}else{

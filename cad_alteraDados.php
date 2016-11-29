@@ -11,16 +11,28 @@
 
     if($_POST)
     { 
-        if($_POST["nomeUsu"] != $_SESSION["nmUsu"]) 
+        if($_POST["nmUsu"] != $_SESSION["nmUsu"]) 
         {
             $banco->bind("nome", $_POST["nmUsu"]);
             $banco->bind("idUsuarioPHP", $_SESSION["idUsuario"]);
-
-            $resultado = $banco->query('update usuario set nm_usuario = :nome where id_usuario = :idUsuarioPHP');
+            $resultado = $banco->query("update usuario set nm_usuario = :nome where id_usuario = :idUsuarioPHP");
 
             if ($resultado) 
             {
                 echo '<div class="alert alert-success" role="alert"> Dados alterados com sucesso.</div>';
+                $_SESSION["nmUsu"] = $_POST["nmUsu"];
+            }
+        }
+        if($_POST["novaSenha"] == $_POST["novaSenha2"]) 
+        {
+            $banco->bind("senha", sha1($_POST["novaSenha"]));
+            $banco->bind("idUsuarioPHP", $_SESSION["idUsuario"]);
+
+            $resultado = $banco->query('update usuario set senha = :senha where id_usuario = :idUsuarioPHP');
+
+            if ($resultado) 
+            {
+                echo '<div class="alert alert-success" role="alert"> Senha alterada com sucesso.</div>';
                 header('Location:perfilUsu.php');
             }else
             {
@@ -67,8 +79,9 @@
                     <div class="content">
                         <div class="8u 12u(mobile)" id="content">
                             <form action="cad_alteraDados.php" method="post" id="formAlteraDados">                             
-                                Nome:<input type="text" name="nomeUsu" id="nomeUsu" class="required">
-                                Email:<input type="text" name="emailUsu" id="emailUsu" class="required">
+                                Novo Nome:<input type="text" name="nmUsu" id="nmUsu" class="required">
+                                Nova Senha:<input type="password" name="novaSenha" id="novaSenha" class="required">
+                                Confirmação da Nova Senha:<input type="password" name="novaSenha2" id="novaSenha2" class="required">  
                                 </br><a href="perfilUsu.php" class="button circled scrolly">Voltar</a>
                                 <input type="submit" value="Alterar Dados" name="cadastrar" class="button">
                             </form>

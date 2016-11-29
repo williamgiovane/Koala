@@ -27,20 +27,20 @@
 	<body class="no-sidebar">
 		<div id="page-wrapper">
 			<!-- Header -->
-				<div id="headerPlacas">
-					<?php
-						require 'cabecalho.php';
-					?>
-					<!-- Inner -->
-					<div class="inner">
-						<header>
-							<h1><a href="index.php" id="logo">Selecione as atrações de Blumenau</a></h1>
-						</header>
-					</div>
+			<div id="headerPlacas">
+				<?php
+					require 'cabecalho.php';
+				?>
+				<!-- Inner -->
+				<div class="inner">
+					<header>
+						<h1><a href="index.php" id="logo">Selecione as atrações de Blumenau</a></h1>
+					</header>
 				</div>
+			</div>
 			<!-- Main -->
-				<div class="wrapper style1">
-					<!-- Ponto Turisticos -->
+			<div class="wrapper style1">
+				<!-- Ponto Turisticos -->
 					<h2 align="center">Pontos Turisticos</h2>
 					<section class="carousel">
 						<div class="reel">
@@ -177,12 +177,12 @@
 							</article>
 						</div>
 					</section>
-					
-					<!--BOTÕES-->			
-					<footer align="center">
-						<a href="cad_escolheCidades.php" class="button circled scrolly">Voltar</a>&nbsp&nbsp<a href="index.php" class="button circled scrolly">Cancelar</a>&nbsp&nbsp<a href="cad_escolheAtracoesFloripa.php" class="button circled scrolly">Próximo</a>
-					</footer>					
-				</div>
+				
+				<!--BOTÕES-->			
+				<footer align="center">
+					<a href="cad_escolheCidades.php" class="button circled scrolly">Voltar</a>&nbsp&nbsp<a href="index.php" class="button circled scrolly">Cancelar</a>&nbsp&nbsp<a href="cad_escolheDatas.php" class="button circled scrolly">Próximo</a>
+				</footer>					
+			</div>
 						
 <?php
 	require 'rodape.php'

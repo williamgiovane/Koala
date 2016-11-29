@@ -7,7 +7,24 @@
 	//Criando obj da classe BD
 	$banco = new DB();
 
-	//echo $_SESSION['idUsuario'];
+	if($_POST)
+	{
+		$nomeRota = $_POST["nomerota"];
+		$Inicial = $_POST['periodoInicial'];
+		$Final = $_POST['periodoFinal'];
+
+		$banco->bind("nomeRota2", $nomeRota);
+		$banco->bind("periInicial", $Inicial);
+		$banco->bind("periFinal", $Final);
+
+		$banco->query("insert into rota (id_rota, ds_rota, dt_inicio, dt_fim, USUARIO_id_usuario) values (null, :nomeRota2, :periInicial, :periFinal,7)");	
+		//$selectRota = $banco->row("select id_rota from rota where ds_rota = :nomeRota2");
+
+		//$_SESSION["nmRota"] = $nomeRota;	
+		//$_SESSION["idRota"] = $selectRota["id_rota"];
+
+		header("Location: cad_escolheCidades.php");
+	}
 
 ?>
 <!DOCTYPE HTML>
@@ -55,22 +72,20 @@
 				<div class="container">
 					<div class="content">
 						<div class="8u 12u(mobile)" id="content">
-							<form action="cad_escolheCidades.php" method="post">
+							<form action="cad_novarota.php" method="post">
 								Digite o nome da rota:<input type="text" name="nomerota" id="nomeRota" >
 								Período Inicial:<input type="text" name="periodoInicial" id="periodoInicial" class="data">
 								Período Final:<input type="text" name="periodoFinal" id="periodoFinal" class="data">
-
-								<!-- <input type="submit" name="login" id="login" class="button circled scrolly"/> -->
-							</form>
 						</div>
 					</div>
 				</div>
 								
-				<footer  align="center">
-					<a href="index.php" class="button circled scrolly">Cancelar</a>
-					<!--<a href="cad_escolheEstados.php" class="button circled scrolly">Próximo</a>-->
-					<a href="cad_escolheCidades.php" class="button circled scrolly">Próximo</a>
-				</footer>
+					<footer  align="center">
+						<a href="index.php" class="button circled scrolly">Cancelar</a>
+						<input type="submit" name="Proximo" id="login" class="button circled scrolly" />	
+						<!-- <a href="cad_escolheCidades.php" class="button circled scrolly">Próximo</a> -->
+					</footer>
+				</form>
 			</div>
 
 <?php

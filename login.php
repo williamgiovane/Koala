@@ -72,7 +72,7 @@
 								Usuário ou Email:<input type="text" name="usuEmail" id="usuEmail">
 								Senha:<input type="password" name="senha1" id="senha1"></br>
 									
-								<input type="submit" name="Enviar" id="login" class="button circled scrolly" />	
+								<input type="submit" name="Logar" id="login" class="button circled scrolly" />	
 
 							</form>
 						</div>

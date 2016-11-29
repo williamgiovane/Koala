@@ -24,8 +24,13 @@
 		$banco->bind("atuCel",$atualizacaoCelular);
 		$banco->bind("atuEmail",$atualizacaoEmail);
 
-		$banco->query("insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 3, '') ");		
-		header('Location:index.php');
+		if($senha == $senhaConfiUsu)
+		{
+			$banco->query("insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 3, '') ");		
+			header('Location:index.php');
+		}else{
+			header('Location:cad_registrarFisica.php');	
+		}
 	}
 ?>
 
@@ -67,7 +72,7 @@
 						<div class="8u 12u(mobile)" id="content">
 							<form action="cad_registrarFisica.php" method="post" id="formCadUsuario">
 								Nome Completo:<input type="text" name="nomeUsu" id="nomeUsu" class="required" maxlength="45"> 
-								Email:<input type="email" name="emailUsu" class="email">
+								Email:<input type="email" name="emailUsu">
 								Senha:<input type="password" name="senhaUsu" class="required">
 								Confirme a senha:<input type="password" name="senhaConfiUsu" class="required">
 								Celular:<input type="text" name="celularUsu" class="phone">

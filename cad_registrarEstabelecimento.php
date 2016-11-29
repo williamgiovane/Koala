@@ -21,8 +21,6 @@
 		$cep     			= $_POST["cep"];
 		$diasFuncionamento  = $_POST["diasFuncionamento"];
 		$celular 			= str_replace("-","",str_replace(")","", str_replace("(","",$_POST["celularUsu"])));
-		//$senha      		= $_POST["senhaUsu"];
-		//$senha2     		= $_POST["senhaConfiUsu"];
 		$about				= $_POST["sobreEmpresa"];
 		$atualizacaoCelular = (isset($_POST["atualizacaoCelular"]))? $_POST["atualizacaoCelular"] : "0" ;
 		$atualizacaoEmail 	= (isset($_POST["atualizacaoEmail"]))? $_POST["atualizacaoEmail"] : "0" ;
@@ -38,19 +36,11 @@
 		$banco->bind("cep",$cep);
 		$banco->bind("diasFuncionamento",$diasFuncionamento);
 		$banco->bind("celular",$celular);
-		//$banco->bind("senha",$senha);
-		//$banco->bind("senha2",$senha2);
 		$banco->bind("about",$about);
 		$banco->bind("atuCel",$atualizacaoCelular);
 		$banco->bind("atuEmail",$atualizacaoEmail);
 
-		$banco->query("insert into estabelecimento (id_estabelecimento, ds_estabelecimento, cnpj, cep, about, telefone, email, classificacao, foto, CIDADE_id_cidade, values (null, $nome, $cnpj, $cep, $about, $celular, $email, null, null, $cidade)");		
-
-		//for para cada opção do check box selecionado (tipo de estabelecimento)
-		$banco->query("insert into estabelecimento_has_tipo_estabelecimento (ESTABELECIMENTO_id_estabelecimento, TIPO_ESTABELECIMENTO_id_tipo_estabelecimento) values (id_estabelecimento, id_tipo_estabelecimento)");	
-
-		//for para cada opção do check box selecionado (dia de semana)
-		$banco->query("insert into estabelecimento_has_dia_semana (ESTABELECIMENTO_id_estabelecimento, DIAS_SEMANA_id_dia_semana) values (id_estabelecimento, id_dia_semana)");	
+		$banco->query("insert into estabelecimento (id_estabelecimento, ds_estabelecimento, cnpj, cep, about, telefone, email, classificacao, foto, CIDADE_id_cidade, values (null, $nome, $cnpj, $cep, $about, $celular, $email, null, null, 1)");		
 	}
 ?>
 
@@ -91,20 +81,9 @@
 					<h2>Digite seus dados:</a></h2></br>
 					<div class="content">
 						<div class="8u 12u(mobile)" id="content">
-							<form>
-								Nome Empresa:<input type="text" name="nomeEmp"> 
-								CNPJ:<input type="text" name="cnpj" class="cnpj">
-								<!--Estado: 
-								<select id="Estado" name="Estado">
-									<option value="">Selecione o Estado</option>
-									<?php
-										$estado = $banco->query('SELECT id_estado, ds_estado FROM estado WHERE PAIS_id_pais = 10 ORDER BY ds_estado');
-										foreach($estado as $e)
-										{
-											echo '<option value="'.$e['id_estado'].'">'.$e['ds_estado'].'</option>';
-										}
-									?>
-								</select>-->
+							<form action="cad_registrarEstabelecimento.php" method="post">
+								Nome: <input type="text" name="nomeEmp"> 
+								CNPJ: <input type="text" name="cnpj" class="cnpj">
 								Cidade:
 								<select id="Cidade" name="Cidade">
 									<option value="">Selecione o Cidade</option>
@@ -118,7 +97,23 @@
 									?>
 								</select>
 								Ramo de Atividade:  
-								<select id="ramoAtividade" name="ramoAtividade">
+								<table>
+									<tr>
+										<td><input type="checkbox" name="balada" id="balada">Balada</td>
+										<td><input type="checkbox" name="bar" id="bar">Bar</td>
+										<td><input type="checkbox" name="cafeteria" id="cafeteria">Cafeteria</td>	
+										<td><input type="checkbox" name="cervejaria" id="cervejaria">Cervejaria</td>
+										<td><input type="checkbox" name="lanchonete" id="lanchonete">Lanchonete</td>	
+									</tr>
+									<tr>
+										<td><input type="checkbox" name="padaria" id="padaria">Padaria</td>
+										<td><input type="checkbox" name="pizzaria" id="pizzaria">Pizzaria</td>
+										<td><input type="checkbox" name="pub" id="pub">Pub</td>
+										<td><input type="checkbox" name="restaurante" id="restaurante">Restaurante</td>
+										<td><input type="checkbox" name="shopping" id="shopping">Shopping</td>
+									</tr>
+								</table>
+								<!--<select id="ramoAtividade" name="ramoAtividade">
 									<option value="">Selecione o Ramo de Atividade</option>
 									<?php
 										$ramoAtividade = $banco->query('SELECT ds_tipo_estabelecimento FROM tipo_estabelecimento ORDER BY ds_tipo_estabelecimento');
@@ -127,13 +122,10 @@
 											echo '<option value="'.$r['ds_tipo_estabelecimento'].'">'.$r['ds_tipo_estabelecimento'].'</option>';
 										}
 									?>
-								</select>
+								</select>-->
 								
 								Email:<input type="email" name="emailEmpresa">
 								Site:<input type="text" name="siteEmpresa">
-								
-								Cep:<input type="text" name="cep" class="cep">	
-								
 								Dias de funcionamento:
 								<table>
 									<tr>
@@ -150,68 +142,21 @@
 							
 
 								Celular ou Telefone:<input type="text" name="celularUsu" class="phone">
-								<!--Senha:<input type="password" name="senhaUsu">
-								Confirme a senha:<input type="password" name="senhaConfiUsu">-->
 								Sobre a empresa:<textarea name="sobreEmpresa" rows="10" cols="60" wrap="virtual"></textarea></p>
 								<input type="checkbox" name="atualizacaoCelular" value="">Desejo receber atualizações por Celular</td></br>
 								<input type="checkbox" name="atualizacaoEmail" value="">Desejo receber atualizações por Email</td>
-							</form>
 						</div>
 					</div>
 				</div>
 								
-				<footer  align="center">
-					<a href="index.php" class="button circled scrolly">Cadastrar</a>
-					<a href="index.php" class="button circled scrolly">Cancelar</a>
-					<a href="cad_escolheTPusuario.php" class="button circled scrolly">Voltar</a>
-				</footer>
+					<footer  align="center">
+						<a href="index.php" class="button circled scrolly">Cancelar</a>
+						<a href="cad_escolheTPusuario.php" class="button circled scrolly">Voltar</a>
+						<input type="submit" name="cadastrar" id="cadastrar" class="button circled scrolly" />
+					</footer>
+				</form>
 			</div>
 				
 <?php
 	require 'rodape.php'
 ?>
-
-<!--Continente
-<select id="Continente" name="Continente">
-	<option value="">Selecione o Continente</option>
-	<?php
-		$continente = $banco->query('select ds_continente from continente ORDER BY ds_continente');
-		$continenteDados = $banco->query('select id_continente from continente');
-		foreach($continente as $c){
-			echo '<option value="'.$c['ds_continente'].'">'.$c['ds_continente'].'</option>';
-		}
-	?>
-</select>
-
-Pais
-<select id="Pais" name="Pais">
-	<option value="">Selecione o Pais</option>
-	<?php
-		$continente = $banco->query('SELECT ds_pais FROM pais WHERE CONTINENTE_id_continente = 1 ORDER BY ds_pais');
-		foreach($continente as $p){
-			echo '<option value="'.$p['ds_pais'].'">'.$p['ds_pais'].'</option>';
-		}
-	?>
-</select>
-
-Estado  
-<select id="Estado" name="Estado">
-	<option value="">Selecione o Estado</option>
-	<?php
-		$estado = $banco->query('SELECT ds_estado FROM estado WHERE PAIS_id_pais = 10 ORDER BY ds_estado');
-		foreach($estado as $e){
-			echo '<option value="'.$e['ds_estado'].'">'.$e['ds_estado'].'</option>';
-		}
-	?>
-</select>
-
-Cidade  
-<select id="Cidade" name="Cidade">
-	<option value="">Selecione o Cidade</option>
-	<?php
-		$cidade = $banco->query('SELECT ds_cidade FROM cidade WHERE ESTADO_id_estado = 24 ORDER BY ds_cidade');
-		foreach($cidade as $c){
-			echo '<option value="'.$c['ds_cidade'].'">'.$c['ds_cidade'].'</option>';
-		}
-	?>
-</select>-->

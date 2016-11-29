@@ -98,17 +98,6 @@
 								Horario Inicio:<input type="text" name="horarioInicio" class="hora">
 								Horario Final:<input type="text" name="horarioFinal" class="hora">
 								Cep:<input type="text" name="cep" class="cep">
-								<!--Estado: 
-								<select id="Estado" name="Estado">
-									<option value="">Selecione o Estado</option>
-									<?php
-										$estado = $banco->query('SELECT id_estado, ds_estado FROM estado WHERE PAIS_id_pais = 10 ORDER BY ds_estado');
-										foreach($estado as $e)
-										{
-											echo '<option value="'.$e['id_estado'].'">'.$e['ds_estado'].'</option>';
-										}
-									?>
-								</select>-->
 								Cidade:
 								<select id="Cidade" name="Cidade">
 									<option value="">Selecione o Cidade</option>
