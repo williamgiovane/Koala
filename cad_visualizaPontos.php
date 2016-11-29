@@ -97,7 +97,7 @@
 
 				<!--BOTÕES-->			
 				<footer align="center">
-					<a href="cad_escolheCidades.php" class="button circled scrolly">OK</a>
+					<a href="cad_escolheAtracoesBlumenau.php" class="button circled scrolly">OK</a>
 				</footer>
 			</div>
 

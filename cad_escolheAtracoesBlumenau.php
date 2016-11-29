@@ -45,7 +45,7 @@
 					<section class="carousel">
 						<div class="reel">
 							<article>
-								<a href="#" class="image featured"><img src="images/blumenau/parqueVG.jpg"/></a>
+								<a href="cad_visualizaPontos.php" class="image featured"><img src="images/blumenau/parqueVG.jpg"/></a>
 								<header>
 									<h3>Parque Vila Germânica</a></h3>
 									<input type="checkbox" name="vilaGermanica" value="vilaGermanica">Adicionar
@@ -161,6 +161,20 @@
 								<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
 							</header>
 						</article>
+						</div>
+					</section>
+
+					<h2 align="center">Eventos</h2>
+					<section class="carousel">
+						<div class="reel">
+							<article>
+								<a href="cad_visualizaEvento.php" class="image featured"><img src="images/Blumenau/oktober/ok1.jpg"/></a>
+								<header>
+									<h3><a href="cad_visualizaEvento.php">Oktoberfest</a></h3>
+									<input type="checkbox" name="vilaGermanica" value="restauranteThapyoka">Adicionar
+									<!--</br><input type="button" name="adicionarpararota" value="Adicionar"></br>-->
+								</header>
+							</article>
 						</div>
 					</section>
 					
