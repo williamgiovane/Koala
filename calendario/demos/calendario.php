@@ -113,40 +113,40 @@
 	<div id='wrap'>
 		<div id='external-events'>
 			<h4>Pontos turisticos</h4>
-			<div class='fc-event'>Parque Vila Germânica</div>
-			<div class='fc-event'>Catedral São Paulo Apóstolo</div>
+			<!-- <div class='fc-event'>Parque Vila Germânica</div> -->
+			<!-- <div class='fc-event'>Catedral São Paulo Apóstolo</div> -->
 			<div class='fc-event'>Teatro Carlos Gomes</div>
 			<div class='fc-event'>Parque Ramiro Ruediger</div>
 			<div class='fc-event'>Praia dos Ingleses</div>
 			<div class='fc-event'>Museu de Arte de Santa Catarina</div>
 			<div class='fc-event'>Estádio Orlando Scarpelli</div>
-			<div class='fc-event'>Santo Antônio de Lisboa</div>
+			<!-- <div class='fc-event'>Santo Antônio de Lisboa</div> -->
 		</div>
 
 		<div id='calendar'></div>
 
 		<div id='external-events'>
 			<h4>Restaurantes</h4>
-			<div class='fc-event'>Thapyoka</div>
+			<!-- <div class='fc-event'>Thapyoka</div> -->
 			<div class='fc-event'>Moinho do Vale</div>
 			<div class='fc-event'>Ataliba</div>
-			<div class='fc-event'>Pepper Jack</div>
+			<!-- <div class='fc-event'>Pepper Jack</div> -->
 			<div class='fc-event'>João de Barro</div>
-			<div class='fc-event'>Antonio's</div>
+			<!-- <div class='fc-event'>Antonio's</div> -->
 			<div class='fc-event'>Pousada dos Sonhos</div>
-			<div class='fc-event'>Delícias Portuguesas</div>
+			<!-- <div class='fc-event'>Delícias Portuguesas</div> -->
 		</div>
 
 		<div id='external-events'>
 			<h4>Pub's e baladas</h4>
-			<div class='fc-event'>The Basement English Pub</div>
+			<!-- <div class='fc-event'>The Basement English Pub</div> -->
 			<div class='fc-event'>Ahoy Tavern Club</div>
-			<div class='fc-event'>Winchester Pub</div>
-			<div class='fc-event'>Rivage</div>
+			<!-- <div class='fc-event'>Winchester Pub</div> -->
+			<!-- <div class='fc-event'>Rivage</div> -->
 			<div class='fc-event'>Fields</div>
-			<div class='fc-event'>Sete Night Club</div>
+			<!-- <div class='fc-event'>Sete Night Club</div> -->
 			<div class='fc-event'>The Roof</div>
-			<div class='fc-event'>Cervejaria Devassa</div>
+			<!-- <div class='fc-event'>Cervejaria Devassa</div> -->
 		</div>
 
 		<div id='external-events'>

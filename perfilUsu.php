@@ -49,7 +49,9 @@
 			  				<!-- Main -->
 							<div class="wrapper style1">
 								<footer align="center">
-									<h2 align="center">Cadastre</h2>
+									<h2 align="center">Cadastros</h2>
+									<a href="cad_alteraDados.php" class="button circled scrolly">Alterar Dados</a>
+									<a href="cad_alteraSenha.php" class="button circled scrolly">Alterar Senha</a>
 									<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
 								</footer>
 
@@ -100,7 +102,9 @@
 							<div class="wrapper style1">
 								
 								<footer align="center">
-									<h2 align="center">Cadastre</h2>
+									<h2 align="center">Cadastro</h2>
+									<a href="cad_alteraDados.php" class="button circled scrolly">Alterar Dados</a>
+									<a href="cad_alteraSenha.php" class="button circled scrolly">Alterar Senha</a>
 									<a href="cad_eventos.php" class="button circled scrolly">Eventos</a>
 						    		<a href="cad_registrarEstabelecimento.php" class="button circled scrolly">Estabelecimento</a>
 								</footer>
@@ -185,7 +189,9 @@
 			  				<!-- Main -->
 							<div class="wrapper style1">
 								<footer align="center">
-									<h2 align="center">Cadastre</h2>
+									<h2 align="center">Cadastro</h2>
+									<a href="cad_alteraDados.php" class="button circled scrolly">Alterar Dados</a>
+									<a href="cad_alteraSenha.php" class="button circled scrolly">Alterar Senha</a>
 									<a href="cad_novarota.php" class="button circled scrolly">Nova Rota</a>
 								</footer>
 

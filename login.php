@@ -15,13 +15,14 @@
 		$banco->bind("email", $usuEmail);
 		$banco->bind("senha", $senha);
 
-		$selectUsu = $banco->row("select id_usuario, nm_usuario, TIPO_USUARIO_id_tipo_usuario as 'tipo' from usuario where email = :email and senha = :senha");
+		$selectUsu = $banco->row("select id_usuario, nm_usuario, email, TIPO_USUARIO_id_tipo_usuario as 'tipo' from usuario where email = :email and senha = :senha");
 
 		if($selectUsu)
 		{
 			$_SESSION["logado"] = true;	
 			$_SESSION["nmUsu"] = $selectUsu["nm_usuario"];	
 			$_SESSION["idUsuario"] = $selectUsu["id_usuario"];
+			$_SESSION["usuEmail"] = $selectUsu["email"];
 			$_SESSION["tipoUsu"] = $selectUsu["tipo"];	
 			header("Location: index.php");
 		}else{
@@ -71,17 +72,12 @@
 								Usuário ou Email:<input type="text" name="usuEmail" id="usuEmail">
 								Senha:<input type="password" name="senha1" id="senha1"></br>
 									
-								<input type="submit" name="login" id="login" class="button circled scrolly" />	
+								<input type="submit" name="Enviar" id="login" class="button circled scrolly" />	
 
 							</form>
 						</div>
 					</div>
 				</div>
-								
-				<!-- <footer align="center">
-					<a href="index.php" class="button circled scrolly">Cancelar</a>
-					<a href="index.php" class="button circled scrolly">Login</a>
-				</footer> -->
 			</div>
 				
 <?php

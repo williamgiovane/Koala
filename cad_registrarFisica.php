@@ -67,9 +67,9 @@
 						<div class="8u 12u(mobile)" id="content">
 							<form action="cad_registrarFisica.php" method="post" id="formCadUsuario">
 								Nome Completo:<input type="text" name="nomeUsu" id="nomeUsu" class="required" maxlength="45"> 
-								Email:<input type="email" name="emailUsu" class="required">
-								Senha:<input type="password" name="senhaUsu">
-								Confirme a senha:<input type="password" name="senhaConfiUsu">
+								Email:<input type="email" name="emailUsu" class="email">
+								Senha:<input type="password" name="senhaUsu" class="required">
+								Confirme a senha:<input type="password" name="senhaConfiUsu" class="required">
 								Celular:<input type="text" name="celularUsu" class="phone">
 								
 								<input type="checkbox" name="atualizacaoCelular" value="1">Desejo receber atualizações por Celular</td></br>

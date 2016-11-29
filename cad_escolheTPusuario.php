@@ -48,8 +48,8 @@
 					<div class="content">
 						<div class="8u 12u(mobile)" id="content">
 							<form>								
-								<a href="cad_registrarFisica.php" class="button circled scrolly">Pessoa Fisica</a>
-								<a href="cad_registrarJuridica.php" class="button circled scrolly">Pessoa Juridica</a>
+								<a href="cad_registrarFisica.php" class="button circled scrolly">Viajante</a>
+								<a href="cad_registrarJuridica.php" class="button circled scrolly">Empresário</a>
 								<a href="index.php" class="button circled scrolly">Voltar</a>
 							</form>
 						</div>
