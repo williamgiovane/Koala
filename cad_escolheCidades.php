@@ -9,7 +9,7 @@
 
 	if($_POST)
 	{
-		$banco->query("insert into rota_has_cidade(ROTA_id_rota, CIDADE_id_cidade) values (4, 1)");
+		//$banco->query("insert into rota_has_cidade(ROTA_id_rota, CIDADE_id_cidade) values (4, 1)");
 
 		header("Location: cad_escolheAtracoesBlumenau.php");
 	}

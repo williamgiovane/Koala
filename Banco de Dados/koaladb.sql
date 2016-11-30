@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Nov-2016 às 20:32
--- Versão do servidor: 5.7.11
--- PHP Version: 5.6.19
+-- Generation Time: 30-Nov-2016 às 01:06
+-- Versão do servidor: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -179,7 +179,7 @@ CREATE TABLE `estabelecimento` (
 
 INSERT INTO `estabelecimento` (`id_estabelecimento`, `ds_estabelecimento`, `cep`, `about`, `telefone`, `email`, `classificacao`, `foto`, `CIDADE_id_cidade`, `cnpj`, `qt_classif`, `ds_endereco`) VALUES
 (1, 'Polpetta', '89', 'Polpetta tem bolinhos deliciosos', 123, 'polpetta@gmail.com', '4.50', NULL, 1, NULL, NULL, ''),
-(2, 'Ahoy', '25', 'Ahoy tem músicas legais', 258, 'ahoy@gmail.com', '5.00', NULL, 1, NULL, NULL, '');
+(2, 'Ahoy', '89012000', 'Balada com temas de piratas animada por bandas de rock eletrônico, grupos cover e mixagem DJ, com pista e bar.', 473209097, 'ahoy@gmail.com', '5.00', NULL, 1, NULL, NULL, 'R. São Paulo, 2083 - Itoupava Seca, Blumenau - SC');
 
 -- --------------------------------------------------------
 
@@ -510,10 +510,17 @@ CREATE TABLE `pais_has_idioma` (
 CREATE TABLE `rota` (
   `id_rota` int(11) NOT NULL,
   `ds_rota` varchar(45) NOT NULL,
-  `dt_inicio` date NOT NULL,
-  `dt_fim` date NOT NULL,
+  `dt_inicio` varchar(15) NOT NULL,
+  `dt_fim` varchar(15) NOT NULL,
   `USUARIO_id_usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `rota`
+--
+
+INSERT INTO `rota` (`id_rota`, `ds_rota`, `dt_inicio`, `dt_fim`, `USUARIO_id_usuario`) VALUES
+(1, 'R1', '01/11/2016', '02/11/2016', 7);
 
 -- --------------------------------------------------------
 
@@ -693,7 +700,8 @@ INSERT INTO `usuario` (`id_usuario`, `nm_usuario`, `email`, `senha`, `celular`, 
 (7, 'William Testoni', 'williamgiovane1@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '47 97424074', 1, 1, 1, ''),
 (9, 'Claudia', 'claudia@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '67 89876567', 0, 0, 2, ''),
 (10, 'Fabio', 'fabio@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '45 67898765', 0, 0, 2, ''),
-(11, 'Joana', 'joana@terra.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '12 34567890', 0, 0, 3, '');
+(11, 'Joana', 'joana@terra.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '12 34567890', 0, 0, 3, ''),
+(12, 'Gabriel Boeing', 'gabriel@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', '54 68461516', 0, 0, 3, '');
 
 --
 -- Indexes for dumped tables
@@ -982,7 +990,7 @@ ALTER TABLE `pais`
 -- AUTO_INCREMENT for table `rota`
 --
 ALTER TABLE `rota`
-  MODIFY `id_rota` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_rota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tipo_entretenimento`
 --
@@ -1007,7 +1015,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- Constraints for dumped tables
 --

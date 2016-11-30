@@ -1,0 +1,31 @@
+Time : 00:54:13
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`koaladb`.`rota_has_cidade`, CONSTRAINT `fk_ROTA_has_CIDADE_ROTA1` FOREIGN KEY (`ROTA_id_rota`) REFERENCES `rota` (`id_rota`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Raw SQL : insert into rota_has_cidade(ROTA_id_rota, CIDADE_id_cidade) values (5, 1)
+
+Time : 00:54:05
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`koaladb`.`rota_has_cidade`, CONSTRAINT `fk_ROTA_has_CIDADE_ROTA1` FOREIGN KEY (`ROTA_id_rota`) REFERENCES `rota` (`id_rota`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Raw SQL : insert into rota_has_cidade(ROTA_id_rota, CIDADE_id_cidade) values (5, 1)
+
+Time : 00:49:12
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`koaladb`.`rota_has_cidade`, CONSTRAINT `fk_ROTA_has_CIDADE_ROTA1` FOREIGN KEY (`ROTA_id_rota`) REFERENCES `rota` (`id_rota`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+Raw SQL : insert into rota_has_cidade(ROTA_id_rota, CIDADE_id_cidade) values (4, 1)
+
+Time : 00:46:08
+SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '31/11/2016' for column 'dt_inicio' at row 1
+Raw SQL : insert into rota (id_rota, ds_rota, dt_inicio, dt_fim, USUARIO_id_usuario) values (null, :nomeRota2, :periInicial, :periFinal,7)
+
+Time : 00:45:13
+SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '01/11/2016' for column 'dt_inicio' at row 1
+Raw SQL : insert into rota (id_rota, ds_rota, dt_inicio, dt_fim, USUARIO_id_usuario) values (null, :nomeRota2, :periInicial, :periFinal,7)
+
+Time : 00:44:44
+SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '01/11/2016' for column 'dt_inicio' at row 1
+Raw SQL : insert into rota (id_rota, ds_rota, dt_inicio, dt_fim, USUARIO_id_usuario) values (null, :nomeRota2, :periInicial, :periFinal,7)
+
+Time : 00:22:57
+SQLSTATE[01000]: Warning: 1265 Data truncated for column 'celular' at row 1
+Raw SQL : insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 3, '')
+
+Time : 00:22:28
+SQLSTATE[01000]: Warning: 1265 Data truncated for column 'celular' at row 1
+Raw SQL : insert into usuario (id_usuario, nm_usuario, email, senha, celular, atualiza_celular, atualiza_email, TIPO_USUARIO_id_tipo_usuario, foto) values (null, :nome, :email, :senha, :celular, :atuCel, :atuEmail, 3, '')

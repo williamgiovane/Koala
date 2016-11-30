@@ -136,7 +136,7 @@
 							</article>
 
 							<article>
-								<a href="#" class="image featured"><img src="images/blumenau/pubAHOY.jpg"/></a>
+								<a href="cad_visualizaEstabelecimento.php" class="image featured"><img src="images/blumenau/pubAHOY.jpg"/></a>
 								<header>
 									<h3><a href="#">Ahoy Tavern Club</a></h3>
 									<input type="checkbox" name="vilaGermanica" value="pubAHOY">Adicionar
